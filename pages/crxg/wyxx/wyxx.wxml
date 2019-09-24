@@ -1,0 +1,65 @@
+<!--pages/crxg/wyxx/wyxx.wxml-->
+
+<view class='list box_fjzd'>
+   <image src='{{imgUrl}}/image/spay/address.png' wx:if="{{imgUrl}}"  style='width:36rpx;height:36rpx;vertical-align:middle'></image>
+   <text class='left' bindtap='fjzd'>附近站点</text>
+   <text class='right'>{{fjzd}}</text>
+</view>
+<image src='{{imgUrl}}/image/index/bg.png'  wx:if="{{imgUrl}}" style='width:750rpx'mode="widthFix"></image>
+<image src='{{imgUrl}}/image/index/bg.png'  wx:if="{{imgUrl}}" style='width:750rpx;height:169rpx;'  wx:if="{{type1==2}}"></image>
+<form bindsubmit='submit'>
+<view class='information_box'>
+    <view class='message'>
+      <image src='{{imgUrl}}/image/details/line.png'  wx:if="{{imgUrl}}" mode='widthFix' style='width:10rpx;'></image>
+      <text>填写信息</text>
+    </view>
+    <view class='information'>
+      <view class='list_s'>
+        <text class='xm'>套餐价格</text>
+        <text class='r'>{{options.menuMoney}}元</text>
+      </view>
+      <view class='list_s'>
+        <text class='xm'>鞋子数量</text>
+        <text class='r'>{{options.shoeNumber}}双</text>
+      </view>
+      <navigator url='/pages/details/fjzd/fjzd?menuMoney={{options.menuMoney}}&shoeNumber={{options.shoeNumber}}&id={{options.id}}' hover-class='none'>
+        <view class='list_s'>
+          <text class='xm'>鞋柜地址</text>
+          <text class='r'>{{dizhi}}</text>
+        </view>
+      </navigator>
+      <view class='list_s'>
+        <text class='xm'>联系电话</text>
+        <input type='number' name="phone" placeholder='请输入您的电话' placeholder-class='phone' class='input'></input>
+      </view>
+      <view class='lists'>
+        <text class='xm bz'>添加备注</text>
+        <textarea placeholder="请注释您鞋子护理的具体要求（字数不超过50字）" maxlength="50" placeholder-class="place" bindblur="bindTextAreaBlur"wx:if="{{!showzf}}"/>
+      </view>
+    </view>
+  <button class='sub' form-type='submit'>提交</button>
+</view>
+</form>
+  <!-- 选择支付方式 -->
+   <view class='zffs_box' wx:if="{{showzf}}">
+      <view class='zffs'>
+        <text class='title'>订单支付</text>
+        <text class='jg'>{{options.menuMoney}}</text>
+        <text class='yuan'>元</text>
+        <text class='selec'>请选择支付方式</text>
+        
+        <radio-group class="radio-group" bindchange="radioChange">
+          <text class='yue'>（余额：{{money}}元)</text>
+            <label class="radio">
+            <radio value="1" checked="checked"/>
+            余额支付
+          </label>
+          <label class='radio'>
+              <radio value="2"/>
+            微信支付
+          </label>
+        </radio-group>
+        <text class='btns' bindtap='surePay'>确认支付</text>
+        <image src='{{imgUrl}}/image/details/x1.png'mode="widthFix"  wx:if="{{imgUrl}}" style='width:43rpx;' class='guan' bindtap='guan'></image>
+      </view>
+    </view>

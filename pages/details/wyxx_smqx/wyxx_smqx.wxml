@@ -1,0 +1,33 @@
+<!--pages/details/wyxx/wyxx.wxml-->
+<image src='{{imgUrl+"/"+img_bg}}' style='width:750rpx;height:240rpx;' wx:if="{{imgUrl}}"></image>
+<!-- <image src='{{imgUrl}}/image/details/icons.png' mode='widthFix' style='width:740rpx;'></image> -->
+<!-- 填写信息 -->
+<view class='message'>
+  <image src='{{imgUrl}}/image/details/line.png' wx:if="{{imgUrl}}"mode='widthFix' style='width:10rpx;'></image>
+  <text>填写信息</text>
+</view>
+<!-- 内容 -->
+<view class='content'>
+  <view class='list'>
+    <view class='left'>鞋子数量</view>
+    <view class='right'>
+      <image  src='{{imgUrl}}/image/details/jian.png'mode="widthFix" wx:if="{{imgUrl}}"style='width:38rpx'></image>   
+      <text>{{num}}</text>
+       <image  src='{{imgUrl}}/image/details/jia.png'mode="widthFix" wx:if="{{imgUrl}}"style='width:38rpx'></image>   
+    </view>
+  </view>
+  <navigator url='../selectdz3/selectdz3?num={{num}}&adaddress={{adaddress}}&zdid={{zdid}}' hover-class="none">
+    <view class='list'>
+      <view class='left'>地址管理</view>
+      <view class='right'>
+        <text class='jt'>{{dizhi}}</text>
+      </view>
+    </view>
+  </navigator>
+  <view class='lists'>
+    <text class='beizhu'>添加备注</text>
+    <textarea bindblur="bindTextAreaBlur"  placeholder="请填写您留下的备注信息" placeholder-style="color:#999;font-size:24rpx;"></textarea>
+  </view>
+</view>
+<view class='fc' bindtap='wyxx'>提交</view>
+<!-- 浮层 -->

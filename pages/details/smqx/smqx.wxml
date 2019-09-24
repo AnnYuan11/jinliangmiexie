@@ -1,0 +1,32 @@
+<!--pages/details/smqx/smqx.wxml-->
+<view class='crxg'>
+  <image src='{{imgUrl}}/image/details/smqx2.png'  wx:if="{{imgUrl}}"></image>
+</view>
+<view class='box'>
+  <image src='{{imgUrl}}/image/details/bgs.png'  wx:if="{{imgUrl}}"class='head'></image>
+  <view class='input_box'>
+    <view class='phone'>
+       <input placeholder="请输入您的手机号" placeholder-class="sjh"/>
+       <view class='djs'>60s</view>
+    </view>
+    <view class='phone'>
+       <input placeholder="请输入您的验证码" placeholder-class="sjh"/>
+    </view>
+  </view>
+  <view class='ty'>
+     <icon  type="success" color='#47DA7B'size="14" bindtap="bindCheckbox" data-index="{{index}}" class="my-check"/> 
+     <text>同意注册协议</text>
+  </view>
+  <view class='hqm' bindtap='showCover'>预约上门取鞋</view>
+</view>
+<!-- 浮层 -->
+<view class='cover' wx:if="{{isShow}}">
+  <view class='yuyue'>
+    <image src='{{imgUrl}}/image/details/yuyue.png'  wx:if="{{imgUrl}}"class='img'></image>
+    <text>您的存货码是：3876</text>
+  </view>
+  <view class='close' bindtap='hideCovew'>
+    <image src='{{imgUrl}}/image/details/close2.png' wx:if="{{imgUrl}}" class='img_close'></image>
+  </view>
+</view>
+

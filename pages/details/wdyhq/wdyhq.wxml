@@ -1,0 +1,25 @@
+<!--pages/details/wdyhq/wdyhq.wxml-->
+<block wx:for="{{list}}">
+  <view class='box' id="{{item.id}}" wx:if="{{item.type=='金额优惠券'}}"bindtap='toxixie' data-id="{{item.id}}" data-money="{{item.couponInfo.money}}">
+    <image src='{{imgUrl}}/image/details/yhq.png' wx:if="{{imgUrl}}"mode='widthFix'></image>
+    <view class='left'>
+      <text class='yuan'>{{item.couponInfo.money}}元优惠券</text>
+      <text class='type'>{{item.type}}</text>
+      <text class='date'>有效期限:{{item.startTime}}-{{item.endTime}}</text>
+    </view>
+    <view class='right'>立即使用</view>
+  </view>
+  <view class='box' wx:else id="{{item.id}}" bindtap='toxixie' data-id="{{item.id}}" data-money="{{item.couponInfo.money}}">
+  <image src='{{imgUrl}}/image/details/yhq.png'wx:if="{{imgUrl}}" mode='widthFix'></image>
+  <view class='left'>
+    <text class='yuan'>{{item.type}}</text>
+    <text class='type'>免费上门擦皮鞋【限5双】</text>
+    <text class='date'>有效期限:{{item.startTime}}-{{item.endTime}}</text>
+  </view>
+  <view class='right'>立即使用</view>
+</view>
+</block>
+<view class='none' style='text-align:center' wx:if="{{isshow}}">
+  <image src='{{imgUrl}}/image/details/no.png' mode="widthFix" wx:if="{{imgUrl}}"style='width:200rpx'></image>
+  <text style='display:block'>您暂无优惠券</text>
+</view>

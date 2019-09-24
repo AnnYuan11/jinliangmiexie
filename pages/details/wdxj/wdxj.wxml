@@ -1,0 +1,15 @@
+<!--pages/details/wdxj/wdxj.wxml-->
+<view class='table'>
+  <view class='tr' >
+    <view class="th width">序号</view>
+    <view class="th width">手机号</view>
+    <view class="th width">注册时间</view>
+  </view>
+  <block wx:for="{{list}}" wx:for-index='i'>
+    <view class='tr' style="{{(i+1)%2==0?'background:#ffffff':'background:#F9F9F9'}}">
+      <view class="td width">{{i+1}}</view>
+      <view class="td width">{{item.phone}}</view>
+      <view class="td width">{{item.createTime}}</view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,23 @@
+<!--pages/details/pingjia/pingjia.wxml-->
+<view class='content'>
+  <textarea  placeholder="请输入评价内容" placeholder-class="defualt" bindblur="bindTextAreaBlur" class='pj'/>
+  <!-- 照片 -->
+  <view class='uploadImg'>
+    <block wx:for="{{arr}}" wx:for-index = "i">  
+      <view class='imgInfo'>  
+        <image src='{{imgUrl+"/"+item}}'  wx:if="{{imgUrl}}" style='width:180rpx;height:180rpx;' bindtap='previewImg' data-index="{{i}}"></image> 
+        <view class='del' data-index="{{i}}" catchtap="deleteImg">
+          <image src='{{imgUrl}}/image/details/close.png' wx:if="{{imgUrl}}"mode="widthFix"></image>
+        </view>
+      </view> 
+    </block>    
+    <view class='addImg' bindtap='addImg'>
+      <image src='{{imgUrl}}/image/details/add.png' style='width:180rpx;height:180rpx;' wx:if="{{arr.length<6}}"></image>
+    </view>
+  </view>
+</view>
+<!-- <view class='ljpj' bindtap='pingjia'>立即评价</view> -->
+<view class='btn'>
+  <view class='sub' bindtap='pingjia'>提交</view>
+  <view class='sub' bindtap='back'>取消</view>
+</view>

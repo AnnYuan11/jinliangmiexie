@@ -1,0 +1,102 @@
+<!--pages/wode/my/my.wxml-->
+<!-- 登录 -->
+<navigator url="../../login/login" hover-class="none" wx:if='{{isshow==true}}'>
+  <view class='bg_box'>
+    <image src='/image/my_new/bg.png' mode='widthFix'> </image>
+    <view class='zc'>
+      <text class='dl'>登陆/注册</text>
+      <text class='content'>登陆后可查看相关内容</text>
+    </view>
+  </view>
+</navigator>
+
+<view class='bg_box'wx:if='{{isshow==false}}'>
+    <image src='/image/my_new/bg.png'mode='widthFix'> </image>
+    <view class='zc'>
+      <view class='head'>
+        <open-data type="userAvatarUrl" style="border-radius:50%;overflow:hidden;display:block;height:130rpx;"></open-data>
+      </view>
+      <view class='xinxi'>
+        <text class='number'>{{phone}}</text>
+        <view class='exit' bindtap='exit'>退出登录</view>
+      </view>
+     
+    </view>
+    <view class='box_message'>
+      <navigator url="../../details/wdcf/wdcf" hover-class="none">
+        <view class='my_message'>
+          <text>我的余额</text>
+          <text>{{list.money}}</text>
+        </view>
+      </navigator>    
+        <view class='my_line'></view>
+      <navigator url="../../details/wdyhq2/wdyhq2" hover-class="none">
+        <view class='my_message'>
+          <text>优惠券</text>
+          <text>30</text>
+        </view>
+      </navigator>
+        <view class='my_line'></view>
+      <navigator url="../../details/wdjf/wdjf" hover-class="none">
+        <view class='my_message'>
+          <text>我的积分</text>
+          <text>{{list.integral}}</text>
+        </view>
+      </navigator>
+      </view>
+    <navigator url="../../details/chongzhi/chongzhi" hover-class="none">
+      <view class='chongzhi'>充值</view>
+    </navigator>
+</view>
+<!-- 我的订单、推荐有礼 -->
+<view class='vie'>
+  <view class='dingdan' bindtap='jump'>
+    <text>我的订单</text>
+  </view>
+  <navigator url="../../details/tuijian/tuijian" hover-class="none"  class='dingdan'>
+    <view>
+      <text>推荐有礼</text>
+    </view>
+  </navigator>
+</view>
+<!-- 列表选项 -->
+<view class='list'>
+  <view class='list-box'>
+    <navigator url="/pages/details/dzgl/dzgl" hover-class="none">
+      <view class='item_lix'>
+        <image src='/image/my_new/dzgl.png' style="width:78rpx;"mode='widthFix'></image>
+        <text>地址管理</text>
+      </view>
+    </navigator>
+    <navigator url="/pages/details/wyjx/wyjx" hover-class="none">
+      <view class='item_lix'>
+        <image src='/image/my_new/axjx.png' style="width:78rpx;"mode='widthFix'></image>
+        <text>爱心捐鞋</text>
+      </view>
+    </navigator>
+    <navigator url="/pages/details/bzzx/bzzx" hover-class="none">
+      <view class='item_lix'>
+        <image src='/image/my_new/bzzx.png' style="width:78rpx;"mode='widthFix'></image>
+        <text>帮助中心</text>
+      </view>
+    </navigator>
+  </view>
+  <view class='list-box'>
+    <navigator url="/pages/details/fapiao/fapiao" hover-class="none">
+      <view class='item_lix'>
+        <image src='/image/my_new/fpgl.png' style="width:78rpx;"mode='widthFix'></image>
+        <text>发票管理</text>
+      </view>
+    </navigator>
+    <navigator url="/pages/details/wdqy/wdqy" hover-class="none">
+      <view class='item_lix'>
+        <image src='/image/my_new/wdqy.png' style="width:78rpx;"mode='widthFix'></image>
+        <text>我的权益</text>
+      </view>
+    </navigator>
+    <view class='item_lix' bindtap='phone'>
+      <image src='/image/my_new/kf.png' style="width:78rpx;"mode='widthFix'></image>
+      <text>客服电话</text>
+    </view>
+  </view>
+</view>

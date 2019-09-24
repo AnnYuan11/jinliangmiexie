@@ -1,0 +1,26 @@
+<!--pages/details/bzzx/bzzx.wxml-->
+<view class='bg_box'>
+<image src='{{imgUrl}}/image/details/bz.png' style='width:750rpx;height:270rpx;'  wx:if="{{imgUrl}}" ></image>
+  <view class='con'>
+    <text>客服电话029-88222448</text>
+    <text>人工服务时间:工作日9:00-18:00</text>
+    <view class='ljcx' bindtap='phonecallevent'>立即咨询</view>
+  </view>
+</view>
+<!-- 常见问题 -->
+<view class='message'>
+  <image src='{{imgUrl}}/image/details/line.png' wx:if="{{imgUrl}}" mode='widthFix' style='width:10rpx;'></image>
+  <text>常见问题</text>
+</view>
+<view class='content'>
+  <block wx:for="{{list}}">
+  <navigator url='../bzzx_details/bzzx_details?id={{item.id}}' hover-class="none">
+    <view class='list' id="{{item.id}}">
+      <view class='left'>{{item.name}}</view>
+      <view class='right'>
+        <text class='jt'>></text>
+      </view>
+    </view>
+  </navigator>
+  </block>
+</view>

@@ -1,0 +1,40 @@
+/* pages/details/wyxx_new/wyxx_new.wxss */
+.bg_img{
+  width: 94%;
+  border-radius: 20rpx;
+  margin:  0 auto;
+}
+.bg_img image{
+  width: 100%;
+}
+.order_box{
+  width: 94%;
+  margin: 0 auto;
+}
+.order{
+  width: 100%;
+  position: relative;
+}
+.order text{
+  font-size: 28rpx;
+  color: #c4c2c2;
+}
+.order image{
+  width: 100%;
+}
+.m_box{
+  position: absolute;
+  left: 10%;
+  top:50%
+}
+.order .money{
+  font-size:42rpx;
+  font-weight:800;
+  color:rgba(232,75,75,1);
+}
+.order .dollar{
+  font-size:22rpx;
+  display: block;
+  font-weight:800;
+  color:rgba(102,102,102,1);
+}

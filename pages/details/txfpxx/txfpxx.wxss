@@ -1,0 +1,52 @@
+/* pages/details/txfpxx/txfpxx.wxss */
+page{
+  background: #F4F4F4;
+}
+.content{
+  width:100%;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+.list{
+  width: 100%;
+  height: 86rpx;
+  line-height: 86rpx;
+  border-bottom: 1px solid #E6E6E6;
+  overflow: hidden;
+}
+.list:last-child{
+  border:none;
+}
+.list text{
+  width: 25%;
+  display: inline-block;
+  font-size: 28rpx;
+  color: #333;
+  float: left;
+}
+.input{
+  font-size: 28rpx;
+  color: #999;
+}
+.inputs{
+  /* float:left; */
+  display:block;
+  margin-top:16rpx;
+  font-size:28rpx;
+  color:#333;
+  text-align:right;
+  margin-left:27%;
+
+}
+.but{
+  background-image: -webkit-linear-gradient(0deg, #47DA7C, #41EAC0); 
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  position: fixed;
+  bottom: 0;
+}

@@ -1,0 +1,15 @@
+/* pages/details/fjzd3/fjzd3.wxss */
+.list{
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-bottom: 1px solid #E6E6E6;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  font-size:30rpx;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.address{
+  margin-left: 30rpx;
+}

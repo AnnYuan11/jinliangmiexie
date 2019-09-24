@@ -1,0 +1,46 @@
+/* pages/details/select/select.wxss */
+.syt{
+  width: 420rpx;
+  height: 90rpx;
+  background-image: -webkit-linear-gradient(0deg, #47DA7C, #41EAC0);
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  border-radius: 40rpx;
+  margin: 0 auto;
+}
+.select{
+  margin-top: 40%;
+  position: relative;
+}
+.crxg{
+  margin-top: 115rpx;
+}
+.rule{
+  text-align: center;
+  font-size: 32rpx;
+  display: block;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  width: 80%;
+  color: #47DA7C;
+}
+.select image.smqx{
+  position: absolute;
+  left: 10%;
+  top:30rpx;
+}
+.select image.crxg{
+  position: absolute;
+  left: 10%;
+  top:180rpx;
+}
+/* 提示 */
+.tis{
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 32rpx;
+  color: #47DA7C;
+  margin-top: 20%;
+}

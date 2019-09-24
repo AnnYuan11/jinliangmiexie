@@ -1,0 +1,27 @@
+<!--pages/details/wdcf/wdcf.wxml-->
+<view class='bg_box'>
+  <image src='{{imgUrl}}/image/details/cf.png'  wx:if="{{imgUrl}}" mode='widthFix' style='width:750rpx;'></image>
+  <view class='yue'>
+    <text class='money'>{{money}}</text>
+    <text class='yuew'>余额</text>
+    <navigator url="../chongzhi/chongzhi" hover-class="none"><view class='ljcz'>立即充值</view></navigator>
+    <!-- <view bindtap='tixian'>提现</view> -->
+  </view>
+</view>
+<view class='content'>
+  <view class='title'>
+    <image src='{{imgUrl}}/image/details/line.png'  wx:if="{{imgUrl}}"style='width:10rpx' mode='widthFix'></image>
+    <text>余额明细</text>
+  </view>
+  <block wx:for="{{list1}}">
+    <view class='box'>
+      <image src='{{imgUrl}}/image/details/cz.png'  wx:if="{{imgUrl}}"></image>
+      <view class='xinx'>
+        <text class='dingdan'>订单编号：{{item.orderNumber}}</text>
+        <text class='time'>{{item.createTime}}</text>
+      </view>
+      <view class='qs' wx:if="{{item.orderType=='1'}}">-{{item.money}}</view>
+      <view class='qs cz' wx:else>+{{item.money}}</view>
+    </view>
+  </block>
+</view>

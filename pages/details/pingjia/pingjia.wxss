@@ -1,0 +1,79 @@
+/* pages/details/pingjia/pingjia.wxss */
+.content{
+  width: 100%;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+.pj{
+  width: 100%;
+  height: 297rpx;
+  background: #F4F4F4;
+  padding: 23rpx;
+  box-sizing: border-box;
+  font-size:28rpx;
+  color:rgba(153,153,153,1);
+}
+.defualt{
+  font-size:28rpx;
+  color:rgba(153,153,153,1);
+}
+/* 照片 */
+.uploadImg{
+  overflow: hidden;
+  margin-top: 30rpx;
+}
+.addImg{
+  margin-top:30rpx;
+  width:180rpx;
+  float:left;
+
+}
+.addImg text{
+  color:#999;
+}
+.imgInfo .del{
+  display:inline-block;
+  width:30rpx;
+  position:absolute;
+  right:20rpx;
+  top: -20rpx;
+}
+.imgInfo .del image{
+  width: 100%;
+}
+.imgInfo{
+  width: 30%;
+  float: left;
+  position: relative;
+  margin-top: 30rpx;
+}
+.ljpj{
+  width:383rpx;
+  height:80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+  margin: 157rpx auto;
+  border-radius: 50rpx;
+  background:linear-gradient(87deg,rgba(71,218,123,1),rgba(65,234,193,1));
+}
+.btn{
+  width: 100%;
+  height:98rpx;
+  line-height: 98rpx;
+  font-size:40rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  color:rgba(254,254,254,1);
+ 
+}
+.sub{
+  width: 49.8%;
+  float: left;
+  background:rgba(71,218,123,1);
+}
+.sub:first-child{
+  border-right: 1rpx solid #fff;
+}

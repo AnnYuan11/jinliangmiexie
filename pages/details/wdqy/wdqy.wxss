@@ -1,0 +1,69 @@
+/* pages/details/wdqy/wdqy.wxss */
+.bg{
+  width: 715rpx; 
+  margin: 0 auto;
+  position: relative;
+}
+.name{
+  text-align: center;
+  font-size:36rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+}
+.name .head{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 71rpx;
+  margin-bottom: 28rpx;
+}
+.message{
+  width: 100%;
+  height: 85rpx;
+  line-height: 85rpx;
+}
+.message image{
+  vertical-align: middle;
+  margin-left: 30rpx;
+}
+.message text{
+  font-size:36rpx;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-left: 8rpx;
+}
+/* 第二部分 */
+.box_icon{
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20rpx;
+}
+.icon_list{
+  width: 25%;
+  text-align: center;
+  float: left;
+}
+.icon_list image{
+  width: 125rpx;
+}
+.icon_list text{
+  font-size:24rpx;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  display: block;
+  width: 110rpx;
+  margin: 0 auto;
+}
+.containers{
+  font-size:26rpx;
+  color:rgba(153,153,153,1);
+  padding: 0 34rpx 30rpx 34rpx;
+  box-sizing: border-box;
+}

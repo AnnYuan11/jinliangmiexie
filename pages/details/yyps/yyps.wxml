@@ -1,0 +1,73 @@
+<!--pages/details/yyps/yyps.wxml-->
+<form bindsubmit="bindFormSubmit" bindreset="formReset">
+  <!-- <view class="section section_gap">
+    <view class='title'>
+      <image style='width:30rpx;height:30rpx;' src="{{imgUrl}}/image/details/time.png"></image>
+      <text>预约时间</text>
+    </view>
+    <view class="jslx riqi">
+       <picker mode="date" value="{{dates}}" start="{{currentDate}}" end="2020-12"  bindchange="bindDateChange" name='date'>
+        <view class="picker"  data-areaCode='{{dates}}' >  
+          {{dates}}  
+        </view>  
+      </picker> 
+    </view>
+    <view class="jslx riqi">
+      <picker mode="time" value="{{time}}" start="09:00" end="20:00" bindchange="bindTimeChange" name = 'time'>
+        <view class="picker">
+          {{time}}
+        </view>
+      </picker>
+    </view>
+
+
+  </view> -->
+  <text class="tips">预约成功后，您的订单将于24小时之内送达，届时请您注意查收短信或接听电话</text>
+  <view class="section section_gap">
+    <view class='title'>
+      <image style='width:30rpx;height:30rpx;'wx:if="{{imgUrl}}" src="{{imgUrl}}/image/details/time.png"></image>
+      <text>配送方式</text>
+    </view>
+    <view class="jslx">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+    {{array[index]}}
+    </view>
+  </picker>
+      <image src='http://fpxcx.yiyunschool.com/demonstration01/image/icon/xuanze.png' mode='widthFix' class='down'></image>
+    </view>
+  </view>
+  <view class="section section_gap" wx:if="{{sendShoeType==2}}">
+      <view class='title'>
+        <image style='width:24rpx;height:28rpx;' wx:if="{{imgUrl}}"src="{{imgUrl}}/image/details/adress.png"></image>
+        <text>填写配送信息【仅限西安】</text>
+      </view>
+      <view class="jslx" bindtap='tzdz'>
+        <text>{{sendAddress}}</text>
+        <!-- <input placeholder="请填写地址"  bindinput ="address" value='{{sendAddress}}'/> -->
+      </view>
+  </view>
+  <navigator wx:if="{{sendShoeType==1}}"url='../fjzd2/fjzd2?ids={{ids}}&dates={{dates}}&sendShoeType={{sendShoeType}}&sendAddress={{sendAddress}}&remark1={{remark1}}&index={{index}}&time={{time}}' hover-class="none">
+      <view class="section section_gap">
+        <view class='title'>
+          <image style='width:30rpx;height:30rpx;' wx:if="{{imgUrl}}"src="{{imgUrl}}/image/details/time.png"></image>
+          <text>请选择鞋柜</text>
+        </view>
+        <view class="jslx">
+          <text>{{address}}</text>
+        </view>
+        
+        </view>
+  </navigator>
+  <view class="section section_gap" wx:if="{{showbz}}">
+    <view class='title'>
+        <image style='width:26rpx;height:30rpx;'wx:if="{{imgUrl}}" src="{{imgUrl}}/image/details/nr.png"></image>
+        <text>备注信息</text><text class='date'></text>
+    </view>
+    <textarea placeholder='请输入备注' bindblur="beizhu" name = 'textarea' value='{{remark1}}'></textarea>
+  </view>
+</form>
+<view class='fc' bindtap='sub'>
+提交
+</view>
+

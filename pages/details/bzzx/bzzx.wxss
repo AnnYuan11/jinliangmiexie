@@ -1,0 +1,80 @@
+/* pages/details/bzzx/bzzx.wxss */
+page{
+  background: #F4F4F4;
+}
+.bg_box{
+  width: 100%;
+  height: 270rpx;
+  overflow: hidden;
+}
+.con{
+  width: 100%;
+  text-align: center;
+  margin-top: 30rpx;
+  position: absolute;
+  top:0;
+}
+.con text{
+  font-size:30rpx;
+  display: block;
+  line-height: 54rpx;
+  color:rgba(255,255,255,1);
+}
+.ljcx{
+  width:204rpx;
+  height:68rpx;
+  border:2rpx solid rgba(255,255,255,1);
+  border-radius:34rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 68rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+/* 常见问题 */
+.message{
+  width: 100%;
+  height: 85rpx;
+  line-height: 85rpx;
+}
+.message image{
+  vertical-align: middle;
+  margin-left: 30rpx;
+}
+.message text{
+  font-size:32rpx;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-left: 8rpx;
+}
+.content{
+  width: 100%;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+.list{
+  width: 100%;
+  height: 89rpx;
+  line-height: 89rpx;
+  border-bottom: 1px solid #E6E6E6;
+  overflow: hidden;
+}
+.list:last-child{
+  border: none;
+}
+.list .left{
+  font-size:28rpx;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  float: left;
+}
+.list .right{
+  float: right;
+}
+
+.right text.jt{
+  color: #999999;
+  font-size: 30rpx;
+}

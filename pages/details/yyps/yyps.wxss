@@ -1,0 +1,182 @@
+/* pages/details/yyps/yyps.wxss */
+page{
+  padding-top:25rpx;
+  height:100%;
+}
+.section,.btn-area{
+  background-color:#fff;
+  padding:0 25rpx;
+}
+.section image{
+  margin-right:14rpx;
+}
+.section text{
+  font-size:28rpx;
+}
+.section text.date{
+  font-size:26rpx;
+}
+.uploadImg image{
+  margin-right:36rpx;
+}
+.jslx{
+  position:relative;
+  height:60rpx;
+  background-color:#F9F9F9;
+  font-size:24rpx;
+  color:#333;
+  line-height: 60rpx;
+  padding-left:20rpx;
+  z-index: 99;
+}
+.down{
+  width: 20rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.title{
+  display: flex;
+  align-items: center;
+  height:90rpx;
+}
+textarea{
+  width:100%;
+  height: 175rpx;
+  background-color:#F9F9F9;
+  color:#999;
+  font-size:24rpx;
+  padding:20rpx;
+  box-sizing: border-box;
+}
+input{
+  width:100%;
+  box-sizing: border-box;
+  font-size:24rpx;
+  background-color:#F9F9F9;
+  height:60rpx;
+  line-height: 60rpx;
+}
+.fc{
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  background-image: -webkit-linear-gradient(0deg, #47DA7C, #41EAC0); 
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+}
+/* 预约前的支付方式 */
+.zffs_box{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  top:0;
+  flex-direction:column;
+  background: rgba(153,153,153,0.5);
+  align-items:center;/*垂直居中*/
+  justify-content: center;/*水平居中*/
+  z-index: 99999999999;
+}
+.zffs{
+  width: 100%;
+  height: 550rpx;
+  background: #fff;
+  margin: 0 auto;
+  padding: 10rpx 30rpx;
+  box-sizing: border-box;
+  /* border-radius: 20rpx; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  text-align: center;
+  /* display: none; */
+}
+
+.zffs .title{
+  display: block;
+  font-size: 32rpx;
+  font-weight: 600;
+  color:#000;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.mess{
+  font-size: 26rpx;
+  display: block;
+  color:#999;
+  margin-top: -20rpx;
+}
+.jg{
+  font-size: 70rpx;
+  /* font-weight: 600; */
+  color:#47DA7C;
+  margin-right: 30rpx;
+  /* margin-top: 20rpx; */
+}
+.yuan{
+  font-size: 38rpx;
+  color: #000;
+}
+.selec{
+  font-size: 30rpx;
+  color: #a0a0a0;
+  display: block;
+  text-align: left;
+}
+.btns{
+  position: absolute;
+  width: 100%;
+  display: inline-block;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #fff;
+  background:  #47DA7C;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+  /* border-bottom-right-radius: 20rpx; */
+}
+.zhkk{
+  left: 0;
+  background:  rgb(23, 243, 103);
+  /* border-bottom-right-radius: 0rpx;
+  border-bottom-left-radius: 20rpx; */
+}
+.tips{
+  font-size: 26rpx;
+  color:#999;
+  display:block;
+  width:90%;
+  margin:0 auto;
+}
+.guan{
+  position: absolute;
+  top: 20rpx;
+  right: 20rpx;
+}
+.radio{
+  display: block;
+  margin-top: 20rpx;
+  font-size:24rpx;
+}
+
+radio {
+  transform:scale(0.8);
+}
+.radio-group{
+  position: relative;
+}
+.yue{
+  font-size: 24rpx;
+  position: absolute;
+  left: 61%;
+  top:5%;
+}

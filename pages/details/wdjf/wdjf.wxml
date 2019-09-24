@@ -1,0 +1,34 @@
+<!--pages/details/wdjf/wdjf.wxml-->
+<view class='bg_box'>
+  <image src='{{imgUrl}}/image/details/cf.png'  wx:if="{{imgUrl}}" mode='widthFix' style='width:750rpx;'></image>
+  <view class='yue'>
+    <text class='money'>{{integral}}</text>
+    <text class='yuew'>总积分</text>
+    <view class='ljcz' bindtap='dh'>立即兑换</view>
+  </view>
+</view>
+<view class='content'>
+  <view class='title'>
+    <image src='{{imgUrl}}/image/details/line.png' wx:if="{{imgUrl}}" style='width:10rpx' mode='widthFix'></image>
+    <text>积分明细</text>
+  </view>
+  <block wx:for="{{list}}">
+    <view class='box'>
+      <image src='{{imgUrl}}/image/details/bgs.png'  wx:if="{{imgUrl}}"></image>
+      <view class='xinx'>
+        <text class='dingdan'>{{item.orderNumber}}</text>
+        <text class='time'>{{item.createTime}}</text>
+      </view>
+      <view class='qs' wx:if="{{item.type=='2'}}">-{{item.integral}}</view>
+       <view class='cz' wx:else>+{{item.integral}}</view>
+    </view>
+  </block>
+  <!-- <view class='box'>
+    <image src='{{imgUrl}}/image/details/bgs.png'></image>
+    <view class='xinx'>
+      <text class='dingdan'>订单编号：6736473637676</text>
+      <text class='time'>3月20日 20:20</text>
+    </view>
+    <view class='cz'>+199</view>
+  </view> -->
+</view>

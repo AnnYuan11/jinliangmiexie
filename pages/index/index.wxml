@@ -1,0 +1,138 @@
+<!--index.wxml-->
+<official-account></official-account>
+<swiper class="swiper-box" indicator-dots="{{indicatorDots}}"autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+        <swiper-item>
+        <navigator url='../details/banner/banner?id={{item.id}}'>
+            <image src="{{imgUrl+'/'+item.photo}}" class="slide-ima5ge img"/>
+        </navigator>
+        </swiper-item>
+    </block>
+</swiper>
+<!-- 精彩评论 -->
+<view class='title_bg'>
+  <view class='s_comment'>
+    <text class='jcpl'>客户评论</text>
+    <text class='more' bindtap='more'>查看更多</text>
+  </view>
+</view>
+<!-- 洗鞋服务 -->
+<view class='s_xxfw'>
+  <image src='{{imgUrl}}/image/sNew/s_icon.png' mode='widthFix'wx:if="{{imgUrl}}" style='width:63rpx;'></image>
+  <text>洗鞋服务</text>
+</view>
+<!-- icon选项部分 -->
+<view class='box_icon'>
+  <navigator url="/pages/crxg/wyxx_crxg/wyxx_crxg" hover-class="none">
+      <view class='icon_list'>
+        <image src='{{imgUrl}}/image/sNew/crxg.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
+        <text>存入鞋柜</text>   
+      </view>
+  </navigator>
+  <navigator url="/pages/details/wyxx_new/wyxx_new" hover-class="none">
+      <view class='icon_list'>
+        <image src='{{imgUrl}}/image/sNew/smqx.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
+        <text>上门取鞋</text>   
+      </view>
+  </navigator>
+  <navigator url="/pages/details/mthx/mthx" hover-class="none">
+        <view class='icon_list'>
+          <image src='{{imgUrl}}/image/sNew/mtyq.png'wx:if="{{imgUrl}}" mode='widthFix'></image>   
+          <text>美团验券</text>   
+        </view>
+  </navigator>
+  <navigator url="/pages/details/bzzx_details/bzzx_details?id=4028b8816c7a759c016c7a7e0b960000" hover-class="none">
+      <view class='icon_list'>
+        <image src='{{imgUrl}}/image/sNew/xhsm.png' wx:if="{{imgUrl}}" mode='widthFix'></image>    
+        <text>洗护说明</text>   
+      </view>
+  </navigator>
+</view>
+<!-- 修鞋服务 -->
+<view class='s_xxfw'>
+  <image src='{{imgUrl}}/image/sNew/s_icon.png' wx:if="{{imgUrl}}"mode='widthFix' style='width:63rpx;'></image>
+  <text>修鞋服务</text>
+</view>
+<!-- icon选项部分 -->
+<view class='box_icon s_box_icon'>
+  <navigator url="/pages/crxg/xiuxie/xiuxie" hover-class="none">
+      <view class='icon_list'>
+        <image src='{{imgUrl}}/image/sNew/crxg2.png'  wx:if="{{imgUrl}}"mode='widthFix'></image>   
+        <text>存入鞋柜</text>   
+      </view>
+  </navigator>
+  <navigator url="/pages/details/xiuxie/xiuxie" hover-class="none">
+      <view class='icon_list s_center'>
+        <image src='{{imgUrl}}/image/sNew/smqx2.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
+        <text>上门取鞋</text>   
+      </view>
+  </navigator>
+    <navigator url="/pages/details/bzzx_details/bzzx_details?id=4028b88165f24d1d0165f25134b40000" hover-class="none">
+        <view class='icon_list'>
+          <image src='{{imgUrl}}/image/sNew/jgsm.png' wx:if="{{imgUrl}}"mode='widthFix'></image>   
+          <text>价格说明</text>   
+        </view>
+  </navigator>
+</view>
+<view class='line'></view>
+<!-- 效果展示 -->
+<view class='s_xxfw'>
+  <image src='{{imgUrl}}/image/sNew/s_icon.png'mode='widthFix' wx:if="{{imgUrl}}"style='width:63rpx;'></image>
+  <text>效果展示</text>
+</view>
+<view class='effect_box'>
+  <view class='effct_list'>
+    <navigator url='../details/banner/banner?id=2c9a91e56c7acf25016c7f1765930000'>
+      <image src='../../image/details/1.png' mode='widthFix' style='width:150rpx;'></image>
+    </navigator>
+  </view>
+  <view class='effct_list'>
+    <navigator url='../details/banner/banner?id=2c9a91e56c7f3f1b016c7f66f45e0000'>
+      <image src='{{imgUrl}}/image/sNew/1.png' wx:if="{{imgUrl}}"mode='widthFix' style='width:369rpx;'></image>
+    </navigator>
+    <navigator url='../details/banner/banner?id=2c9a91e56c7f3f1b016c7f67393b0001'>
+      <image src='{{imgUrl}}/image/sNew/2.png'wx:if="{{imgUrl}}" mode='widthFix' style='width:369rpx;margin-top:10rpx;'></image>
+    </navigator>
+  </view>
+  <view class='effct_list'>
+    <navigator url='../details/banner/banner?id=2c9a91e56c7f3f1b016c7f6757550002'>
+      <image src='{{imgUrl}}/image/sNew/3.png' wx:if="{{imgUrl}}"mode='widthFix' style='width:150rpx;'></image>
+    </navigator>
+  </view>
+</view>
+<view class='line'></view>
+<!-- 关于我们 -->
+
+<view class='s_xxfw'>
+  <image src='{{imgUrl}}/image/sNew/s_icon.png'wx:if="{{imgUrl}}" mode='widthFix' style='width:63rpx;'></image>
+  <text>关于我们</text>
+</view>
+
+<navigator url="/pages/details/bzzx_details/bzzx_details?id=2c91cd82665781c50166579ff9ab0005" hover-class="none">
+  <view class='about_us'>
+    <image src='{{imgUrl}}/image/sNew/about.png' wx:if="{{imgUrl}}"mode='widthFix' style='width:100%;'></image>
+  </view>
+</navigator>
+<view class='line'></view>
+<!-- 客服电话 -->
+<view class='service' bindtap='zx'>
+  <image src='{{imgUrl}}/image/sNew/kf.png' wx:if="{{imgUrl}}"mode='widthFix' style='width:120rpx;'></image>
+</view>
+<view class='kfdh' wx:if="{{zixun}}" bindtap='close'>
+  <view class='bg_kfdh'>
+    <view class='title'>客服</view>
+    <view class='con_box'>
+    <view class='zx'>
+      <image src='/image/kef/zxzx.png' mode='widthFix' style='width:80rpx;'></image>
+      <button open-type="contact" bindcontact="handleContact">在线咨询</button>
+      <text>常见问题解答</text>
+    </view>
+    <view class='lines'></view>
+    <view class='zx'>
+      <image src='/image/kef/kfdh.png' mode='widthFix' style='width:66rpx;'></image>
+      <button bindtap='phone'>客服电话</button>
+      <text>服务时间:8:00-20:00</text>
+    </view>
+    </view>
+  </view>
+</view>

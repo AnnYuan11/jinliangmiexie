@@ -1,0 +1,62 @@
+/* pages/details/dingdan_details/dingdan_details.wxss */
+.box{
+  width: 94%;
+  margin: 0 auto;
+}
+.title{
+  font-size:30rpx;
+  color:rgba(187,187,187,1);
+  border-bottom: 1px solid #EEEEEE;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.ddxx{
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #EEEEEE;
+}
+.list{
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  color: #333333;
+}
+.list .left{
+  color: #999999;
+  display:inline-block;
+  width:30%;
+}
+.list .yrc{
+  color: #BBBBBB
+}
+.pic{
+  display: flex;
+  justify-content: space-around;
+}
+.list_s{
+  margin: 30rpx 0;
+}
+.qxq{
+  background: #EBE9E9;
+  width: 45%;
+  text-align: center;
+}
+.qxq image{
+  width:140rpx;
+  display:inline-block;
+  height:140rpx;
+  margin-right:10%;
+  margin-top:60rpx;
+
+}
+.qxq image:nth-child(2n){
+  margin-right:0;
+}
+.qxq text{
+  display: block;
+  font-size:36rpx;
+  font-weight:800;
+  color:rgba(100,183,156,1);
+}

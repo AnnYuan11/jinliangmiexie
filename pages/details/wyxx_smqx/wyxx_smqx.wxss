@@ -1,0 +1,185 @@
+/* pages/details/wyxx/wyxx.wxss */
+.message{
+  width: 100%;
+  height: 85rpx;
+  line-height: 85rpx;
+  background: #F4F4F4;
+}
+.message image{
+  vertical-align: middle;
+  margin-left: 30rpx;
+}
+.message text{
+  font-size:32rpx;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-left: 8rpx;
+}
+.content{
+  width: 100%;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  padding-bottom: 98rpx;
+}
+.list{
+  width: 100%;
+  height: 89rpx;
+  line-height: 89rpx;
+  border-bottom: 1px solid #E6E6E6;
+  overflow: hidden;
+}
+.list .left{
+  font-size:28rpx;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  float: left;
+}
+.list .right{
+  float: right;
+}
+.right image{
+  vertical-align: middle;
+  margin: 0 14rpx;
+}
+.right text{
+  font-size:26rpx;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.right text.jt{
+  color: #999999;
+  font-size: 30rpx;
+}
+.hb{
+  width: 150rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  float: right; 
+  font-size:20rpx;
+  font-weight:400;
+  text-align: center;
+  color:#FFF;
+  margin-top: 30rpx;
+  margin-right: 50rpx;
+  background-image: -webkit-linear-gradient(0deg, #47DA7C, #41EAC0); 
+}
+.lists{
+  width: 100%;
+}
+.lists .beizhu{
+  font-size:28rpx;
+  font-weight:400;
+  display: block;
+  color:rgba(51,51,51,1);
+  margin: 24rpx 0;
+}
+.lists textarea{
+  font-size: 24rpx;
+  color: #999;
+  height:120rpx;
+}
+.fc{
+  width: 100%;
+  height: 98rpx;
+  line-height: 98rpx;
+  background-image: -webkit-linear-gradient(0deg, #47DA7C, #41EAC0); 
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+  overflow: hidden;
+  text-align: center;
+  color: #fff;
+}
+.smqx{
+  width: 49%;
+  text-align: center;
+  float: left;
+}
+.smqx image{
+  vertical-align: middle;
+  margin-right: 8rpx;
+}
+.smqx text{
+  font-size:30rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}
+.xian{
+  width: 1px;
+  height:30rpx; 
+  background: #fff;
+  float: left;
+  margin-top: 34rpx;
+}
+.cover{
+  width: 100%;
+  height: 100vh;
+  background:rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+}
+.yuyue{
+  width: 343rpx;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top:350rpx;
+}
+.img{
+  width: 343rpx;
+  height: 337rpx;
+}
+.yuyue text{
+  font-size:24rpx;
+  color:rgba(51,51,51,1);
+  position: absolute;
+  bottom: 30rpx;
+  left: 60rpx;
+}
+.close{
+  text-align: center;
+  margin-top: 50%;
+}
+.img_close{
+  width: 48rpx;
+  height: 48rpx;
+}
+/* 浮层 */
+.cover{
+  width: 100%;
+  height: 100%;
+  background:rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+.yuyue{
+  width: 343rpx;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top:350rpx;
+}
+.img{
+  width: 343rpx;
+  height: 337rpx;
+}
+.yuyue text{
+  font-size:24rpx;
+  color:rgba(51,51,51,1);
+  position: absolute;
+  bottom: 30rpx;
+  left: 60rpx;
+}
+.close{
+  text-align: center;
+  margin-top: 50%;
+}
+.img_close{
+  width: 48rpx;
+  height: 48rpx;
+}

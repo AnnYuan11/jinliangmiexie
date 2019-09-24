@@ -1,0 +1,49 @@
+<!--pages/details/xiuxie/xiuxie.wxml-->
+<image src='{{imgUrl}}/image/index/bg.png' wx:if="{{imgUrl}}"style='width:750rpx;' mode="widthFix"></image>
+<view class='information_box'>
+    <view class='message'>
+      <image src='{{imgUrl}}/image/details/line.png'wx:if="{{imgUrl}}" mode='widthFix' style='width:10rpx;'></image>
+      <text>填写信息</text>
+    </view>
+    <view class='information'>
+      <view class='list_s'>
+        <text class='xm'>鞋子数量</text>
+          <view class='right'>
+            <!-- <image  src='{{imgUrl}}/image/details/jian.png' wx:if="{{imgUrl}}"mode="widthFix"style='width:38rpx' bindtap='jian'></image>    -->
+            <text>{{num}}</text>
+            <!-- <image  src='{{imgUrl}}/image/details/jia.png' wx:if="{{imgUrl}}"mode="widthFix"style='width:38rpx' bindtap='jia'></image>    -->
+          </view>
+      </view>
+      <navigator url='../selectdz/selectdz?types=1&num={{num}}' hover-class='none'>
+        <view class='list_s'>
+          <text class='xm'>地址</text>
+          <text class='r'>{{dizhi}}</text>
+        </view>
+      </navigator>
+      <view class='list_s'>
+        <text class='xm'>联系电话</text>
+        <text class='r'>{{phone}}</text>
+      </view>
+      <view class='lists'>
+      <block wx:for="{{arr}}" wx:for-index = "i">  
+        <view class='imgInfo'>  
+          <image src='{{imgUrl+"/"+item}}' style='width:180rpx;height:180rpx;'wx:if="{{imgUrl}}" bindtap='previewImg' data-index="{{i}}"></image> 
+          <view class='del' data-index="{{i}}" catchtap="deleteImg">
+            <image src='{{imgUrl}}/image/details/close.png' wx:if="{{imgUrl}}"mode="widthFix"></image>
+          </view>
+        </view> 
+      </block>    
+      <view class='addImg' bindtap='addImg' wx:if="{{arr.length<2}}">
+          <image src='{{imgUrl}}/image/spay/photo.png'wx:if="{{imgUrl}}"style="width:124rpx;" mode='widthFix'></image>
+          <text class='xm bz'>上传图片</text>
+          <text class='upload'>请上传您的爱鞋照片,可上传两张</text>
+        </view>
+      </view>
+      <view class='lists'>
+        <text class='xm'>添加备注</text>
+        <textarea placeholder="请注释您鞋子护理的具体要求（字数不超过50字）" maxlength="50" placeholder-class="place" bindblur="bindTextAreaBlur"/>
+      </view>
+    </view>
+    <button class='sub' bindtap='submit'>提交</button>
+</view>
+

@@ -1,0 +1,46 @@
+<!--pages/details/mthx_hx/mthx_hx.wxml-->
+<form bindsubmit='addShdz'>
+<view class='box'>
+  <view class='top'>
+    <view class='message'>
+      <text class='name'>团券名称：</text>
+      <text class='detail'>{{tqmc}}</text>
+    </view>
+    <view class='message'>
+      <text class='name'>团券状态：</text>
+      <text class='detail'>待使用</text>
+    </view>
+    <image src='{{imgUrl}}/image/spay/hx.png'wx:if="{{imgUrl}}" style='width:236rpx;' mode='widthFix'></image>
+  </view>
+  <view class='information_box'>
+    <text class='title'>填写信息</text>
+    <view class='information'>
+    <navigator url='../selectdz/selectdz?types=2&name={{options.name}}&receiptCode={{options.receiptCode}}' hover-class='none'>
+        <view class='list'>
+          <text class='xm'>地址</text>
+          <text class='address'>{{dizhi}}</text>
+        </view>
+      </navigator>
+     
+      <view class='list'>
+        <text class='xm'>姓名</text>
+        <text class='address'>{{names}}</text>
+      </view>
+      <!-- <view class='list'>
+        <text class='xm'>数量</text>
+        <input placeholder="请输入鞋的数量" type="number" name="shoesNumber"placeholder-class='place'/>
+      </view> -->
+      <view class='list'>
+        <text class='xm'>电话</text>
+        <text>{{phone}}</text>
+      </view>
+     
+      <view class='lists'>
+        <text class='xm bz'>添加备注</text>
+        <textarea placeholder="请注释您鞋子护理的具体要求（字数不超过50字）" maxlength="50" placeholder-class="place" name="remark"/>
+      </view>
+    </view>
+    <button class='sub' form-type='submit'>提交</button>
+  </view>
+</view>
+</form>

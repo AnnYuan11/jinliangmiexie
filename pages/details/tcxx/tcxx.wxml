@@ -1,0 +1,24 @@
+<!--pages/details/tcxx/tcxx.wxml-->
+<image src='{{imgUrl}}/image/details/tcxx/bg.png' style='width:750rpx'mode="widthFix"  wx:if="{{imgUrl}}"></image>
+<view class='message' style='display:none'>
+  <image src='{{imgUrl}}/image/details/line.png' mode='widthFix' style='width:10rpx;'  wx:if="{{imgUrl}}"></image>
+  <text>存入鞋柜</text>
+</view>
+<view class='content' style='display:none'>
+  <image src='{{imgUrl}}/image/details/tcxx/2.png'  wx:if="{{imgUrl}}"style='width:100%'mode="widthFix"  bindtap='Tocrxg'></image>
+</view>
+<view class='message'>
+  <image src='{{imgUrl}}/image/details/line.png'  wx:if="{{imgUrl}}"mode='widthFix' style='width:10rpx;'></image>
+  <text>上门取鞋</text>
+</view>
+<view class='content'>
+<navigator url='/pages/details/wyxx_smqx/wyxx_smqx?type2=1&num=3' style='border-bottom:1px solid #86cab0;margin-bottom:10rpx'>
+  <image src='{{imgUrl}}/image/details/tcxx/4.png'  wx:if="{{imgUrl}}"style='width:100%'mode="widthFix"></image>
+</navigator>
+<navigator url='/pages/details/wyxx_smqx/wyxx_smqx?type2=1&num=4' style='border-bottom:1px solid #86cab0;margin-bottom:10rpx'>
+   <image src='{{imgUrl}}/image/details/tcxx/1.png' wx:if="{{imgUrl}}" style='width:100%'mode="widthFix"></image>
+</navigator>
+ <navigator url='/pages/details/wyxx_smqx/wyxx_smqx?type2=1&num=5' style='border-bottom:1px solid #86cab0;margin-bottom:10rpx'>
+    <image src='{{imgUrl}}/image/details/tcxx/3.png' wx:if="{{imgUrl}}" style='width:100%'mode="widthFix"></image>
+</navigator>
+</view>

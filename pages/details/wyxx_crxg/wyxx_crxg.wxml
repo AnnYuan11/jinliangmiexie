@@ -1,0 +1,40 @@
+<!--pages/details/wyxx_crxg/wyxx_crxg.wxml-->
+<view class='list box_fjzd' wx:if="{{type1==1}}">
+   <image src='{{imgUrl}}/image/details/address.png' style='width:44rpx;height:44rpx;vertical-align:middle' wx:if="{{imgUrl}}"></image>
+   <text class='left' bindtap='fjzd'>附近站点</text>
+   <text class='right'>{{fjzd}}</text>
+</view>
+<image src='{{imgUrl+"/"+img_bg}}' wx:if="{{imgUrl}}" style='width:750rpx;height:300rpx;'></image>
+<!-- <image src='{{imgUrl}}/image/details/icons.png' mode='widthFix' style='width:740rpx;'></image> -->
+<!-- 填写信息 -->
+<view class='message'>
+  <image src='{{imgUrl}}/image/details/line.png' wx:if="{{imgUrl}}"mode='widthFix' style='width:10rpx;'></image>
+  <text>填写信息</text>
+</view>
+<!-- 内容 -->
+<view class='content'>
+  <view class='list'>
+    <view class='left'>鞋子数量</view>
+    <view class='right'>
+      <image  src='{{imgUrl}}/image/details/jian.png'wx:if="{{imgUrl}}"mode="widthFix"style='width:38rpx'></image>   
+      <text>{{num}}</text>
+       <image  src='{{imgUrl}}/image/details/jia.png'wx:if="{{imgUrl}}"mode="widthFix"style='width:38rpx'></image>   
+    </view>
+  </view>
+  <navigator wx:if="{{type1==1}}" url='/pages/details/fjzd_crxg/fjzd_crxg?num={{num}}&dizhi={{dizhi}}&dzid={{dzid}}&type1={{type1}}&userCouponInfoId={{userCouponInfoId}}&money={{money}}' hover-class="none">
+    <view class='list'>
+      <view class='left'>鞋柜地址</view>
+      <view class='right'>
+        <text class='jt'>{{adaddress}}</text>
+      </view>
+    </view>
+  </navigator>
+  <view class='lists'>
+    <text class='beizhu'>添加备注</text>
+    <textarea wx:if="{{show2}}" bindblur="bindTextAreaBlur"  placeholder='请标注您鞋子护理的具体要求（字数不超过50字）'placeholder-style="color:#999;font-size:24rpx;" maxlength='50'></textarea>
+    <text wx:if="{{show1}}" style='font-size:24rpx;color:#999;'>{{remark}}</text>
+  </view>
+</view>
+<view class='fc' bindtap='wyxx'>提交</view>
+<!-- 浮层 -->
+

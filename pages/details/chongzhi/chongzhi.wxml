@@ -1,0 +1,35 @@
+<!--pages/details/chongzhi/chongzhi.wxml-->
+<view class='title'>
+  <view class='shu'></view>
+  <text>选择优惠活动</text>
+</view>
+<view class='content'>
+<block wx:for="{{list}}">
+  <view class=" list3 {{ _num == index? 'list':'list2'}}"data-giveMoney="{{item.giveMoney}}" data-rechargeMoney="{{item.rechargeMoney}}"data-id="{{item.id}}" data-num="{{index}}" bindtap="menuClick">{{item.rechargeMoney}}送{{item.giveMoney}}</view>
+  <!-- <view class='list list2'>1000送500</view> -->
+</block> 
+</view>
+<view class='title titles'>
+  <view class='shu'></view>
+  <text>选择充值</text>
+</view>
+<view class='zdycz'>
+   <input placeholder="请输入充值金额" type="number"value="{{inputVal}}"bindblur="input"/>
+</view>
+<!-- 付款方式 -->
+<view class='title2'>
+  <image src='{{imgUrl}}/image/details/line.png'  wx:if="{{imgUrl}}"  style='width:10rpx' mode='widthFix'></image>
+  <text>选择支付方式</text>
+</view>
+<view class='zfss'>
+  <image src='{{imgUrl}}/image/details/wx.png' wx:if="{{imgUrl}}"  style='width:48rpx;height:48rpx;'></image>
+  <text>微信支付</text>
+  <icon  type="success" color='#47DA7B'size="18" data-index="{{index}}" class="my-check"/> 
+  <!-- <checkbox-group bindchange="checkboxChange">
+    <label class="checkbox">
+      <checkbox value="" checked="{{checked}}" class="my-check"/>
+    </label>
+  </checkbox-group> -->
+</view>
+<!-- <button open-type="getUserInfo" class='ljcz'>立即充值</button> -->
+<view class='ljcz' bindtap='addcz'>立即充值</view>

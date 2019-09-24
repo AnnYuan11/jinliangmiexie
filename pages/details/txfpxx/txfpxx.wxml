@@ -1,0 +1,31 @@
+<!--pages/details/txfpxx/txfpxx.wxml-->
+<form bindsubmit='kaipiao'>
+<view class='content'>
+  <view class='list'>
+      <text class='left'>填写名称</text>
+      <input placeholder="请输入您的名称" placeholder-class="input" class='inputs' name="taxName"/>
+  </view>
+   <view class='list'>
+      <text class='left'>填写税号</text>
+      <input placeholder="请输入您的税号" placeholder-class="input" class='inputs' name="taxNumber"/>
+  </view>
+   <view class='list'>
+      <text class='left'>填写开户行</text>
+      <input placeholder="请输入您的开户行" placeholder-class="input" class='inputs' name="openBank"/>
+  </view>
+   <view class='list'>
+      <text class='left'>填写银行账号</text>
+      <input placeholder="请输入您的银行账号" placeholder-class="input" class='inputs' name="bankNumber"/>
+  </view>
+  <view class='list'>
+      <text class='left'>填写地址电话</text>
+      <input placeholder="请输入您的地址与电话" placeholder-class="input" class='inputs' name="bankAddress"/>
+  </view>
+  <view class='list'>
+      <text class='left'>填写收票地址</text>
+      <input placeholder="请输入您的收票地址" placeholder-class="input" class='inputs' name="address"/>
+  </view>
+</view>
+<!-- <view class='but'>确定</view> -->
+<button  class='but' hover-class="" form-type='submit'> 确定</button> 
+</form>

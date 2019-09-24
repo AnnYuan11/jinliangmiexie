@@ -1,0 +1,119 @@
+/* pages/details/jbdh/jbdh.wxss */
+.box{
+  width: 100%;
+  position: relative;
+}
+.box image{
+  width: 750rpx;
+  height: 223rpx;
+}
+.js{
+  position: absolute;
+  top: 50rpx;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.js text{
+  display: block;
+  color: #fff;
+  margin: 0 auto;
+}
+.js .bs{
+  font-size:60rpx;
+  font-weight:bold;
+}
+.js .jrbs{
+  font-size:28rpx;
+}
+.content{
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.title{
+  margin: 20rpx 0;
+  margin-bottom: 30rpx;
+}
+.title image{
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.title text{
+  font-size: 36rpx;
+  color: #000;
+}
+.boxs{
+  width: 717rpx;
+  margin: 0 auto;
+  position: relative;
+}
+.boxs image{
+  width: 717rpx;
+}
+.boxs .left{
+  text-align: center;
+  position: absolute;
+  top:30rpx;
+  left:112rpx;
+}
+.left text{
+  display: block;
+  line-height: 64rpx;
+}
+.left .yuan{
+  font-size:36rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}
+.left .type{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+}
+.boxs .right{
+  font-size:36rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  position: absolute;
+  top:67rpx;
+  right:55rpx;
+}
+/* 浮层 */
+.cover{
+  width: 100%;
+  height: 100%;
+  background:rgba(0,0,0,0.7);
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  overflow: hidden;
+}
+.yuyue{
+  width: 343rpx;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top:350rpx;
+}
+.img{
+  width: 343rpx;
+  height: 337rpx;
+}
+.yuyue text{
+  font-size:24rpx;
+  color:rgba(51,51,51,1);
+  position: absolute;
+  bottom: 30rpx;
+  left: 60rpx;
+}
+.close{
+  text-align: center;
+  margin-top: 50%;
+}
+.img_close{
+  width: 48rpx;
+  height: 48rpx;
+}

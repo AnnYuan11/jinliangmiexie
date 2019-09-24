@@ -1,0 +1,3 @@
+<!--pages/details/jzxy/jzxy.wxml-->
+<import src="../../../utils/wxParse/wxParse.wxml"/> 
+<template is="wxParse" data="{{wxParseData:artice.nodes}}"/>

@@ -1,0 +1,48 @@
+/* pages/details/yjmx/yjmx.wxss */
+.bg_box{
+  position: relative;
+}
+.yue{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top:43%;
+}
+.yue text{
+  display: block;
+}
+.yue .money{
+  font-size: 40rpx;
+  color: #fff;
+  font-weight: 700;
+}
+.yuew{
+  font-size: 36rpx;
+  color: #fff;
+}
+.content{
+  width: 100%;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  height: 83rpx;
+  align-items: center;
+  background-color:#fff;
+  padding:0 10rpx;
+  box-sizing: border-box;
+}
+.th{
+  font-size:28rpx;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  text-align: center;
+}
+.td{
+  font-size:24rpx;
+  color:#999999;
+  text-align: center;
+}

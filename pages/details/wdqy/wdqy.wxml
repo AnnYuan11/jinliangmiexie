@@ -1,0 +1,51 @@
+<!--pages/details/wdqy/wdqy.wxml-->
+<view class='bg'>
+  <image src='{{imgUrl}}/image/details/wdqy.png' mode='widthFix' wx:if="{{imgUrl}}" style='width:715rpx;'></image>
+  <view class='name'>
+     <open-data class="head" type="userAvatarUrl" style="border-radius:50%;overflow:hidden;display:block;width:130rpx;height:130rpx;"></open-data>
+    <text>{{phone}}</text>
+  </view>
+</view>
+<view class='message'>
+  <image src='{{imgUrl}}/image/details/line.png'  wx:if="{{imgUrl}}"mode='widthFix' style='width:10rpx;'></image>
+  <text>会员权益</text>
+</view>
+<view class='box_icon'>
+    <view class='icon_list'>
+      <image src='{{imgUrl}}/image/details/jfsd.png'  wx:if="{{imgUrl}}"mode='widthFix'></image>   
+      <text>积分速度{{levels}}倍提升</text>   
+    </view>
+     <view class='icon_list'>
+      <image src='{{imgUrl}}/image/details/cdhq.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
+      <text>超多好券N张赠送</text>   
+    </view>
+</view>
+<view class='message'>
+  <image src='{{imgUrl}}/image/details/line.png'  wx:if="{{imgUrl}}" mode='widthFix' style='width:10rpx;'></image>
+  <text>权益说明</text>
+</view>
+<view class='containers'>
+  <text>
+    方案一：会员积分
+    （1）会员判定方式
+    当月注册，当月即刻为一级会员
+    上月消费>=68元，即为二级会员；
+    当月消费{{'<'}}=68元，次月自动降级为一级会员；
+    当月消费{{'<'}}=128元次月升级为三级会员；
+    上月消费>=128元，即为三级会员；
+    68元={{'<'}}当月消费{{'<'}}=128元则自动降级为二级会员；
+    当月消费{{'<'}}=68元自动降级为一级会员;
+
+    会员积分类
+    会员积分养成法：
+    一级会员：当月注册
+    二级会员：¥68元≤上月消费≤¥128元
+    三级会员：上月消费≥¥128元
+    会员积分积攒法：
+     
+    一级会员：消费¥1元【+1积分】
+    二级会员：消费¥1元【+1.2积分】
+    三级会员：消费¥1元【+1.5积分】
+  </text>
+ 
+</view>

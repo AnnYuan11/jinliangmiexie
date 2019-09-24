@@ -1,0 +1,29 @@
+<!--pages/details/fxyj/fxyj.wxml-->
+<view class='line'></view>
+<block wx:for="{{list}}">
+  <view class='box'>
+    <view class='list'>
+      <text class='name'>订单号：</text>
+      <text class='con'>{{item.orderNumber}}</text>
+    </view>
+    <view class='list'>
+      <text class='name'>下单人电话：</text>
+      <text class='con'>{{item.orderPhone}}</text>
+    </view>
+    <view class='list'>
+      <text class='name'>下单时间</text>
+      <text class='con'>{{item.orderTime}}</text>
+    </view>
+    <view class='list'>
+      <view class='lis'>
+        <text class='name'>下单金额：</text>
+        <text class='con'>{{item.orderMoney}}元</text>
+      </view>
+      <view class='lis'>
+        <text class='name'>收益金额：</text>
+        <text class='con'>{{item.money}}元</text>
+      </view>
+    </view>
+  </view>
+</block>
+

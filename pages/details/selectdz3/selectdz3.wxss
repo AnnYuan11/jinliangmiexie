@@ -1,0 +1,74 @@
+/* pages/details/selectdz3/selectdz3.wxss */
+.list{
+  padding: 0 32rpx;
+  box-sizing: border-box;
+}
+.message{
+  width: 100%;
+}
+.message text{
+  font-size:28rpx;
+  color:rgba(51,51,51,1);
+}
+.message text.num{
+  color: #999;
+  margin-left: 30rpx;
+}
+.address{
+  font-size:28rpx;
+  color:rgba(51,51,51,1);
+  margin: 30rpx 0;
+}
+.xian{
+  width: 100%;
+  height: 1px;
+  background: #E6E6E6;
+}
+.dzgl{
+  margin: 14rpx 0;
+  overflow: hidden;
+}
+.my-check{
+  vertical-align: middle;
+}
+.dzgl .mrdz{
+  font-size:24rpx;
+  color:rgba(85,221,133,1);
+  margin-left: 15rpx;
+}
+.right{
+  float: right;
+  margin-right:30rpx;
+}
+.edit,.delete{
+  float: left;
+}
+.edit{
+  margin-right: 30rpx;
+}
+.edit image,.delete image{
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.edit text,.delete text{
+  font-size:24rpx;
+  color:rgba(153,153,153,1);
+}
+.line{
+  width: 100%;
+  height: 20rpx;
+  background: #F4F4F4;
+}
+.add{
+  width:100%;
+  height:88rpx;
+  line-height: 88rpx;
+  box-sizing:border-box;
+  background:-webkit-linear-gradient(0deg, #46da7a, #41eac0);
+  overflow:hidden;
+  text-align: center;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  z-index: 999;
+}

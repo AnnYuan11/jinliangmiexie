@@ -1,0 +1,24 @@
+<!--pages/login/login.wxml-->
+<view class='con'>登陆后可查看相关内容</view>
+<!-- <form bindsubmit='login'> -->
+<view class='content'>
+  <view class='list'>
+      <text class='name'>手机号</text>
+      <input placeholder="请输入您的手机号"value="" type='number' bindinput='bindinput' placeholder-class="pla"class='phone' name="phone"/>
+      <view class='miao' bindtap='yzm'>{{num}}</view>
+      <view class="mask" wx:if="{{flag}}"></view>
+  </view>
+   <view class='list'>
+      <text class='name'>验证码</text>
+      <input placeholder="请输入验证码" placeholder-class="pla"class='phone' name="yzm" bindinput='bindinput2' />
+  </view>
+</view>
+<view class='select'>
+   <image wx:if="{{selected}}" class="my-check" src="../../image/details/YYY.png" bindtap="selectList"></image>
+    <image wx:else  class="my-check" src="../../image/details/noYY.png"  bindtap="selectList" ></image>
+    <navigator url='../details/yhxy/yhxy' hover-class='none'><text>我同意《用户注册协议》</text></navigator>
+</view>
+<button  class='login' hover-class="" form-type='submit' wx:if="{{canIUse}}"
+  open-type="getUserInfo"
+  bindgetuserinfo="bindGetUserInfo"> 立即登录</button> 
+<!-- </form> -->

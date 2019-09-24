@@ -1,0 +1,43 @@
+/* pages/details/wdyq/wdyq.wxss */
+page{
+  background:-webkit-linear-gradient(0deg, #46da7a, #41eac0);
+}
+.bg{
+  width: 100%;
+}
+.ewm_box{
+  position: relative;
+  text-align: center;
+}
+.title{
+  position: absolute;
+  top:10%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.ewm{
+  width: 80%;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+.ewm image{
+  width: 400rpx;
+}
+.ewm text{
+  display: block;
+  margin-top: 30rpx;
+  font-size: 24rpx;
+  color: rgb(187, 187, 187);
+}
+.xj{
+  font-size: 28rpx;
+  color: #41eac0;
+  position: absolute;
+  right:12%;
+  top:72%;
+}

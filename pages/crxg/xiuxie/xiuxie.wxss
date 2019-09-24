@@ -1,0 +1,154 @@
+/* pages/crxg/xiuxie/xiuxie.wxss */
+.box_fjzd{
+  padding:0 20rpx 20rpx 20rpx;
+  box-sizing: border-box;
+}
+.box_fjzd .left{
+  float: none;
+  font-size:28rpx;
+  margin-left: 30rpx;
+}
+.box_fjzd .right{
+  font-size:28rpx;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.message{
+  width: 100%;
+}
+.message image{
+  vertical-align: middle;
+}
+.message text{
+  font-size:32rpx;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+  margin-left: 8rpx;
+}
+.lists{
+  overflow: hidden;
+}
+.list_s{
+  width: 100%;
+  height: 89rpx;
+  line-height: 89rpx;
+  border-bottom: 1px solid #E6E6E6;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between
+}
+
+.list_s .left{
+  font-size:28rpx;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  float: left;
+  margin-left: 30rpx;
+}
+.information_box{
+  width: 85%;
+  margin: 0 auto;
+  margin-top: -14%;
+  box-shadow: 0px 0px 10px 2px #e2e2e2;
+  padding: 30rpx;
+  box-sizing: border-box;
+  z-index: 99999;
+  position:relative;
+  background:#fff;
+  border-radius: 20rpx;
+}
+.information{
+  margin-top:20rpx;
+}
+.xm{
+  font-size:30rpx;
+  color:#999999;
+  display: inline-block;
+  vertical-align: middle;
+  /* width: 20%; */
+}
+.r{
+  font-size:24rpx;
+  color:rgba(51,51,51,1);
+}
+.list input{
+  width: 85%;
+  border-bottom: 1px solid #EEEEEE;
+  font-size: 24rpx;
+}
+.place{
+  font-size:24rpx;
+  color:#999;
+}
+.address{
+  width: 85%;
+  font-size:24rpx;
+  color:rgba(51,51,51,1);
+}
+.lists textarea{
+  width: 100%;
+  height: 200rpx;
+  padding: 30rpx 40rpx;
+  box-sizing: border-box;
+  background: #EEEEEE;
+  border-radius: 20rpx;
+  margin-top: 40rpx;
+  font-size:24rpx;
+  color:#000;
+}
+.sub{
+  width:259rpx;
+  height:72rpx;
+  background:rgba(100,183,156,1);
+  border-radius:36rpx;
+  font-size:36rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 72rpx;
+  margin: 0 auto;
+  margin-top: 40rpx;
+}
+.bz{
+  display: block;
+  margin: 30rpx 0;
+}
+.upload{
+  font-size:18rpx;
+  color:rgba(170,170,170,1);
+  display: block;
+}
+.right text{
+  font-size:26rpx;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.right image{
+  vertical-align:middle;
+  margin:0 14rpx;
+}
+.imgInfo .del{
+  display:inline-block;
+  width:30rpx;
+  position:absolute;
+  right:-13rpx;
+  top: -20rpx;
+}
+.imgInfo .del image{
+  width: 100%;
+}
+.imgInfo{
+  width: 30%;
+  float: left;
+  position: relative;
+  margin:30rpx 10rpx;
+}
+.phone{
+  font-size:24rpx;
+  color:#999;
+}
+.input{
+  font-size:24rpx;
+  color:rgba(51,51,51,1);
+  margin-top:22rpx;
+  text-align: right;
+}

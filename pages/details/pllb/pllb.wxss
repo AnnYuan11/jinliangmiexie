@@ -1,0 +1,45 @@
+/* pages/details/pllb/pllb.wxss */
+.content{
+  width: 100%;
+  padding: 0 34rpx;
+  box-sizing: border-box;
+}
+.list{
+  width: 100%;
+  border-bottom: 1px solid #E6E6E6;
+  padding-bottom: 30rpx;
+}
+.title{
+  width: 100%;
+}
+.title .name{
+  font-size:28rpx;
+  font-weight:500;
+  color:rgba(34,34,34,1);
+}
+.title .date{
+  font-size:22rpx;
+  float: right;
+  color:rgba(184,184,184,1);
+  margin-top: 16rpx;
+}
+.cantainer{
+  font-size:24rpx;
+  color:rgba(111,111,111,1);
+  line-height: 40rpx;
+  margin-top: 12rpx;
+}
+.imgArr{
+  margin-top: 20rpx;
+}
+.img{
+  width: 160rpx;
+  height: 160rpx;
+  margin-right: 27rpx;
+}
+.replay{
+  font-size: 24rpx;
+  color: #46da7a;
+  display: block;
+  margin-top: 20rpx;
+}

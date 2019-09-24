@@ -1,0 +1,17 @@
+<!--pages/details/fjzd2/fjzd2.wxml-->
+<view class='box'>
+  <view class='search_box'>
+   <input placeholder=" 请填写站点" placeholder-style='font-size:28rpx;' bindinput ="searchInput"/>
+   <!-- <text bindtap='search'>搜索</text> -->
+    </view>
+  <view class="search" bindtap='search'>
+  搜索
+  </view>
+</view>
+<block wx:for="{{list}}">
+  <view class='list' bindtap='toxixie' id="{{item.id}}" data-address="{{item.address}}">
+    <text>站点{{index+1}}:</text>
+    <text class='address'>{{item.address}}</text>
+  </view>
+</block>
+<view class='zw' wx:if="{{list.length==0}}">暂无数据</view>

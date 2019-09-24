@@ -1,0 +1,98 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/details/mthx_hx/mthx_hx",
+    "pages/details/pingjia/pingjia",
+    "pages/wode/my/my",
+    "pages/details/wyxx_crxg/wyxx_crxg",
+    "pages/details/mthx/mthx",
+    "pages/details/wyxx_new/wyxx_new",
+    "pages/details/dingdan_new/dingdan_new",
+    "pages/details/wyxx/wyxx",
+    "pages/details/xiuxie/xiuxie",
+    "pages/details/dingdan_details/dingdan_details",
+    "pages/details/wyxx_smqx/wyxx_smqx",
+    "pages/details/tcxx/tcxx",
+    "pages/details/fxyj/fxyj",
+    "pages/details/yjmx/yjmx",
+    "pages/details/wdyq/wdyq",
+    "pages/details/wdxjlb/wdxjlb",
+    "pages/details/tuijian/tuijian",
+    "pages/login/login",
+    "pages/details/yyps/yyps",
+    "pages/details/fjzd/fjzd",
+    "pages/details/fapiao/fapiao",
+    "pages/details/selectdz2/selectdz2",
+    "pages/details/fjzd3/fjzd3",
+    "pages/dingdan/order/order",
+    "pages/details/select/select",
+    "pages/details/txfpxx/txfpxx",
+    "pages/details/tjshdz/tjshdz",
+    "pages/details/pllb/pllb",
+    "pages/details/wyjx/wyjx",
+    "pages/details/order_jx/order_jx",
+    "pages/details/map/map",
+    "pages/details/wdxj/wdxj",
+    "pages/details/wdqy/wdqy",
+    "pages/details/chongzhi/chongzhi",
+    "pages/details/bzzx/bzzx",
+    "pages/details/bzzx_details/bzzx_details",
+    "pages/details/smqx/smqx",
+    "pages/details/crxg/crxg",
+    "pages/details/wdyhq/wdyhq",
+    "pages/details/wdcf/wdcf",
+    "pages/details/bjshdz/bjshdz",
+    "pages/details/selectdz/selectdz",
+    "pages/details/dzgl/dzgl",
+    "pages/details/jbdh/jbdh",
+    "pages/details/wdjf/wdjf",
+    "pages/details/jx_address/jx_address",
+    "pages/details/jzxy/jzxy",
+    "pages/details/yhxy/yhxy",
+    "pages/details/fjzd2/fjzd2",
+    "pages/details/wdyhq2/wdyhq2",
+    "pages/details/banner/banner",
+    "pages/details/fjzd_crxg/fjzd_crxg",
+    "pages/details/selectdz3/selectdz3",
+    "pages/crxg/wyxx_crxg/wyxx_crxg",
+    "pages/crxg/wyxx/wyxx",
+    "pages/crxg/xiuxie/xiuxie"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "今亮美鞋",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#55DD85",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "image/icon/1_select.png",
+        "iconPath": "image/icon/1.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "image/icon/2_select.png",
+        "iconPath": "image/icon/2.png",
+        "pagePath": "pages/details/dingdan_new/dingdan_new",
+        "text": "订单"
+      },
+      {
+        "selectedIconPath": "image/icon/3_select.png",
+        "iconPath": "image/icon/3.png",
+        "pagePath": "pages/wode/my/my",
+        "text": "个人中心 "
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

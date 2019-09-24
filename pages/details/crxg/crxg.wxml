@@ -1,0 +1,17 @@
+<!--pages/details/crxg/crxg.wxml-->
+<view class='crxg'>
+  <image src='{{imgUrl}}/image/details/crxg2.png'  wx:if="{{imgUrl}}" ></image>
+</view>
+<view class='box'>
+  <image src='{{imgUrl}}/image/details/bgs.png'  wx:if="{{imgUrl}}"  class='head'></image>
+  <view class='input_box'>
+    <view class='phone'>
+       <input placeholder="请输入您的手机号" placeholder-class="sjh"/>
+       <view class='djs'>60s</view>
+    </view>
+    <view class='phone'>
+       <input placeholder="请输入您的验证码" placeholder-class="sjh"/>
+    </view>
+  </view>
+  <view class='hqm'>获取存鞋开柜码</view>
+</view>

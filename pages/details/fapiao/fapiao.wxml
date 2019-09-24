@@ -1,0 +1,54 @@
+<!--pages/details/fapiao/fapiao.wxml-->
+
+
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">待开票
+  </view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">开票超期
+  </view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 34}}px" bindchange="bindChange">
+  <swiper-item>
+    <scroll-view  scroll-y style="height: 100%;">
+      <view class='list_box'>
+        <block wx:for="{{list}}">
+          <view class='list'>
+            <image src='{{imgUrl}}/image/details/fp.png'  wx:if="{{imgUrl}}" style='width:734rpx;height:205rpx;'></image>
+            <view class='lis'>
+              <image wx:if="{{item.selected}}" data-index="{{index}}" class="my-check" src="{{imgUrl}}/image/details/select.png" bindtap="selectList" data-id='{{item.id}}'></image>
+                  <image wx:else  class="my-check" data-index="{{index}}" src="{{imgUrl}}/image/details/noselect.png"  bindtap="selectList" ></image>
+              <image src='{{imgUrl}}/image/details/cz.png'  wx:if="{{imgUrl}}"  style='width:100rpx;height:100rpx;'></image>
+              <view class='cz'>
+                <text class='czs'>{{item.types}}</text>
+                <text class='date'>{{item.createTime}}</text>
+              </view>
+              <text class='num'>{{item.paymentMoney}}元</text>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class='kp' bindtap='kaipiao'>开票</view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view  scroll-y style="height: 100%;">
+        <view class='list_box'>
+        <block wx:for="{{listcs}}">
+          <view class='list'>
+            <image src='{{imgUrl}}/image/details/fp.png'  wx:if="{{imgUrl}}" style='width:734rpx;height:205rpx;'></image>
+            <view class='lis'>
+            
+              <image src='{{imgUrl}}/image/details/cz2.png' wx:if="{{imgUrl}}"  style='width:100rpx;height:100rpx;'></image>
+              <view class='cz'>
+                <text class='czs'>{{item.types}}</text>
+                <text class='date'>失效日期：{{item.overTime}}</text>
+              </view>
+              <text class='num'>{{item.paymentMoney}}元</text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>

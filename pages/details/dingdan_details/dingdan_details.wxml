@@ -1,0 +1,80 @@
+<!--pages/details/dingdan_details/dingdan_details.wxml-->
+  <view class='box'>
+    <view class='title'>订单信息</view>
+    <view class='ddxx'>
+      <view class='list'>
+        <text class='left'>订单编号：</text>
+        <text class='right'>{{list.connectNumber}}</text>
+      </view>
+      <view class='list'>
+        <text class='left'>订单状态：</text>
+        <text class='right'>{{list.orderStatusTotal}}</text>
+      </view>
+      <view class='list'>
+        <text class='left'>备注：</text>
+        <text class='right'>{{list.remark}}</text>
+      </view>
+      <view class='list'>
+        <text class='left'>订单时间：</text>
+        <text class='right'>{{list.orderTime}}</text>
+      </view>
+    
+    </view>
+    <view class='ddxx'>
+      <view class='list'>
+        <text class='left'>订单类型：</text>
+        <text class='right'>{{list.orderType}}-{{list.takeShoeType}}</text>
+      </view>
+      <view class='list'>
+        <text class='left'>订单数量：</text>
+        <text class='right'>{{list.shoesNumberTotal}}双</text>
+      </view>
+      <view class='list'>
+        <text class='left'>实付款：</text>
+        <text class='right'>{{list.totalMoney}}元</text>
+      </view>
+    </view>
+    <view class='ddxx'>
+      <view class='list'>
+        <text class='left'>订单联系人：</text>
+        <text class='right'>{{list.userAddressInfo.name}}</text>
+      </view>
+      <view class='list'>
+        <text class='left'>订单手机号：</text>
+        <text class='right'>{{list.userAddressInfo.phone}}</text>
+        <text class='right'>{{list.userPhone}}</text>
+      </view>
+      <view class='list'>
+        <text class='left'>地址：</text>
+        <text class='right'>{{list.userAddressInfo.province}}{{list.userAddressInfo.city}}{{list.userAddressInfo.area}}{{list.userAddressInfo.address}}</text>
+        <text class='right'>{{list.equipmentInfo.address}}</text>
+      </view>
+    </view>
+    <block wx:for="{{list2}}" wx:inde>
+      <view class='img_box'>
+        <view class='list list_s'>
+          <text class='right'>鞋{{index+1}}:{{item.orderNumberList}}</text>
+
+          <text class='yrc' wx:if="{{list.orderStatusTotal=='待取货'||list.orderStatusTotal=='已取货'||list.orderStatusTotal=='未支付'||list.orderStatusTotal=='已支付'||list.orderStatusTotal=='待审核'}}">未入厂</text>
+          <text class='yrc' wx:if="{{list.orderStatusTotal=='清洗中'}}">入厂</text> 
+          <text class='yrc'wx:if="{{list.orderStatusTotal=='配送中'||list.orderStatusTotal=='已送达'||list.orderStatusTotal=='已完成'||list.orderStatusTotal=='已评价'||list.orderStatusTotal=='已失效'}}">出厂</text> 
+        </view>
+        <view class='pic'>
+          <view class='qxq'>
+            <image src='../../../image/details/2.png' wx:if="{{item.beforePhotoList==''}}" mode='widthFix' style='margin-right:0;margin-top:56rpx'></image>
+            <block wx:for="{{item.beforePhotoList}}"  wx:for-item="img">  
+              <image class="img" src='{{imgUrl+"/"+img}}'wx:if="{{imgUrl}}" data-src="{{imgUrl+'/'+img}}" data-list='{{item.beforePhotoList}}' data-index='{{index}}' bindtap='previewImg'></image>   
+              </block>    
+            <text>清洗前</text>
+          </view>
+          <view class='qxq'>
+            <image src='../../../image/details/2.png' wx:if="{{item.afterPhotoList==''}}" mode='widthFix' style='margin-right:0;margin-top:56rpx'></image>
+            <block wx:for="{{item.afterPhotoList}}"  wx:for-item="img">  
+              <image class="img" src='{{imgUrl+"/"+img}}'wx:if="{{imgUrl}}" data-src="{{imgUrl+'/'+img}}" data-list='{{item.afterPhotoList}}' data-index='{{index}}' bindtap='previewImg'></image>   
+              </block>    
+            <text>清洗后</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>

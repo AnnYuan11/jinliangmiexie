@@ -1,0 +1,199 @@
+/**index.wxss**/
+swiper {
+  display:block;
+  height:400rpx;
+}
+.img{
+  width: 750rpx;
+  height: 473rpx;
+  margin: 0 auto;
+  display: block;
+  border-radius: 20rpx;
+}
+/* 指示点样式 */
+.swiper-box .wx-swiper-dots.wx-swiper-dots-horizontal{
+     margin-bottom: 15rpx;
+}
+.swiper-box .wx-swiper-dot{
+    width:10rpx;
+    display: inline-flex;
+    height: 10rpx;
+    background: #fff;
+    justify-content:space-between;
+}
+.swiper-box .wx-swiper-dot::before{
+    content: '';
+    flex-grow: 1; 
+    background: rgba(255,255,255,0.8);
+    border-radius: 8rpx
+}
+.swiper-box .wx-swiper-dot-active::before{
+    /* width:40rpx;
+    display: inline-flex;
+    height: 10rpx; */
+    background: #55DD85;
+}
+
+  /* 精彩评论 */
+.title_bg{
+  width: 100%;
+  margin: 0 auto;
+  height:120rpx;
+  line-height: 120rpx;
+  box-sizing: border-box;
+  background: rgb(244, 244, 244);
+  overflow: hidden;
+}
+.s_comment{
+  width: 92%;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 0 auto;
+  border-radius: 100rpx;
+  margin-top: 15rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  background: #dddddd;
+}
+.title_bg text{
+  font-size:34rpx;
+  color:rgba(102,102,102,1);
+  font-weight: 600;
+}
+.title_bg .more {
+  font-size: 24rpx;
+  font-weight: 400;
+  color:#5e5e5e;
+  float:right;
+}
+/* 洗鞋服务 */
+.s_xxfw{
+  width: 92%;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.s_xxfw image{
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.s_xxfw text{
+  font-size: 34rpx;
+  color: #000;
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+/* 图标部分 */
+.box_icon{
+  width: 100%;
+  padding: 50rpx 30rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-bottom:2px solid #f9f9f9;
+}
+.icon_list{
+  width: 25%;
+  text-align: center;
+  float: left;
+}
+.s_center{
+  width: 50%;
+}
+.icon_list image{
+  width: 120rpx;
+}
+.icon_list text{
+  font-size:26rpx;
+  color:#bcbcbc;
+  display: block;
+  line-height: 10rpx;
+  margin-top:20rpx;
+}
+.line{
+  width: 100%;
+  height: 20rpx;
+  background: #f4f4f4;
+}
+.lines{
+  width: 4rpx;
+  height: 150rpx;
+  background: #f4f4f4;
+  margin-top: 15%;
+}
+/* 效果展示 */
+.effect_box{
+  width: 92%;
+  margin: 30rpx auto;
+  display: flex;
+  justify-content: space-between;
+}
+.effct_list{
+ text-align: center;
+}
+/* .effct_list:nth-child(1) image{
+  width: 150rpx;
+  height: 300rpx;
+}
+.effct_list:nth-child(2) image{
+  width: 369rpx;
+  height: 100rpx;
+}
+.effct_list:nth-child(4) image{
+  width: 150rpx;
+  height: 300rpx;
+}
+.effct_list:nth-child(3) image{
+  width: 369rpx;
+  height: 100rpx;
+} */
+/* 客服 */
+.service{
+  position: fixed;
+  right: 10rpx;
+  bottom: 20rpx;
+}
+
+/* 客服浮层 */
+.kfdh{
+  width: 100%;
+  height:100%;
+  position: fixed;
+  top: 0%;
+  background: rgba(0,0,0,0.5);
+  left: 0;
+}
+.bg_kfdh{
+  width: 80%;
+  /* height: 250rpx; */
+  background: #fff;
+  margin: 40% auto;
+  padding:40rpx 60rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+.con_box{
+  display: flex;
+  justify-content: space-between;
+}
+.zx{
+  margin-top: 30rpx;
+}
+.zx text{
+  font-size:24rpx;
+  font-weight:500;
+  color:rgba(170,170,170,1);
+}
+button{
+  background: transparent;
+  border:0px;
+  /* position: static; */
+  font-size:30rpx;
+  font-weight:600;
+  color:rgba(51,51,51,1);
+}
+button::after{
+  border: none;
+}
+.button-hover {
+  background-color:transparent;
+}

@@ -1,0 +1,28 @@
+/* pages/details/wdxj/wdxj.wxss */
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  height: 83rpx;
+  align-items: center;
+  background-color:#fff;
+  padding:0 10rpx;
+  box-sizing: border-box;
+}
+.th{
+  font-size:28rpx;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  text-align: center;
+}
+.td{
+  font-size:24rpx;
+  color:#999999;
+  text-align: center;
+}
+.width{
+  width: 23%;
+}
+.jt{
+  width: 8%;
+}

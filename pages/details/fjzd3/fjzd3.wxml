@@ -1,0 +1,8 @@
+<!--pages/details/fjzd3/fjzd3.wxml-->
+<block wx:for="{{list}}">
+  <view class='list' bindtap='toxixie' id="{{item.id}}" data-longitude="{{item.lng}}" data-latitude="{{item.lat}}" data-address="{{item.address}}">
+    <text>站点{{index+1}}:</text>
+    <text class='address'>{{item.address}}</text>
+    <image src='{{imgUrl}}/image/details/address.png' style='width:44rpx;height:44rpx;float:right;margin-top:30rpx;'></image>
+  </view>
+</block>

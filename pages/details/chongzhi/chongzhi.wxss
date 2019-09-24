@@ -1,0 +1,135 @@
+/* pages/details/chongzhi/chongzhi.wxss */
+.title{
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-image: -webkit-linear-gradient(0deg, #47DA7C, #41EAC0);
+}
+.titles{
+  margin: 30rpx 0;
+}
+.shu{
+  width:9rpx;
+  height:33rpx;
+  background:rgba(255,255,255,1);
+  margin: 30rpx 20rpx 0 30rpx;
+  float: left;
+}
+.title text{
+  font-size:36rpx;
+  color:rgba(255,255,255,1);
+}
+.content{
+  width: 100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 54rpx;
+  overflow: hidden;
+}
+.list3,.list{
+  width: 200rpx;
+  height: 119rpx;
+  border-radius: 10rpx;
+  background-image: -webkit-linear-gradient(0deg, #47DA7C, #41EAC0);
+  font-size:30rpx;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 119rpx;
+  float: left;
+  margin-right: 50rpx;
+  margin-bottom: 30rpx;
+}
+.list3:nth-child(3n){
+  margin-right: 0;
+}
+.list2{
+  width: 196rpx;
+  height: 115rpx;
+  border-radius: 10rpx;
+  background: none;
+  border:1px solid #47DA7C;
+  color: #55DD85;
+  font-size:30rpx;
+  text-align: center;
+  line-height: 119rpx;
+  float: left;
+  margin-right: 50rpx;
+  margin-bottom: 30rpx;
+}
+.title2{
+  margin: 0rpx 20rpx 0 30rpx;
+}
+.title2 image{
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.title2 text{
+  font-size: 36rpx;
+  color: #000;
+}
+.zfss{
+  overflow: hidden;
+  margin: 30rpx;
+}
+.zfss image{
+  float: left;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.zfss text{
+  font-size:28rpx;
+  color:rgba(0,0,36,1);
+  float: left;
+}
+.my-check{
+  float: right;
+}
+.ljcz{
+  width: 383rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-image: -webkit-linear-gradient(0deg, #47DA7C, #41EAC0);
+  border-radius: 50rpx;
+  text-align: center;
+  color: #fff;
+  font-size:30rpx;
+  margin: 100rpx auto;
+}
+/* 选框 */
+checkbox .wx-checkbox-input{
+height: 30rpx;
+width: 30rpx;
+border-radius: 50%;
+margin-top: -4rpx;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+border-radius: 50%;
+background-color: #55DD85;
+border: 1rpx solid#55DD85;
+}
+
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 34rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.zdycz{
+  margin-bottom: 20rpx;
+}
+.zdycz input{
+  display: block;
+  width: 95%;
+  height: 60rpx;
+  border:1px solid #47DA7C;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+}

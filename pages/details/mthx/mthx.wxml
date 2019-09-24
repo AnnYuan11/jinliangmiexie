@@ -1,0 +1,26 @@
+<!--pages/details/mthx/mthx.wxml-->
+<form bindsubmit='hx'>
+<view class='img_box'>
+  <image src='{{imgUrl}}/image/spay/hx.png' wx:if="{{imgUrl}}" mode='widthFix'></image>
+</view>
+<view class='hx_box'>
+  <text class='title'>请输入团购券码</text>
+  <input placeholder="请输入团购券码" placeholder-class="place" name="receiptCode"/>
+</view>
+<button class='ljhx' form-type='submit'>立即核券</button>
+</form>
+<view class='bg_fc' wx:if="{{isYes}}">
+  <view class='box'>
+    <image src='{{imgUrl}}/image/sNew/hx.png' mode='widthFix' wx:if="{{imgUrl}}" style='width:465rpx;'></image>
+    <text>尊敬的用户，您的爱鞋订单已核销成功，请保持电话畅通等待配送人员上门取鞋</text>
+    <button bindtap='sure'>下一步</button>
+  </view> 
+</view>
+<!-- 验券失败 -->
+<view class='bg_fc' wx:if="{{isNo}}">
+  <view class='box'>
+    <image src='../../../image/details/new3.png' mode='widthFix' style='width:465rpx;'></image>
+    <text>很遗憾，您的券为无效券，请检查后重新输入</text>
+    <button bindtap='sure2'>确定</button>
+  </view> 
+</view>

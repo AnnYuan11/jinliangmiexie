@@ -1,0 +1,32 @@
+<!--pages/details/selectdz2/selectdz2.wxml-->
+<block wx:for="{{list}}">
+  
+  <view class='list' id="{{item.id}}"  bindtap='toxixie' data-id="{{item.id}}"  data-province="{{item.province}}" data-city="{{item.city}}" data-area="{{item.area}}" data-address="{{item.address}}">
+      <view class='message'>
+        <text class='name'>{{item.name}}</text>
+        <text class='num'>{{item.phone}}</text>
+      </view>
+      <view class='address'>{{item.province}}{{item.city}}{{item.area}}{{item.address}}</view>
+      <view class='xian'></view>
+      
+    </view>
+    <view class='dzgl'>
+        <!-- <icon  type="success" color='#47DA7B'size="16" bindtap="bindCheckbox" data-index="{{index}}" class="my-check"/>  -->
+        <text class='mrdz' wx:if="{{item.isDefault=='1'}}">默认地址</text>
+        <view class='right'>
+          <navigator url="../bjshdz/bjshdz?id={{item.id}}" style='float:left' hover-class="none">
+            <view class='edit'>
+              <image src='{{imgUrl}}/image/details/bj.png'  wx:if="{{imgUrl}}"style='width:31rpx;height:35rpx;'></image>
+              <text>编辑</text>
+            </view>
+          </navigator>
+          <view class='delete' bindtap='deleteAddress' data-id="{{item.id}}" data-default="{{item.isDefault}}">
+            <image src='{{imgUrl}}/image/details/del.png' wx:if="{{imgUrl}}" style='width:34rpx;height:36rpx;'></image>
+            <text>删除</text>
+          </view>
+        </view>
+      </view>
+    <view class='line'></view>
+  
+</block>
+<navigator url='../tjshdz/tjshdz' hover-class="none"><view class='add'>添加收货地址</view></navigator>

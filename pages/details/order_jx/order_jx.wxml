@@ -1,0 +1,91 @@
+<!--pages/details/order_jx/order_jx.wxml-->
+<view class="swiper-tab">
+      <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">待取货              </view>
+      <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">已完成            </view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <swiper-item>
+      <scroll-view  scroll-y style="height: 100%;">
+      <block wx:for="{{list}}">
+        <view class='content'>
+          <view class='list'>
+            <view class='dingdan'>
+                <text>订单编号：</text><text>{{item.orderNumber}}</text>
+                <text class='type'>{{item.orderStatus}}</text>
+            </view>
+            <view class='xiadan'>
+              <text>捐赠时间</text>
+              <text class='right'>{{item.orderTime}}</text>
+            </view>
+            <view class='xiadan'>
+              <text>订单类型</text>
+              <text class='right'>捐鞋</text>
+            </view>
+             <view class='xiadan'>
+              <text>捐鞋数量</text>
+              <text class='right'>{{item.shoeNumber}}双</text>
+            </view>
+            <view class='xiadan'>
+              <text>地址</text>
+              <view class='right'>
+                <text>{{item.equipmentInfo.address}}</text>
+              </view>
+            </view>
+          </view>
+          <view class='qhm' wx:if="{{item.storageNumber!=''}}">
+            <text>存货码：</text>
+            <text>{{item.storageNumber}}</text>
+          </view>
+        </view>
+      </block>
+      </scroll-view>
+    </swiper-item>
+    <!-- 清洗中 -->
+    <swiper-item>
+      <scroll-view  scroll-y style="height: 100%;">
+      <block wx:for="{{list2}}">
+        <view class='content'>
+          <view class='list'>
+              <view class='dingdan'>
+                <text>订单编号：</text><text>{{item.orderNumber}}</text>
+                <text class='type'>{{item.orderStatus}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>捐赠时间</text>
+                <text class='right'>{{item.orderTime}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>订单类型</text>
+                <text class='right'>捐鞋</text>
+              </view>
+               <view class='xiadan'>
+                <text>捐鞋数量</text>
+                <text class='right'>{{item.shoeNumber}}双</text>
+              </view>
+              <view class='xiadan'>
+                <text>地址</text>
+                <view class='right'>
+                  <text>{{item.equipmentInfo.address}}}</text>
+                  
+                </view>
+              </view>
+              <!-- 照片 -->
+
+              <view class='img' wx:if="{{item.photo!=''}}">
+
+
+                <block  wx:for="{{item.img}}" wx:for-item="img">
+                <image class="imgs" src='{{imgUrl+"/"+img}}' style='width:180rpx;height:180rpx;margin-right:30rpx'data-list='{{item.img}}' wx:if="{{imgUrl}}" data-src='{{imgUrl+img}}' bindtap='previewImg'></image>   
+              </block>
+
+                <!-- <image  mode='widthFix'src='{{imgUrl+item.photo}}' style='width:180rpx;height:180rpx;' bindtap='previewImg' data-index="{{index}}"></image> 
+                <text class='sm'>清洗前</text>         -->
+              </view>
+            
+              
+          </view>
+        </view>
+      </block>
+      </scroll-view>
+    </swiper-item>
+</swiper>

@@ -1,0 +1,40 @@
+<!--pages/details/wdxjlb/wdxjlb.wxml-->
+<view class='bg_box'>
+  <image src='{{imgUrl}}/image/tuijian/2.png' mode='widthFix'  wx:if="{{imgUrl}}" style='width:750rpx;'></image>
+  <view class='yue'>
+    <view class='lis'>
+      <text class='name'>推荐我的人</text>
+      <text class='num'>{{userPhone}}</text>
+    </view>
+    <view class='lines'></view>
+    <view class='lis'>
+      <text class='name'>我推荐的人</text>
+      <text class='num'>{{wdxj}}人</text>
+    </view>
+  </view>
+</view>
+<view class='content'>
+  <view class='title'>
+    <image src='{{imgUrl}}/image/details/line.png'  wx:if="{{imgUrl}}" style='width:10rpx' mode='widthFix'></image>
+    <text>推荐列表</text>
+  </view>
+<block wx:for="{{list}}">
+  <view class='box'>
+    <image src='{{imgUrl}}/image/details/bgs.png' wx:if="{{item.photo==''&imgUrl}}"></image>
+    <image src='{{imgUrl+"/"+item.photo}}' wx:if="{{item.photo!=''&imgUrl}}"></image>
+    <view class='xinx'>
+      <text class='dingdan'>昵称：<text class='nc'>{{item.nickName}}</text></text>
+      <text class='dingdan'>手机号码：<text class='nc'>{{item.phone}}</text></text>
+      <text class='dingdan'>发展时间：<text class='nc'>{{item.createTime}}</text></text>
+    </view>
+  </view>
+</block>
+  <!-- <view class='box'>
+    <image src='{{imgUrl}}/image/details/bgs.png'></image>
+    <view class='xinx'>
+      <text class='dingdan'>昵称：<text class='nc'>安小浠</text></text>
+      <text class='dingdan'>手机号码：<text class='nc'>15222229999</text></text>
+      <text class='dingdan'>发展时间：<text class='nc'>2019-02-03</text></text>
+    </view>
+  </view> -->
+</view>

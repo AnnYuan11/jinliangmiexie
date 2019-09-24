@@ -1,0 +1,478 @@
+<!--pages/dingdan/order/order.wxml-->
+<view class="swiper-tab">
+  <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+      <!-- <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部订单</view> -->
+      <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">待取货
+        <view class='circle' wx:if="{{count1!=0}}">{{count1}}</view>
+      </view>
+      <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">清洗中
+         <view class='circle' wx:if="{{count2!=0}}">{{count2}}</view>
+      </view>
+      <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">待支付
+         <view class='circle' wx:if="{{count3!=0}}">{{count3}}</view>
+      </view>
+      <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">待预约
+         <view class='circle' wx:if="{{count7!=0}}">{{count7}}</view>
+      </view>
+      <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">待收货
+         <view class='circle' wx:if="{{count4!=0}}">{{count4}}</view>
+      </view>
+      <view class="swiper-tab-list {{currentTab==5 ? 'on' : ''}}" data-current="5" bindtap="swichNav">已送达
+         <view class='circle' wx:if="{{count5!=0}}">{{count5}}</view>
+      </view>
+      <view class="swiper-tab-list {{currentTab==6 ? 'on' : ''}}" data-current="6" bindtap="swichNav">已完成
+         <!-- <view class='circle' wx:if="{{count6!=0}}">{{count6}}</view> -->
+      </view>
+  </scroll-view>
+</view>
+ 
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 40}}px" bindchange="bindChange">
+
+    <!-- 待取货 -->
+    <swiper-item>
+      <scroll-view  scroll-y style="height: 100%;">
+      <block wx:for="{{list2}}">
+        <view class='content'>
+          <view class='list'>
+            <view class='dingdan'>
+                <text>订单编号：</text><text>{{item.orderNumber}}</text>
+                <text class='type'>{{item.orderStatus}}</text>
+            </view>
+            <view class='xiadan'>
+              <text>下单时间</text>
+              <text class='right'>{{item.orderTime}}</text>
+            </view>
+            <view class='xiadan'>
+              <text>订单类型</text>
+              <text class='right'>{{item.takeShoeType}}</text>
+            </view>
+            <view class='xiadan' wx:if="{{item.takemoney!=''||item.takemoney!='undefined'}}">
+              <text>物流费</text>
+              <text class='right'>{{item.takeMoney}}元</text>
+            </view>
+            <view class='xiadan'>
+              <text>备注信息</text>
+              <text class='right'>{{item.remark}}</text>
+            </view>
+            <view class='xiadan'>
+              <text>地址</text>
+              <view class='right'>
+                <text>{{item.userAddressInfo.name}}{{item.userAddressInfo.phone}}</text>
+                <text>{{item.userAddressInfo.area}}{{item.userAddressInfo.address}}</text>
+              </view>
+               <view class='right'>
+                <text>{{item.equipmentInfo.address}}</text>
+              </view>
+            </view>
+          </view>
+          <!-- <view class='qhm' wx:if="{{item.storageNumber!=''}}">
+            <text>存货码：</text>
+            <text>{{item.storageNumber}}</text>
+          </view> -->
+        </view>
+      </block>
+      <view class='none' style='text-align:center' wx:if="{{list2.length==0}}">
+        <image src='{{imgUrl}}/image/details/no.png' wx:if="{{imgUrl}}"mode="widthFix" style='width:200rpx'></image>
+        <text style='display:block'>暂无该状态订单</text>
+      </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 清洗中 -->
+    <swiper-item>
+      <scroll-view  scroll-y style="height: 100%;">
+      <block wx:for="{{list3}}">
+        <view class='content'>
+          <view class='list'>
+              <view class='dingdan'>
+                <text>订单编号：</text><text>{{item.orderNumber}}</text>
+                <text class='type'>{{item.orderStatus}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>下单时间</text>
+                <text class='right'>{{item.orderTime}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>订单类型</text>
+                <text class='right'>{{item.takeShoeType}}</text>
+               
+              </view>
+              <view class='xiadan'>
+                <text>价格</text>
+                <text class='right'>{{item.needMoney}}</text>
+              </view>
+              <view class='xiadan' wx:if="{{item.takemoney!=''||item.takemoney!='undefined'}}">
+                   <text>物流费</text>
+                    <text class='right'>{{item.takeMoney}}元</text>
+                </view>
+              <view class='xiadan'>
+                <text>备注信息</text>
+                <text class='right'>{{item.remark}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>地址</text>
+                <view class='right'>
+                  <text>{{item.userAddressInfo.name}}{{item.userAddressInfo.phone}}</text>
+                  <text>{{item.userAddressInfo.area}}{{item.userAddressInfo.address}}</text>
+                </view>
+                 <view class='right'>
+                  <text>{{item.equipmentInfo.address}}</text>
+                </view>
+              </view>
+              <!-- 照片 -->
+              
+              <view class='img' wx:if="{{item.beforePhoto!=''}}">
+                <!-- <image  mode='widthFix'src='{{imgUrl+item.beforePhoto}}' style='width:180rpx;height:180rpx;' bindtap='previewImg' data-index="{{index}}"></image> 
+                <text class='sm'>清洗前</text>   -->
+              <block  wx:for="{{item.img}}" wx:for-item="img">
+                <image class="imgs" src='{{imgUrl+img}}' style='width:180rpx;height:180rpx;'data-list='{{item.img}}' data-src='{{imgUrl+img}}' bindtap='previewImg'></image>   
+              </block>
+              </view>
+            
+              <!-- <view class='img' wx:if="{{item.afterPhoto!=''}}">
+                <image src='{{imgUrl+item.afterPhoto}}' mode='widthFix' style='width:180rpx;height:180rpx'></image>  
+                <text class='sm'>清洗后</text>        
+              </view> -->
+          </view>
+        </view>
+      </block>
+       <view class='none' style='text-align:center' wx:if="{{list3.length==0}}">
+        <image src='{{imgUrl}}/image/details/no.png' mode="widthFix" style='width:200rpx'></image>
+        <text style='display:block'>暂无该状态订单</text>
+      </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 预约前 -->
+    <swiper-item class="zindex">
+      <scroll-view  scroll-y style="height: 100%;" class="zindex">
+      <view class='content_box'>
+        <block wx:for="{{list4}}">
+          <view class='content'>
+            <view class='list'>
+                <view class='dingdan'>
+                  <image wx:if="{{item.selected}}" data-index="{{index}}" class="my-check" src="{{imgUrl}}/image/details/select.png" bindtap="selectList" data-id='{{item.id}}'></image>
+        <image wx:else  class="my-check" data-index="{{index}}" src="{{imgUrl}}/image/details/noselect.png"  bindtap="selectList" ></image>
+                  <text>订单编号：</text><text>{{item.orderNumber}}</text>
+                  <text class='type'>{{item.orderStatus}}</text>
+                </view>
+                <view class='xiadan'>
+                  <text>下单时间</text>
+                  <text class='right'>{{item.orderTime}}</text>
+                </view>
+                <view class='xiadan'>
+                  <text>订单类型</text>
+                  <text class='right'>{{item.takeShoeType}}</text>
+                </view>
+                <view class='xiadan'>
+                   <text>价格</text>
+                    <text class='right'>{{item.needMoney}}元</text>
+                </view>
+                <view class='xiadan' wx:if="{{item.takemoney!=''||item.takemoney!='undefined'}}">
+                   <text>物流费</text>
+                    <text class='right'>{{item.takeMoney}}元</text>
+                </view>
+                <view class='xiadan'>
+                  <text>备注信息</text>
+                  <text class='right'>{{item.remark}}</text>
+                </view>
+                <view class='xiadan'>
+                  <text>地址</text>
+                  <view class='right'>
+                    <text>{{item.userAddressInfo.name}}{{item.userAddressInfo.phone}}</text>
+                    <text>{{item.userAddressInfo.area}}{{item.userAddressInfo.address}}</text>
+                  </view>
+                   <view class='right'>
+                    <text>{{item.equipmentInfo.address}}</text>
+                  </view>
+                </view>
+                <!-- 照片 -->
+                <view class='img' wx:if="{{item.beforePhoto!=''}}">
+                    <!-- <image  style='width:180rpx;height:180rpx;' src='{{imgUrl+item.beforePhoto}}' bindtap='previewImg2' data-index="{{index}}"></image> 
+                    <text class='sm'>清洗前</text>         -->
+                      <block  wx:for="{{item.img}}" wx:for-item="img">
+                <image class="imgs" src='{{imgUrl+img}}' style='width:180rpx;height:180rpx;'data-list='{{item.img}}' data-src='{{imgUrl+img}}' bindtap='previewImg2'></image>   
+              </block>
+                </view>
+                <!-- <view class='img' wx:if="{{item.afterPhoto!=''}}">
+                  <image src='{{imgUrl+item.afterPhoto}}' style='width:180rpx;height:180rpx'></image>  
+                  <text class='sm'>清洗后</text>        
+                </view> -->
+            </view>
+          </view>
+        </block> 
+      </view>
+      <view class='none' style='text-align:center' wx:if="{{list4.length==0}}">
+        <image src='{{imgUrl}}/image/details/no.png' mode="widthFix" style='width:200rpx'></image>
+        <text style='display:block'>暂无该状态订单</text>
+      </view>
+      <!-- 选择支付方式 -->
+        <view class='zffs_box' wx:if="{{showzf}}">
+          <view class='zffs'>
+            <text class='title'>订单支付</text>
+            <text class='jg'>{{jg}}</text>
+            <text class='yuan'>元</text>
+            <text class='selec'>请选择支付方式</text>
+            
+            <radio-group class="radio-group" bindchange="radioChange">
+              <text class='yue' wx:if="{{isshowye}}">（余额：{{money}}元)</text>
+              <!-- <label class="radio" wx:for="{{items}}">
+                <radio value="{{item.name}}" checked="{{item.checked}}"/>
+                {{item.value}}
+              </label> -->
+               <label class="radio" wx:if="{{isshowye}}">
+                <radio value="1" checked="checked"/>
+               余额支付
+              </label>
+              <label class='radio' wx:if="{{isshowyes}}">
+                 <radio value="2"/>
+               微信支付
+              </label>
+            </radio-group>
+
+            <text class='btns' bindtap='surePay'>确认支付</text>
+
+            <!-- <text class='btns zhkk' bindtap='zhkk'>账户扣款</text>
+            <text class='btns' bindtap='zxzf'>在线支付</text> -->
+            <image src='{{imgUrl}}/image/details/x1.png'mode="widthFix" style='width:43rpx;' class='guan' bindtap='guan'></image>
+          </view>
+        </view>
+      </scroll-view>
+     <view class='yuyue' wx:if="{{has}}" bindtap='zhifu'>支付</view>
+    </swiper-item>
+      <!-- 已支付待预约 -->
+    <swiper-item class="zindex">
+      <scroll-view  scroll-y style="height: 100%;" class="zindex">
+      <view class='content_box'>
+        <block wx:for="{{list8}}">
+          <view class='content'>
+            <view class='list'>
+                <view class='dingdan'>
+                  <image wx:if="{{item.selected}}" data-index="{{index}}" class="my-check" src="{{imgUrl}}/image/details/select.png" bindtap="selectList2" data-id='{{item.id}}'></image>
+                  <image wx:else  class="my-check" data-index="{{index}}" src="{{imgUrl}}/image/details/noselect.png"  bindtap="selectList2" ></image>
+                  <text>订单编号：</text><text>{{item.orderNumber}}</text>
+                  <text class='type'>{{item.orderStatus}}</text>
+                </view>
+                <view class='xiadan'>
+                  <text>下单时间</text>
+                  <text class='right'>{{item.orderTime}}</text>
+                </view>
+                <view class='xiadan'>
+                  <text>订单类型</text>
+                  <text class='right'>{{item.takeShoeType}}</text>
+                </view>
+                <view class='xiadan'>
+                   <text>价格</text>
+                    <text class='right'>{{item.needMoney}}</text>
+                </view>
+                <view class='xiadan' wx:if="{{item.takemoney!=''||item.takemoney!='undefined'}}">
+                  <text>物流费</text>
+                  <text class='right'>{{item.takeMoney}}元</text>
+                </view>
+                <view class='xiadan'>
+                  <text>备注信息</text>
+                  <text class='right'>{{item.remark}}</text>
+                </view>
+                <view class='xiadan'>
+                  <text>地址</text>
+                  <view class='right'>
+                    <text>{{item.userAddressInfo.name}}{{item.userAddressInfo.phone}}</text>
+                    <text>{{item.userAddressInfo.area}}{{item.userAddressInfo.address}}</text>
+                  </view>
+                   <view class='right'>
+                    <text>{{item.equipmentInfo.address}}</text>
+                  </view>
+                </view>
+                <!-- 照片 -->
+                <view class='img' wx:if="{{item.beforePhoto!=''}}">
+                   
+                      <block  wx:for="{{item.img}}" wx:for-item="img">
+                <image class="imgs" src='{{imgUrl+img}}' style='width:180rpx;height:180rpx;'data-list='{{item.img}}' data-src='{{imgUrl+img}}' bindtap='previewImg6'></image>   
+              </block>
+                </view>
+               
+            </view>
+          </view>
+        </block> 
+      </view>
+      <view class='none' style='text-align:center' wx:if="{{list8.length==0}}">
+        <image src='{{imgUrl}}/image/details/no.png' mode="widthFix" style='width:200rpx'></image>
+        <text style='display:block'>暂无该状态订单</text>
+      </view>
+      
+      </scroll-view>
+     <view class='yuyue' wx:if="{{has2}}" bindtap='yyps'>预约配送</view>
+    </swiper-item>
+    <!-- 待收货 -->
+    <swiper-item>
+      <scroll-view  scroll-y style="height: 100%;">
+      <block wx:for="{{list5}}">
+        <view class='content'>
+          <view class='list'>
+              <view class='dingdan'>
+                <text>订单编号：</text><text>{{item.orderNumber}}</text>
+                <text class='type'>{{item.orderStatus}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>下单时间</text>
+                <text class='right'>{{item.orderTime}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>订单类型</text>
+                <text class='right'>{{item.sendShoeType}}</text>
+              </view>
+               <view class='xiadan'>
+                 <text>价格</text>
+                <text class='right'>{{item.needMoney}}</text>
+              </view>
+              <view class='xiadan' wx:if="{{item.takemoney!=''||item.takemoney!='undefined'}}">
+                <text>物流费</text>
+                <text class='right'>{{item.takeMoney}}元</text>
+              </view>
+              <view class='xiadan'>
+                <text>备注信息</text>
+                <text class='right'>{{item.remark1}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>地址</text>
+                <view class='right'>
+                  <text>{{item.sendAddress}}</text>
+                  <text>{{item.equipmentInfo.address}}</text>
+                </view>
+              </view>
+              <!-- 照片 -->
+              <view class='img' wx:if="{{item.beforePhoto!=''}}">
+                    <!-- <image src='{{imgUrl+item.beforePhoto}}'    style='width:180rpx;height:180rpx;'bindtap='previewImg3' data-index="{{index}}"></image> 
+                    <text class='sm'>清洗前</text>         -->
+                    <block  wx:for="{{item.img}}" wx:for-item="img">
+                <image class="imgs" src='{{imgUrl+img}}' style='width:180rpx;height:180rpx;'data-list='{{item.img}}' data-src='{{imgUrl+img}}' bindtap='previewImg3'></image>   
+              </block>
+                </view>
+               
+          </view>
+          <!-- <view class='qhm' wx:if="{{item.takeNumber!=''}}">取货码：{{item.takeNumber}}</view> -->
+        </view>
+      </block>
+       <view class='none' style='text-align:center' wx:if="{{list5.length==0}}">
+        <image src='{{imgUrl}}/image/details/no.png' mode="widthFix" style='width:200rpx'></image>
+        <text style='display:block'>暂无该状态订单</text>
+      </view>
+      </scroll-view>
+    </swiper-item>
+     <!-- 已送达 -->
+    <swiper-item>
+      <scroll-view  scroll-y style="height: 100%;">
+      <block wx:for="{{list7}}">
+        <view class='content'>
+          <view class='list'>
+              <view class='dingdan'>
+                <text>订单编号：</text><text>{{item.orderNumber}}</text>
+                <text class='type'>{{item.orderStatus}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>下单时间</text>
+                <text class='right'>{{item.orderTime}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>订单类型</text>
+                <text class='right'>{{item.sendShoeType}}</text>
+              </view>
+               <view class='xiadan'>
+                 <text>价格</text>
+                <text class='right'>{{item.needMoney}}</text>
+              </view>
+              <view class='xiadan' wx:if="{{item.takemoney!=''||item.takemoney!='undefined'}}">
+                <text>物流费</text>
+                <text class='right'>{{item.takeMoney}}元</text>
+              </view>
+              <view class='xiadan'>
+                <text>备注信息</text>
+                <text class='right'>{{item.remark1}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>地址</text>
+                <view class='right'>
+                  <text>{{item.sendAddress}}</text>
+                  <text>{{item.equipmentInfo.address}}</text>
+                </view>
+              </view>
+              <!-- 照片 -->
+              <view class='img' wx:if="{{item.beforePhoto!=''}}">
+                  <block  wx:for="{{item.img}}" wx:for-item="img">
+                <image class="imgs" src='{{imgUrl+img}}' style='width:180rpx;height:180rpx;'data-list='{{item.img}}' data-src='{{imgUrl+img}}' bindtap='previewImg4'></image>   
+              </block>     
+                </view>
+               <view class='sure' data-id="{{item.id}}" bindtap='sureGoods'>确认收货</view>
+            
+          </view>
+          <!-- <view class='qhm' wx:if="{{item.takeNumber!=''}}">取货码：{{item.takeNumber}}</view> -->
+        </view>
+      </block>
+       <view class='none' style='text-align:center' wx:if="{{list7.length==0}}">
+        <image src='{{imgUrl}}/image/details/no.png' mode="widthFix" style='width:200rpx'></image>
+        <text style='display:block'>暂无该状态订单</text>
+      </view>
+      </scroll-view>
+    </swiper-item>
+    <!-- 已完成 -->
+    <swiper-item>
+      <scroll-view  scroll-y style="height: 100%;">
+      <view class='ywc_box'>
+      <block wx:for="{{list6}}">
+        <view class='content'>
+          <view class='list'>
+              <view class='dingdan'>
+                <text>订单编号：</text><text>{{item.orderNumber}}</text>
+                <text class='type'>{{item.orderStatus}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>下单时间</text>
+                <text class='right'>{{item.orderTime}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>订单类型</text>
+                <text class='right' wx:if="{{item.orderStatus=='1'||item.orderStatus=='2'||item.orderStatus=='3'}}">{{item.takeShoeType}}</text>
+                <text class='right'wx:else>{{item.sendShoeType}}</text>
+              </view>
+                 <view class='xiadan'>
+                 <text>价格</text>
+                <text class='right'>{{item.needMoney}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>备注信息</text>
+                <text class='right'>{{item.remark1}}</text>
+              </view>
+              <view class='xiadan'>
+                <text>地址</text>
+                <view class='right'>
+                  <text>{{item.userAddressInfo.name}}{{item.userAddressInfo.phone}}</text>
+                    <text>{{item.userAddressInfo.area}}{{item.userAddressInfo.address}}</text>
+                </view>
+              </view>
+              <!-- 照片 -->
+              <view class='img' wx:if="{{item.beforePhoto!=''}}" >
+                    <block  wx:for="{{item.img}}" wx:for-item="img">
+                         <image class="imgs" src='{{imgUrl+img}}' style='width:180rpx;height:180rpx;'data-list='{{item.img}}' data-src='{{imgUrl+img}}' bindtap='previewImg5'></image>   
+                    </block>
+                    <!-- <image  src='{{imgUrl+item.beforePhoto}}'style='width:180rpx;height:180rpx;' bindtap='previewImg5' data-index="{{index}}"></image> 
+                    <text class='sm'>清洗前</text>         -->
+                </view>
+                <!-- <view class='img' wx:if="{{item.afterPhoto!=''}}">
+                  <image src='{{imgUrl+item.afterPhoto}}'style='width:180rpx;height:180rpx'></image>  
+                  <text class='sm'>清洗后</text>        
+                </view> -->
+                <!-- <view class='sure' data-id="{{item.id}}" bindtap='pingjia'>去评价</view> -->
+                <navigator url="../../details/pingjia/pingjia?id={{item.id}}">
+                  <view class='sure' wx:if="{{item.orderStatus=='已完成'}}">去评价</view>
+                </navigator>
+          </view>
+          
+        </view>
+      
+      </block>
+       <view class='none' style='text-align:center' wx:if="{{list6.length==0}}">
+        <image src='{{imgUrl}}/image/details/no.png' mode="widthFix" style='width:200rpx'></image>
+        <text style='display:block'>暂无该状态订单</text>
+      </view>
+      </view>
+      </scroll-view>
+    </swiper-item>
+</swiper>

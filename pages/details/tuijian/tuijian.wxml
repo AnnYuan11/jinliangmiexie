@@ -1,0 +1,70 @@
+<!--pages/details/tuijian/tuijian.wxml-->
+<view class='box'>
+  <image src='{{imgUrl}}/image/tuijian/1.png' mode='widthFix' wx:if="{{imgUrl}}" style='width:714rpx;'></image>
+  <view class='content'>
+    <view class='head'>
+        <open-data type="userAvatarUrl" style="border-radius:50%;overflow:hidden;display:block;height:130rpx;"></open-data>
+    </view>
+    <view class='message'>
+    <open-data type="userNickName" style="color:#fff"></open-data>
+      <text class='phone'>{{phone}}</text>
+      <text class='plant'>{{type}}</text>
+    </view>
+    <view class='ewm'>
+      <image src='https://www.jlzn365.com/app/user/getUserIdQr?userId={{userId}}'  mode="widthFix"></image>
+     <!-- <image src='https://jlmxcs.jlzn365.com/app/user/getUserIdQr?userId={{userId}}'  mode="widthFix"></image> -->
+      <text class=' annotation'>（专属推广码）</text>
+    </view>
+  </view>
+  <view class='box_money'>
+    <view class='yj'>
+      <text class='jine'>{{ljyj}}</text>
+      <text class='zs'>累计金额(元)</text>
+    </view>
+    <view class='line'></view>
+    <view class='yj'>
+        <text class='jine'>{{cashMoney}}</text>
+        <text class='zs'>可提现金额(元)</text>
+      </view>
+  </view>
+  <view class='ljtx' bindtap='ljtx'>立即提现</view>
+</view>
+<view class='fl_box'>
+  <navigator url="../../details/fxyj/fxyj" hover-class="none">
+    <view class='lis'>
+      <image src='{{imgUrl}}/image/tuijian/yj.png' wx:if="{{imgUrl}}" mode='widthFix'></image>
+      <view class='mingm'>
+        <text class='yj2'>{{ljyj}}</text>
+        <text class='type'>累计金额(元)</text>
+      </view>
+    </view> 
+  </navigator>
+
+  <navigator url="../../details/wdxjlb/wdxjlb?wdxj={{wdxj}}&userPhone={{userPhone}}" hover-class="none">
+    <view class='lis'>
+      <image src='{{imgUrl}}/image/tuijian/xj.png'  wx:if="{{imgUrl}}"mode='widthFix'></image>
+      <view class='mingm'>
+        <text class='yj2'>{{wdxj}}</text>
+        <text class='type'>我推荐的人</text>
+      </view>
+    </view> 
+  </navigator>
+
+  <navigator url="../../details/wdyq/wdyq" hover-class="none">
+    <view class='lis'>
+      <image src='{{imgUrl}}/image/tuijian/ewm.png' wx:if="{{imgUrl}}" mode='widthFix'></image>
+      <view class='mingm ewm'>
+        <text class='yj2'>专属二维码</text>
+      </view>
+    </view>
+  </navigator> 
+  <navigator url="../../details/yjmx/yjmx?cashMoneyTotal={{cashMoneyTotal}}&cashMoney={{cashMoney}}" hover-class="none">
+    <view class='lis'>
+      <image src='{{imgUrl}}/image/tuijian/mx.png'  wx:if="{{imgUrl}}" mode='widthFix'></image>
+      <view class='mingm'>
+        <text class='yj2'>金额明细</text>
+        <text class='type'>个人提现明细</text>
+      </view>
+    </view> 
+  </navigator> 
+</view>

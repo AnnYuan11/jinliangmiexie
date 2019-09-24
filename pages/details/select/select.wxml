@@ -1,0 +1,14 @@
+<!--pages/details/select/select.wxml-->
+<view class='select'>
+  <!-- <navigator url='../wyxx/wyxx?type1=2' hover-class="none"> -->
+    <image class="smqx"src='{{imgUrl}}/image/details/smqxs.png'  wx:if="{{imgUrl}}"mode="widthFix"style='width:48rpx;'></image>
+    <view class='syt smqx' bindtap='tz'>上门取鞋</view>
+    <text class='rule'>三双以上免费上门取鞋</text>
+  <!-- </navigator> -->
+   <!-- <navigator url='../wyxx/wyxx?type1=1' hover-class="none"> -->
+   <image class="crxg" src='{{imgUrl}}/image/details/crxgs.png'  wx:if="{{imgUrl}}"mode="widthFix"style='width:48rpx;'></image>
+    <view class='syt crxg' bindtap='tz2'>存入鞋柜</view>
+  <!-- </navigator> -->
+  <text class='rule'>长筒靴等体积偏大的鞋，请单独下单</text>
+</view>
+<view class='tis'>【订单状态为“清洗中”时，即可得知爱鞋清洗价格，详情请致电029-88222448】</view>

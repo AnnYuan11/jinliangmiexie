@@ -1,0 +1,119 @@
+/* pages/details/smqx/smqx.wxss */
+page{
+  background: #F9F9F9;
+}
+.crxg{
+  width: 100%;
+}
+.crxg image{
+  width: 100%;
+  height: 263rpx;
+}
+.box{
+  width: 625rpx;
+  height: 622rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  margin: 0 auto;
+  margin-top: -60rpx;
+  position: relative;
+  z-index: 99;
+  overflow: hidden;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+}
+.head{
+  width: 150rpx;
+  height: 150rpx;
+  display: block;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 40rpx;
+}
+.input_box{
+  margin-top: 30rpx;
+}
+.phone{
+  width: 100%;
+  height: 86rpx;
+  line-height: 86rpx;
+  border-bottom: 1px solid #E6E6E6;
+  overflow: hidden;
+}
+.sjh{
+  font-size:28rpx;
+  color:rgba(153,153,153,1);
+}
+.input_box input{
+  width: 80%;
+  font-size:28rpx;
+  color:rgba(153,153,153,1);
+  margin-top: 20rpx;
+}
+.djs{
+  width:71rpx;
+  height:43rpx;
+  line-height: 43rpx;
+  background:rgba(244,244,244,1);
+  border-radius:22rpx;
+  font-size:24rpx;
+  color:rgba(102,102,102,1);
+  float: right;
+  text-align: center;
+  margin-top: -42rpx;
+}
+.hqm{
+  width: 383rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size:30rpx;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  border-radius:40rpx; 
+  background-image: -webkit-linear-gradient(0deg, #47DA7C, #41EAC0); 
+  margin: 48rpx auto;
+}
+.ty .my-check{
+ vertical-align: middle;
+}
+.ty text{
+  font-size:24rpx;
+  color:rgba(85,221,133,1);
+  margin-left: 20rpx;
+}
+/* 浮层 */
+.cover{
+  width: 100%;
+  height: 100vh;
+  background:rgba(0,0,0,0.7);
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+}
+.yuyue{
+  width: 343rpx;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top:350rpx;
+}
+.img{
+  width: 343rpx;
+  height: 337rpx;
+}
+.yuyue text{
+  font-size:24rpx;
+  color:rgba(51,51,51,1);
+  position: absolute;
+  bottom: 30rpx;
+  left: 60rpx;
+}
+.close{
+  text-align: center;
+  margin-top: 50%;
+}
+.img_close{
+  width: 48rpx;
+  height: 48rpx;
+}
