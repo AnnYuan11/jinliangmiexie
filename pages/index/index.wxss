@@ -9,6 +9,8 @@ swiper {
   margin: 0 auto;
   display: block;
   border-radius: 20rpx;
+
+  
 }
 /* 指示点样式 */
 .swiper-box .wx-swiper-dots.wx-swiper-dots-horizontal{
