@@ -2,14 +2,14 @@
 import { Base } from "utils/request/base.js";
 var base = new Base();
 // var url = 'https://www.jlzn365.com'
-var url = 'https://jlmxcs.jlzn365.com'
+var url = 'https://www.jlzn365.com'
 var util = require('utils/util.js');
 App({
   
   globalData: {
     userInfo: null,
-    // imgUrl:"http://www.jlzn365.com:8585"
-    imgUrl: "http://jlmxcs.jlzn365.com:8585"
+    // imgUrl:"https://www.jlzn365.com:8585"
+    imgUrl: "https://www.jlzn365.com:8585"
   }
   //  refresh: function () {
   //   var that = this;
