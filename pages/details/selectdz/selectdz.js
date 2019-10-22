@@ -142,7 +142,8 @@ Page({
     var city = e.currentTarget.dataset.city;
     var area = e.currentTarget.dataset.area;
     var address = e.currentTarget.dataset.address;
-    var dizhi = province + city + area + address;
+    var street = e.currentTarget.dataset.street;
+    var dizhi = province + city + area + street+ address;
     var dzid = e.currentTarget.dataset.id;
     var menuMoney = that.data.menuMoney;
     var shoeNumber = that.data.shoeNumber;

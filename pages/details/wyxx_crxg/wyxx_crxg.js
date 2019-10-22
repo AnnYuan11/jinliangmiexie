@@ -3,7 +3,7 @@ import { Base } from "../../../utils/request/base.js";
 var base = new Base();
 var util = require('../../../utils/util.js');
 var app = getApp()
-// var url = 'https://jlmxcs.jlzn365.com'
+// var url = 'https://www.jlzn365.com'
 var url = 'https://www.jlzn365.com'
 Page({
 

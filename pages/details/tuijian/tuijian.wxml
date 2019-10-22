@@ -12,7 +12,7 @@
     </view>
     <view class='ewm'>
       <image src='https://www.jlzn365.com/app/user/getUserIdQr?userId={{userId}}'  mode="widthFix"></image>
-     <!-- <image src='https://jlmxcs.jlzn365.com/app/user/getUserIdQr?userId={{userId}}'  mode="widthFix"></image> -->
+     <!-- <image src='https://www.jlzn365.com/app/user/getUserIdQr?userId={{userId}}'  mode="widthFix"></image> -->
       <text class=' annotation'>（专属推广码）</text>
     </view>
   </view>

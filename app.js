@@ -8,8 +8,8 @@ App({
   
   globalData: {
     userInfo: null,
-    // imgUrl:"https://www.jlzn365.com:8585"
-    imgUrl: "https://www.jlzn365.com:8585"
+    // imgUrl:"http://www.jlzn365.com:8585"
+    imgUrl: "http://www.jlzn365.com:8585"
   }
   //  refresh: function () {
   //   var that = this;

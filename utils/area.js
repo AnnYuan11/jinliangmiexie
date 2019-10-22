@@ -5,21 +5,145 @@ var AreaJson = [
       {
         "name": "西安市",
         "area": [
-          "莲湖区",
-          "新城区",
-          "碑林区",
-          "雁塔区",
-          "灞桥区",
-          "未央区",
-          "阎良区",
-          "临潼区",
-          "长安区",
-          "高陵县",
-          "蓝田县",
-          "户县",
-          "周至县",
-          "杨凌农业示范区",
-          "其他"
+          {
+            "name": "莲湖区",
+            "village": [
+              "暂不选择",
+              "青年路街道",
+              "北院门街道",
+              "北关街道",
+              "红庙坡街道",
+              "环城西路街道",
+              "西关街道",
+              "土门街道",
+              "桃园路街道",
+              "枣园街道"
+            ]
+          },
+          {
+            "name": "新城区",
+            "village": [
+              "暂不选择",
+              "长乐西路街道",
+              "长乐中路街道",
+              "韩森寨街道",
+              "胡家庙街道",
+              "解放门街道",
+              "太华路街道",
+              "西一路街道",
+              "中山门街道",
+              "自强路街道"
+            ]
+          },
+          {
+            "name": "碑林区",
+            "village": [
+              "暂不选择",
+              "柏树林街道",
+              "长安路街道",
+              "长乐坊街道",
+              "东关南街街道",
+              "南院门街道",
+              "太乙路街道",
+              "文艺路街道",
+              "张家村街道"
+            ]
+          },
+          {
+            "name": "灞桥区",
+            "village": [
+              "暂不选择",
+              "灞桥街道",
+              "狄寨街道",
+              "纺织城街道",
+              "红旗街道",
+              "洪庆街道",
+              "十里铺街道",
+              "席王街道",
+              "新合街道",
+              "新筑街道"
+            ]
+          },
+          {
+            "name": "未央区",
+            "village": [
+              "暂不选择",
+              "草滩街道",
+              "大明宫街道",
+              "汉城街道",
+              "建章路街道",
+              "六村堡街道",
+              "三桥街道",
+              "谭家街道",
+              "未央宫街道",
+              "未央湖街道",
+              "辛家庙街道",
+              "徐家湾街道",
+              "张家堡街道"
+            ]
+          },
+          {
+            "name": "长安区",
+            "village": [
+              "暂不选择",
+              "大兆街道",
+              "东大街道",
+              "斗门街道",
+              "杜曲街道",
+              "高桥街道",
+              "郭杜街道",
+              "黄良街道",
+              "灵沼街道",
+              "滦镇街道",
+              "马王街道",
+              "鸣犊街道",
+              "炮里街道",
+              "太乙宫街道",
+              "王莽街道",
+              "王曲街道",
+              "王寺街道",
+              "韦曲街道",
+              "魏寨街道",
+              "五台街道",
+              "五星街道",
+              "细柳街道",
+              "兴隆街道",
+              "杨庄街道",
+              "引镇街道",
+              "子午街道"
+            ]
+          },
+          {
+            "name": "雁塔区",
+            "village": [
+              "暂不选择",
+              "长延堡街道",
+              "大雁塔街道",
+              "等驾坡街道",
+              "电子城街道",
+              "曲江街道",
+              "小寨路街道",
+              "鱼化寨街道",
+              "丈八沟街道"
+
+            ]
+          },
+
+          // "莲湖区",
+          // "新城区",
+          // "碑林区",
+          // "雁塔区",
+          // "灞桥区",
+          // "未央区",
+          // "阎良区",
+          // "临潼区",
+          // "长安区",
+          // "高陵县",
+          // "蓝田县",
+          // "户县",
+          // "周至县",
+          // "杨凌农业示范区",
+          // "其他"
         ]
       },
     ]
@@ -31,9 +155,9 @@ var AreaJson = [
 /**
  * 获取所有省份
  */
-function getProvinces(){
+function getProvinces() {
   var provinces = [];
-  for (var i = 0; i < AreaJson.length;i++){
+  for (var i = 0; i < AreaJson.length; i++) {
     provinces.push(AreaJson[i].name);
   }
   return provinces;
@@ -43,9 +167,9 @@ function getProvinces(){
 /**
  * 获取省对应的所有城市
  */
-function getCitys(provinceIndex){
+function getCitys(provinceIndex) {
   var citys = [];
-  for (var i = 0; i < AreaJson[provinceIndex].city.length;i++){
+  for (var i = 0; i < AreaJson[provinceIndex].city.length; i++) {
     citys.push(AreaJson[provinceIndex].city[i].name);
   }
   return citys;
@@ -54,16 +178,27 @@ function getCitys(provinceIndex){
 /**
  * 获取省市对应的所有地区
  */
-function getAreas(provinceIndex,cityIndex){
+function getAreas(provinceIndex, cityIndex) {
   var areas = [];
-  areas = AreaJson[provinceIndex].city[cityIndex].area;
+  for (var i = 0; i < AreaJson[provinceIndex].city[cityIndex].area.length; i++) {
+    areas.push(AreaJson[provinceIndex].city[cityIndex].area[i].name);
+  }
   return areas;
 }
+
+// 获取镇
+function getVillage(provinceIndex, cityIndex, areaIndex) {
+  var villages = [];
+  villages = AreaJson[provinceIndex].city[cityIndex].area[areaIndex].village;
+  return villages;
+}
+
 
 module.exports = {
   getProvinces: getProvinces,
   getCitys: getCitys,
-  getAreas: getAreas
+  getAreas: getAreas,
+  getVillage: getVillage
 }
 
 

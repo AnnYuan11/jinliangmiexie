@@ -126,7 +126,8 @@ Page({
           province: data.data.result.province,
           city: data.data.result.city,
           area: data.data.result.area,
-          address: data.data.result.address
+          address: data.data.result.address,
+          village: data.data.result.street
         })
     
 
@@ -187,7 +188,8 @@ Page({
           'province': that.data.province,
           'city': that.data.city,
           'area': that.data.area,
-          'id': that.data.id
+          'id': that.data.id,
+          'street': that.data.village
         },
         sCallBack: function (data) {
           console.log(data)
@@ -271,11 +273,23 @@ Page({
   sureSelectAreaListener: function (e) {
     var that = this;
     console.log(e)
+    if (e.detail.currentTarget.dataset.village == "" || e.detail.currentTarget.dataset.village == "暂不选择") {
+      that.setData({
+        village: '',
+
+      })
+    } else {
+      that.setData({
+        village: e.detail.currentTarget.dataset.village
+
+      })
+    }
     that.setData({
       show: false,
       province: e.detail.currentTarget.dataset.province,
       city: e.detail.currentTarget.dataset.city,
-      area: e.detail.currentTarget.dataset.area
+      area: e.detail.currentTarget.dataset.area,
+      // village: e.detail.currentTarget.dataset.village,
     })
   },
   cancleSelectAreaLis: function () {

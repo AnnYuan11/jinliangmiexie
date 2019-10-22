@@ -12,7 +12,7 @@
 <view class='bg_fc' wx:if="{{isYes}}">
   <view class='box'>
     <image src='{{imgUrl}}/image/sNew/hx.png' mode='widthFix' wx:if="{{imgUrl}}" style='width:465rpx;'></image>
-    <text>尊敬的用户，您的爱鞋订单已核销成功，请保持电话畅通等待配送人员上门取鞋</text>
+    <text>券码已验证完成，请填写订单信息</text>
     <button bindtap='sure'>下一步</button>
   </view> 
 </view>

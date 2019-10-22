@@ -34,3 +34,13 @@
 
 </view>
 
+<!-- 弹窗 -->
+<view class='t_flow'>
+  <view class='t_box'>
+  
+  <view class='t_img' bindtap='swidthTo'>
+    <image src='../../../image/details/tt.png' mode='widthFix'></image>
+  </view>
+ 
+  </view>
+</view>

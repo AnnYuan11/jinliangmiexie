@@ -91,5 +91,11 @@ Page({
       }
     }
     base.request(params);
+  },
+
+  swidthTo: function () {
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
   }
 })

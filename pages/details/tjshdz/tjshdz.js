@@ -12,17 +12,15 @@ Page({
     province: '',
     city: '',
     area: '',
+    village: '',
     show: false,
-    showAddress:true,
+    showAddress: true,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      imgUrl: app.globalData.imgUrl
-    })
     // this.addShdz();
   },
 
@@ -82,7 +80,7 @@ Page({
   //     province: e.detail.value[0],
   //     city: e.detail.value[1],
   //     area: e.detail.value[2]
-      
+
   //   })
   // },
   beizhu: function (e) {
@@ -96,7 +94,7 @@ Page({
     console.log('switch1 发生 change 事件，携带值为', e.detail.value)
   },
   // 添加收货地址
-  addShdz:function(e){
+  addShdz: function (e) {
     console.log(e)
     var that = this;
     var userId = wx.getStorageSync('userId');//wx.getStorageSync(key)，获取本地缓存
@@ -108,7 +106,7 @@ Page({
     var regx = /^1\d{10}$/;
     var dz = that.data.province
     console.log(dz)
-   if (e.detail.value.xm==""){
+    if (e.detail.value.xm == "") {
       wx.showToast({
         title: '请输入收货人姓名',
         icon: 'none',
@@ -128,21 +126,15 @@ Page({
         icon: 'none',
         duration: 1000
       })
-    } 
-    else if (dz == undefined || dz == ""){
-     wx.showToast({
-       title: '请选择您的地址',
-       icon: 'none',
-       duration: 1000,
-     })
-   } else if (that.data.address == '' || that.data.address == undefined){
-     wx.showToast({
-       title: '请输入您的详细地址',
-       icon: 'none',
-       duration: 1000,
-     })
-   }
-    else{
+    }
+    else if (dz == undefined || dz == "") {
+      wx.showToast({
+        title: '请选择您的地址',
+        icon: 'none',
+        duration: 1000,
+      })
+    }
+    else {
       var params = {
         url: '/app/user/addUserAddressInfo',
         method: 'POST',
@@ -153,7 +145,8 @@ Page({
           'userInfo.id': userId,
           'province': that.data.province,
           'city': that.data.city,
-          'area': that.data.area
+          'area': that.data.area,
+          'street': that.data.village
         },
         sCallBack: function (data) {
           console.log(data)
@@ -180,18 +173,30 @@ Page({
   sureSelectAreaListener: function (e) {
     var that = this;
     console.log(e)
+    if (e.detail.currentTarget.dataset.village == "" || e.detail.currentTarget.dataset.village=="暂不选择"){
+      that.setData({
+        village: '',
+      
+      })
+    }else{
+      that.setData({
+        village: e.detail.currentTarget.dataset.village
+
+      })
+    }
     that.setData({
       show: false,
       province: e.detail.currentTarget.dataset.province,
       city: e.detail.currentTarget.dataset.city,
       area: e.detail.currentTarget.dataset.area,
+      // village: e.detail.currentTarget.dataset.village,
       showAddress: true
     })
   },
-  cancleSelectAreaLis:function(){
+  cancleSelectAreaLis: function () {
     this.setData({
-        show:false
-      })
+      show: false
+    })
   },
   chooseAddress: function () {
     var that = this;

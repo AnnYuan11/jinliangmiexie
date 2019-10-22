@@ -93,11 +93,13 @@ Page({
         var pinglun = data.data.result;
         var imgUrl = that.data.imgUrl;
         for (var i = 0; i < pinglun.length; i++) {
-          if (pinglun[i].photo==''){
-            pinglun[i].photo = '[]';
+          // if (pinglun[i].photo==''){
+          //   pinglun[i].photo = '[]';
+          // }
+          if (pinglun[i].photo != '[]') {
+            var img = JSON.parse(pinglun[i].photo);
+            pinglun[i].img = img;
           }
-          var img = JSON.parse(pinglun[i].photo);
-          pinglun[i].img = img;
           var nickName = pinglun[i].userInfo.nickName.substr(5, 16);
           var nickNames = nickName.replace(nickName.substring(3, 7), "****")
           pinglun[i].userInfo.nickName = nickNames;

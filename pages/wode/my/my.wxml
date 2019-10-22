@@ -68,12 +68,12 @@
         <text>地址管理</text>
       </view>
     </navigator>
-    <navigator url="/pages/details/wyjx/wyjx" hover-class="none">
+    <!-- <navigator url="/pages/details/wyjx/wyjx" hover-class="none"> -->
       <view class='item_lix'>
         <image src='/image/my_new/axjx.png' style="width:78rpx;"mode='widthFix'></image>
         <text>爱心捐鞋</text>
       </view>
-    </navigator>
+    <!-- </navigator> -->
     <navigator url="/pages/details/bzzx/bzzx" hover-class="none">
       <view class='item_lix'>
         <image src='/image/my_new/bzzx.png' style="width:78rpx;"mode='widthFix'></image>

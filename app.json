@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/details/yyps/yyps",
     "pages/details/mthx_hx/mthx_hx",
     "pages/details/pingjia/pingjia",
     "pages/wode/my/my",
@@ -19,7 +20,6 @@
     "pages/details/wdxjlb/wdxjlb",
     "pages/details/tuijian/tuijian",
     "pages/login/login",
-    "pages/details/yyps/yyps",
     "pages/details/fjzd/fjzd",
     "pages/details/fapiao/fapiao",
     "pages/details/selectdz2/selectdz2",

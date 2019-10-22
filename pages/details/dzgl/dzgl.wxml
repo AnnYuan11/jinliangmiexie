@@ -5,7 +5,7 @@
       <text class='name'>{{item.name}}</text>
       <text class='num'>{{item.phone}}</text>
     </view>
-    <view class='address'>{{item.province}}{{item.city}}{{item.area}}{{item.address}}</view>
+    <view class='address'>{{item.province}}{{item.city}}{{item.area}}{{item.street}}{{item.address}}</view>
     <view class='xian'></view>
     <view class='dzgl'>
       <!-- <icon  type="success" color='#47DA7B'size="16" bindtap="bindCheckbox" data-index="{{index}}" class="my-check"/>  -->

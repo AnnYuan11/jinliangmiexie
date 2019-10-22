@@ -38,3 +38,23 @@
   font-weight:800;
   color:rgba(102,102,102,1);
 }
+/* 弹窗 */
+.t_flow{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999999999;
+}
+.t_box{
+  width:80%;
+  margin:0 auto;
+  margin-top:35%;
+
+}
+.t_img image{
+  width:100%;
+  display: block;
+  margin: 0 auto;
+}

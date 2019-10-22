@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // imgUrl: "http://jlmxcs.jlzn365.com:8585/"
+    // imgUrl: "http://www.jlzn365.com:8585/"
     imgUrl: "http://www.jlzn365.com:8585/"
    
   },

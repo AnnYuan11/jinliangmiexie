@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="49fdc93b-d76a-416f-98aa-323a90b3ca1f" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Component/nyz_area_picker/nyz_area_picker.js" beforeDir="false" afterPath="$PROJECT_DIR$/Component/nyz_area_picker/nyz_area_picker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Component/nyz_area_picker/nyz_area_picker.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/Component/nyz_area_picker/nyz_area_picker.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/details/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/image/details/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/crxg/wyxx/wyxx.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/crxg/wyxx/wyxx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/crxg/wyxx_crxg/wyxx_crxg.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/crxg/wyxx_crxg/wyxx_crxg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/crxg/wyxx_crxg/wyxx_crxg.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/crxg/wyxx_crxg/wyxx_crxg.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/crxg/wyxx_crxg/wyxx_crxg.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/crxg/wyxx_crxg/wyxx_crxg.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/crxg/xiuxie/xiuxie.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/crxg/xiuxie/xiuxie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/crxg/xiuxie/xiuxie.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/crxg/xiuxie/xiuxie.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/crxg/xiuxie/xiuxie.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/crxg/xiuxie/xiuxie.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/bjshdz/bjshdz.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/bjshdz/bjshdz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/bjshdz/bjshdz.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/bjshdz/bjshdz.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/chongzhi/chongzhi.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/chongzhi/chongzhi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/dingdan_new/dingdan_new.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/dingdan_new/dingdan_new.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/dzgl/dzgl.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/dzgl/dzgl.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/jbdh/jbdh.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/jbdh/jbdh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/mthx/mthx.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/mthx/mthx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/mthx/mthx.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/mthx/mthx.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/mthx_hx/mthx_hx.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/mthx_hx/mthx_hx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/pingjia/pingjia.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/pingjia/pingjia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/pllb/pllb.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/pllb/pllb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/selectdz/selectdz.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/selectdz/selectdz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/selectdz/selectdz.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/selectdz/selectdz.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/selectdz2/selectdz2.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/selectdz2/selectdz2.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/selectdz3/selectdz3.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/selectdz3/selectdz3.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/tjshdz/tjshdz.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/tjshdz/tjshdz.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/tjshdz/tjshdz.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/tjshdz/tjshdz.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/tuijian/tuijian.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/tuijian/tuijian.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/wdxjlb/wdxjlb.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/wdxjlb/wdxjlb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/wdyq/wdyq.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/wdyq/wdyq.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/wyxx/wyxx.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/wyxx/wyxx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/wyxx_crxg/wyxx_crxg.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/wyxx_crxg/wyxx_crxg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/wyxx_new/wyxx_new.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/wyxx_new/wyxx_new.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/wyxx_smqx/wyxx_smqx.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/wyxx_smqx/wyxx_smqx.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/xiuxie/xiuxie.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/xiuxie/xiuxie.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/details/yyps/yyps.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/details/yyps/yyps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/dingdan/order/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dingdan/order/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/wode/my/my.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wode/my/my.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/area.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/area.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/request/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/request/config.js" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>https://jlmxcs.jlzn365.com</find>
+      <find>http://jlmxcs.jlzn365.com:8585</find>
+      <find>http://www.jlzn365.com:8585</find>
+      <find>https://www.jlzn365.com:8585</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>https://www.jlzn365.com</replace>
+      <replace>https://www.jlzn365.com:8585</replace>
+      <replace>http://www.jlzn365.com:8585</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>C:\Users\Lenovo\Desktop\fengchaocs\fengchao</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/app.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="7" />
+    <option name="y" value="200" />
+    <option name="width" value="1400" />
+    <option name="height" value="776" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="D:/nodejs/node" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="49fdc93b-d76a-416f-98aa-323a90b3ca1f" name="Default" comment="" />
+      <created>1571045738093</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1571045738093</updated>
+      <workItem from="1571045740574" duration="2486000" />
+    </task>
+    <task id="LOCAL-00001" summary="1015">
+      <created>1571110367095</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571110367095</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="2486000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17917548" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.5005285" side_tool="true" weight="0.60560095" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" sideWeight="0.49947146" visible="true" weight="0.60560095" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1015" />
+    <option name="LAST_COMMIT_MESSAGE" value="1015" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

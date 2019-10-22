@@ -4,7 +4,7 @@
 <view class="nyz_area_view {{show ? 'show':'hide'}}">
   <view class="nyz_area_view_btns">
     <text class="nyz_area_view_btn_cancle" bindtap="handleNYZAreaCancle">取消</text>
-    <text class="nyz_area_view_btn_sure" bindtap="handleNYZAreaSelect" data-province="{{province}}" data-city="{{city}}" data-area="{{area}}">确定</text>
+    <text class="nyz_area_view_btn_sure" bindtap="handleNYZAreaSelect" data-province="{{province}}" data-city="{{city}}" data-area="{{area}}" data-village="{{village}}">确定</text>
   </view>
   <picker-view class="nyz_area_pick_view" indicator-style="height: 35px;" bindchange="handleNYZAreaChange" value="{{value}}">
     <picker-view-column>
@@ -15,6 +15,9 @@
     </picker-view-column>
     <picker-view-column>
       <view class="nyz_area_colum_view" wx:for="{{areas}}">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view class="nyz_area_colum_view" wx:for="{{villages}}">{{item}}</view>
     </picker-view-column>
   </picker-view>
 </view>

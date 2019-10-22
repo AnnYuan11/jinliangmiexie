@@ -11,7 +11,7 @@
     </picker> -->
       <view bindtap='chooseAddress' style='width:100%;'>
         <text class='picker'>所选地址：</text>
-        <text class='picker'>{{province == ''?'选择地址':province + '-' + city + '-' + area}}</text>
+        <text class='picker'>{{province == ''?'选择地址':province + '-' + city + '-' + area + '-'+ village}}</text>
         </view>
       <nyz_area_picker show="{{show}}" bind:sureSelectArea="sureSelectAreaListener" bind:cancleSelectArea="cancleSelectAreaLis"></nyz_area_picker>
     </view>

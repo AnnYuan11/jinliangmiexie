@@ -31,7 +31,7 @@
     </view>
   </view>
 </navigator>
-<navigator url='../wyxx/wyxx?id={{list[3].id}}&menuMoney={{list[3].menuMoney}}&shoeNumber={{list[3].shoeNumber}}' hover-class="none" >
+<!-- <navigator url='../wyxx/wyxx?id={{list[3].id}}&menuMoney={{list[3].menuMoney}}&shoeNumber={{list[3].shoeNumber}}' hover-class="none" >
   <view class='order'>
     <image src='{{imgUrl}}/image/spay/4.png' wx:if="{{imgUrl}}"mode="widthFix"></image>
     <view class='m_box'>
@@ -39,7 +39,7 @@
       <text class='dollar'>${{list[3].menuMoney}}</text>
     </view>
   </view>
-</navigator>
+</navigator> -->
 <navigator url='../wyxx/wyxx?id={{list[4].id}}&menuMoney={{list[4].menuMoney}}&shoeNumber={{list[4].shoeNumber}}' hover-class="none" >
   <view class='order'>
     <image src='{{imgUrl}}/image/spay/5.png'wx:if="{{imgUrl}}" mode="widthFix"></image>
