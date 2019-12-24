@@ -1,5 +1,5 @@
 <!--pages/details/wdqy/wdqy.wxml-->
-<view class='bg'>
+<!-- <view class='bg'>
   <image src='{{imgUrl}}/image/details/wdqy.png' mode='widthFix' wx:if="{{imgUrl}}" style='width:715rpx;'></image>
   <view class='name'>
      <open-data class="head" type="userAvatarUrl" style="border-radius:50%;overflow:hidden;display:block;width:130rpx;height:130rpx;"></open-data>
@@ -48,4 +48,7 @@
     三级会员：消费¥1元【+1.5积分】
   </text>
  
+</view> -->
+<view>
+  <image src='{{imgUrl}}/image/details/111.jpg' wx:if="{{imgUrl}}"mode="widthFix"style="width:100%"></image>
 </view>

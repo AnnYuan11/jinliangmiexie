@@ -1,9 +1,12 @@
 /* pages/details/wdyq/wdyq.wxss */
 page{
-  background:-webkit-linear-gradient(0deg, #46da7a, #41eac0);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 .bg{
   width: 100%;
+  height: 100vh;
 }
 .ewm_box{
   position: relative;
@@ -17,16 +20,12 @@ page{
   margin: auto;
 }
 .ewm{
-  width: 80%;
+  width: 103%;
   position: absolute;
-  top: 20%;
-  left: 0;
-  right: 0;
-  margin: auto;
-  text-align: center;
+  top: 40%;
 }
 .ewm image{
-  width: 400rpx;
+  width: 300rpx;
 }
 .ewm text{
   display: block;

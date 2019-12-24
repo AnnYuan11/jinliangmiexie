@@ -3,7 +3,7 @@ import { Base } from "../../../utils/request/base.js";
 var base = new Base();
 var util = require('../../../utils/util.js');
 var app = getApp();
-var url = 'https://www.jlzn365.com'
+var url = 'https://jlmxcs.jlzn365.com'
 Page({
 
   /**
@@ -34,11 +34,13 @@ Page({
 
   },
 
-  /**
+  /* 
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    console.log("1111111")
     this.list();
+    this.zbdd()
   },
 
   /**
@@ -108,8 +110,8 @@ Page({
               orderStatusTotal = "待审核"
             }
             orderType = "修鞋订单"
-          } else if (orderType == "3"){
-            orderType = "增补订单"
+          } else{
+            orderType = "洗鞋订单"
           }
         
           var takeShoeType = list[i].takeShoeType;
@@ -118,7 +120,6 @@ Page({
           } else {
             takeShoeType = "上门取鞋"
           }
-        
          
           if (orderStatusTotal == "1") {
             orderStatusTotal = "待取货"
@@ -138,14 +139,12 @@ Page({
           } else if (orderStatusTotal == "0") {
             orderStatusTotal = "已失效"
           }
-          
           list[i].orderStatusTotal = orderStatusTotal;
           list[i].takeShoeType = takeShoeType;
           list[i].orderType = orderType;
         }
         that.setData({
           list: list
-          
         })
       },
       eCallBack: function () {
@@ -153,6 +152,81 @@ Page({
     }
     base.request(params);
   },
+  // 增补订单
+  zbdd:function(){
+    var that = this;
+    // 获取userID
+    var userId = wx.getStorageSync('userId');
+    var params = {
+      url: '/app/orderV3/listWashOrderInfoV3Zb',
+      method: 'POST',
+      data: {
+        'pageIndex': 1,
+        'pageSize': 1000000,
+        'userInfo.id': userId
+      },
+      sCallBack: function (data) {
+        console.log(data)
+        var lists = data.data.result;
+        for (var i = 0; i < lists.length; i++) {
+          var orderType = lists[i].orderType;
+          var authStatus = lists[i].authStatus;
+          var paymentStatus = lists[i].paymentStatus;
+          var orderStatus = lists[i].orderStatus;
+
+          if (orderType == "3") {
+            orderType = "增补订单"
+          } 
+          if (paymentStatus == 0) {
+            orderStatus = "待支付"
+          } 
+           
+          var takeShoeType = lists[i].takeShoeType;
+          if (takeShoeType == "1") {
+            takeShoeType = "存入鞋柜"
+          } else {
+            takeShoeType = "上门取鞋"
+          }
+
+          if (orderStatus == "1") {
+            orderStatus = "待取货"
+          } else if (orderStatus == "2") {
+            orderStatus = "已取货"
+          } else if (orderStatus == "3") {
+            orderStatus = "清洗中"
+          } else if (orderStatus == "4") {
+            orderStatus = "配送中"
+          } else if (orderStatus == "5") {
+            orderStatus = "已送达"
+          }
+          else if (orderStatus == "6") {
+            orderStatus = "已完成"
+          } else if (orderStatus == "7") {
+            orderStatus = "已评价"
+          } else if (orderStatus == "0") {
+            orderStatus = "已失效"
+          }
+          lists[i].orderStatus = orderStatus;
+          lists[i].takeShoeType = takeShoeType;
+          lists[i].orderType = orderType;
+        }
+        // that.data.list1.push.apply(that.data.list1, lists);
+        // console.log(that.data.list1)
+        
+        that.setData({
+          
+          lists:lists
+        })
+        console.log(that.data.list)
+      },
+      eCallBack: function () {
+      }
+    }
+    base.request(params);
+  },
+
+
+
   // 支付
   surePay:function(e){
     var that = this;
@@ -161,11 +235,13 @@ Page({
       showzf:true,
       id:e.currentTarget.dataset.id,
       menuMoney: e.currentTarget.dataset.money,
-      orderNumber: e.currentTarget.dataset.ordernumber
+      orderNumber: e.currentTarget.dataset.ordernumber,
+      types: e.currentTarget.dataset.types
     })
   },
   surePay2: function () {
     var that = this;
+    that.refresh();
     var type = that.data.type;
     console.log(type);
     if (type == "1") {
@@ -188,41 +264,94 @@ Page({
     that.setData({
       showzf: false,
     })
-    console.log( that.data.id)
-    var params = {
-      url: '/app/orderV3/updateWashOrderInfoStatusPay',
-      method: 'POST',
-      data: {
-        'connectNumber': that.data.id,
-      },
-      sCallBack: function (data) {
-        console.log(data)
-        that.setData({
-          showzf: false,
-        })
-        if (data.data.errorCode == "0") {
-          // that.success();
-          wx.showToast({
-            title: '已支付成功，请耐心等待您的美鞋！',
-            icon: 'none',
-            duration: 3000,
-            success: function () {
-              setTimeout(function () {
-                that.onLoad();
-              }, 3000);
+    if (that.data.types=="4"){
+      var params = {
+        url: '/app/orderV3/updateWashOrderInfoStatusZbYePay',
+        method: 'POST',
+        data: {
+          'orderNumber': that.data.orderNumber,
+        },
+        sCallBack: function (data) {
+          console.log(data)
+          that.setData({
+            showzf: false,
+          })
+          if (data.data.errorCode == "0") {
+            // that.success();
+              //  debugger
+            wx.showToast({
+              title: '已支付成功，请耐心等待您的美鞋！',
+              icon: 'none',
+              duration: 2000,
+              success: function () {
+                that.onShow()
+                // setTimeout(function () {
+                 
+                // }, 2000);
 
-            }
-          })
-        } else {
-          wx.showToast({
-            icon: 'none',
-            title: data.data.errorMsg,
-          })
+              }
+            })
+          } else {
+            // debugger
+            wx.showToast({
+              icon: 'none',
+              title: data.data.errorMsg,
+              duration: 2000,
+              success: function () {
+                that.onShow()
+                // setTimeout(function () {
+                  
+                // }, 2000);
+
+              }
+            })
+          }
+        },
+        eCallBack: function () {
         }
-      },
-      eCallBack: function () {
       }
-    }
+    }else{
+      var params = {
+        url: '/app/orderV3/updateWashOrderInfoStatusPay',
+        method: 'POST',
+        data: {
+          'connectNumber': that.data.id,
+        },
+        sCallBack: function (data) {
+          // debugger
+          console.log(data)
+          that.setData({
+            showzf: false,
+          })
+          if (data.data.errorCode == "0") {
+            // that.success();
+                
+            wx.showToast({
+              title: '已支付成功，请耐心等待您的美鞋！',
+              icon: 'none',
+              duration: 3000,
+              success: function () {
+                // debugger;
+                that.onShow()
+                // that.onshow()
+                // setTimeout(function () {
+                 
+                // }, 3000);
+
+              }
+            })
+          } else {
+            wx.showToast({
+              icon: 'none',
+              title: data.data.errorMsg,
+            })
+          }
+        },
+        eCallBack: function () {
+        }
+      }
+
+    }   
     base.request(params);
 
   },
@@ -233,12 +362,14 @@ Page({
     console.log(orderNumber)
     var openId = that.data.openId;
     console.log(openId)
+    var types = that.data.types
+    console.log(types)
     var params = {
       url: '/payment/getOrderStr',
       method: 'POST',
       data: {
         'openId': openId,
-        'type': 2,
+        'type': types,
         'orderNumber': that.data.orderNumber,
         'price': that.data.menuMoney
         // 'price': 0.01
@@ -263,9 +394,12 @@ Page({
                 icon: 'none',
                 duration: 3000,
                 success: function () {
-                  setTimeout(function () {
-                    that.onLoad();
-                  }, 3000);
+                  // this.list();
+                  this.zbdd()
+
+                  // setTimeout(function () {
+                   
+                  // }, 3000);
 
                 }
               })

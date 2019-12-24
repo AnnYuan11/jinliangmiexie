@@ -29,13 +29,13 @@
           <text>{{list.money}}</text>
         </view>
       </navigator>    
-        <view class='my_line'></view>
+        <!-- <view class='my_line'></view>
       <navigator url="../../details/wdyhq2/wdyhq2" hover-class="none">
         <view class='my_message'>
           <text>优惠券</text>
           <text>30</text>
         </view>
-      </navigator>
+      </navigator> -->
         <view class='my_line'></view>
       <navigator url="../../details/wdjf/wdjf" hover-class="none">
         <view class='my_message'>

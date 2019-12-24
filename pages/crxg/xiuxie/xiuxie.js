@@ -1,8 +1,8 @@
 // pages/crxg/xiuxie/xiuxie.js
 import { Base } from "../../../utils/request/base.js";
 var base = new Base();
-// var url = 'https://www.jlzn365.com'
-var url = 'https://www.jlzn365.com'
+// var url = 'https://jlmxcs.jlzn365.com'
+var url = 'https://jlmxcs.jlzn365.com'
 var util = require('../../../utils/util.js');
 var app = getApp()
 Page({
@@ -32,10 +32,14 @@ Page({
       this.data.num = 1;
     }
     this.setData({
-      dizhi: options.address,
+      address: options.address,
       imgUrl: imgUrl,
-      equipmentInfoId: options.equipmentInfoId
+      equipmentInfoId: options.equipmentInfoId,
+      dizhi:options.dizhi,
+      phone:options.phone,
+      dzid: options.dzid
     })
+    console.log(this.data.address)
     this.mapViewTap();
   },
   // 附近站点
@@ -262,15 +266,8 @@ Page({
    
     var arr = JSON.stringify(that.data.arr)
     var regx = /^1(3|4|5|7|8|9)\d{9}$/;
-    var phone = e.detail.value.phone;
-    if (phone == "" || phone == null || phone == undefined) {
-      wx.showToast({
-        title: '请输入您的手机号码',
-        icon: 'none',
-        duration: 2000
-      })
-      return;
-    }
+   
+   
     if (arr == "[]" || arr == null || arr == undefined) {
       wx.showToast({
         title: '请上传您鞋子的照片',
@@ -279,14 +276,7 @@ Page({
       })
       return;
     }
-    else if (phone.length < 11 || !regx.test(phone) || phone.length > 11) {
-      wx.showToast({
-        title: '请输入正确的手机号',
-        icon: 'none',
-        duration: 2000
-      })
-      return;
-    }else{
+   else{
       if (that.data.equipmentInfoId) {
         var userId = wx.getStorageSync('userId');//wx.getStorageSync(key)，获取本地缓存
         console.log(userId)
@@ -304,7 +294,7 @@ Page({
             'takeShoeType': 1,
             'beforePhoto': arr,
             'shoesNumber': that.data.num,
-            'userPhone':phone
+            'userAddressInfo.id': that.data.dzid,
           },
           sCallBack: function (res) {
             console.log(res)
@@ -330,9 +320,9 @@ Page({
       }
     }
   },
-  swidthTo: function () {
-    wx.switchTab({
-      url: '/pages/index/index',
-    })
-  }
+  // swidthTo: function () {
+  //   wx.switchTab({
+  //     url: '/pages/index/index',
+  //   })
+  // }
 })

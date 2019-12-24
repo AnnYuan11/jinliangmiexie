@@ -6,7 +6,7 @@
         <text class='left'>订单编号：</text>
         <text class='right'>{{list.connectNumber}}</text>
       </view>
-      <view class='list'>
+      <view class='list' wx:if="{{lx!='1'}}">
         <text class='left'>订单状态：</text>
         <text class='right'>{{list.orderStatusTotal}}</text>
       </view>
@@ -25,11 +25,19 @@
         <text class='left'>订单类型：</text>
         <text class='right'>{{list.orderType}}-{{list.takeShoeType}}</text>
       </view>
-      <view class='list'>
+      <view class='list' wx:if="{{lx!='1'}}">
         <text class='left'>订单数量：</text>
         <text class='right'>{{list.shoesNumberTotal}}双</text>
       </view>
-      <view class='list'>
+      <view class='list' wx:if="{{lx=='1'}}">
+        <text class='left'>维修费用：</text>
+        <text class='right'>{{list.paymentMoney}}元</text>
+      </view>
+      <view class='list' wx:if="{{lx=='1'}}">
+        <text class='left'>维修备注：</text>
+        <text class='right'>{{list.repairRemark}}</text>
+      </view>
+      <view class='list' wx:if="{{lx!='1'}}">
         <text class='left'>实付款：</text>
         <text class='right'>{{list.totalMoney}}元</text>
       </view>
@@ -41,9 +49,19 @@
       </view>
       <view class='list'>
         <text class='left'>订单手机号：</text>
-        <text class='right'>{{list.userAddressInfo.phone}}</text>
-        <text class='right'>{{list.userPhone}}</text>
+        <text class='right'  wx:if="{{list.userAddressInfo.phone}}">{{list.userAddressInfo.phone}}</text>
+        <text class='right' wx:if="{{list.userPhone}}">{{list.userPhone}}</text>
       </view>
+      <!-- <view class='list'>
+        <text class='left'>快递员姓名：</text>
+        <text class='right'>安安</text>
+       
+      </view>
+      <view class='list'>
+        <text class='left'>快递员手机号：</text>
+        <text class='right'>13522220000</text>
+       
+      </view> -->
       <view class='list'>
         <text class='left'>地址：</text>
         <text class='right'>{{list.userAddressInfo.province}}{{list.userAddressInfo.city}}{{list.userAddressInfo.area}}{{list.userAddressInfo.address}}</text>

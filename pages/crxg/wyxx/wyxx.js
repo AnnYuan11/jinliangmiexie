@@ -2,7 +2,7 @@
 import { Base } from "../../../utils/request/base.js";
 var base = new Base();
 var util = require('../../../utils/util.js');
-var url = 'https://www.jlzn365.com'
+var url = 'https://jlmxcs.jlzn365.com'
 var app = getApp()
 Page({
 
@@ -22,24 +22,23 @@ Page({
       imgUrl: app.globalData.imgUrl
     })
     console.log(options)
-    var dizhis = options.dizhi;
-    if (dizhis) {
-      dizhis = options.dizhi.substring(dizhis.length - 9)
-    }
-    this.setData({
+        this.setData({
       options: options,
       id: options.id,
       menuMoney: options.menuMoney,
-      dizhi: options.address,
+      address: options.address,
       shoeNumber: options.shoeNumber,
       equipmentInfoId: options.equipmentInfoId,
+      dizhi: options.dizhi,
+      phone:options.phone,
+      dzid: options.dzid
 
     })
 
     this.setData({
       imgUrl: app.globalData.imgUrl
     })
-    this.mapViewTap();
+  
     // 账户余额
     this.refresh();
     // 获取openid
@@ -60,7 +59,6 @@ Page({
     wx.getStorage({
       key: 'userId',
       success: function (res) {
-        console.log(res.data)
        
       }
     })
@@ -78,8 +76,9 @@ Page({
    */
 
   onUnload: function () {
-    var that = this;
-
+    // wx.redirectTo({
+    //   url: '/pages/crxg/wyxx_crxg/wyxx_crxg',//指定界面
+    // })
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
@@ -110,45 +109,7 @@ Page({
   },
 
 
-  // 附近站点
-  mapViewTap: function () {
-    var that = this;
-    setTimeout(() => {
-      wx.getLocation({
-        type: 'gcj02',
-        success(res) {
-          console.log(res)
-          const latitude = res.latitude
-          const longitude = res.longitude
-          const speed = res.speed
-          const accuracy = res.accuracy
-          that.setData({
-            latitude: res.latitude,
-            longitude: res.longitude
-          })
-          that.list();
-        },
-        fail(er) {
-          var params = {
-            url: '/app/user/listEquipmentInfoByDistance',
-            method: 'POST',
-            data: {
-
-            },
-            sCallBack: function (data) {
-              console.log(data)
-              that.setData({
-                list: data.data.result,
-              })
-            },
-            eCallBack: function () { }
-          }
-          base.request(params);
-        }
-      })
-    }, 1000)
-
-  },
+  
   list: function () {
     var that = this;
     var params = {
@@ -170,11 +131,7 @@ Page({
     }
     base.request(params);
   },
-  fjzd: function () {
-    wx.navigateTo({
-      url: '/pages/details/fjzd3/fjzd3',
-    })
-  },
+  
 
   // 支付方式选择
   radioChange(e) {
@@ -332,26 +289,7 @@ Page({
   submit: function (e) {
     console.log(e)
     var userId = wx.getStorageSync('userId');//wx.getStorageSync(key)，获取本地缓存
- 
     var that = this;
-    var regx = /^1(3|4|5|7|8|9)\d{9}$/;
-    var phone = e.detail.value.phone;
-    if (phone == "" || phone == null || phone == undefined) {
-      wx.showToast({
-        title: '请输入您的手机号码',
-        icon: 'none',
-        duration: 2000
-      })
-      return;
-    }
-    else if (phone.length < 11 || !regx.test(phone) || phone.length > 11) {
-      wx.showToast({
-        title: '请输入正确的手机号',
-        icon: 'none',
-        duration: 2000
-      })
-      return;
-    }else{
       if (that.data.equipmentInfoId) {       
         console.log(userId)
         if (userId == undefined || userId == "") {
@@ -379,7 +317,7 @@ Page({
             'userInfo.id': userId,
             'remark': that.data.remark,
             'orderType': 1,
-            'userPhone': phone
+            'userAddressInfo.id': that.data.dzid,
           },
           sCallBack: function (res) {
             console.log(res)
@@ -400,7 +338,7 @@ Page({
           icon: 'none'
         })
       }
-    }
+    
    
 
   },

@@ -122,7 +122,8 @@ Page({
         icon:'none',
         duration:1000
       })
-    }else{
+    }
+    else{
       var params = {
         url: '/app/user/deleteUserAddressInfo',
         method: 'POST',

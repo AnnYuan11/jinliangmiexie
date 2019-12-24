@@ -29,7 +29,9 @@ Page({
       types:options.types,
       num:options.num,
       name:options.name,
-      receiptCode: options.receiptCode
+      receiptCode: options.receiptCode,
+      equipmentInfoId: options.equipmentInfoId,
+      address_dizhi: options.address
     })
     // console.log(that.data.num)
   },
@@ -153,7 +155,9 @@ Page({
     var num = that.data.num;
     var names = e.currentTarget.dataset.name;
     var receiptCode = that.data.receiptCode;
-    var name = that.data.name
+    var name = that.data.name;
+    var equipmentInfoId = that.data.equipmentInfoId
+    var address_dizhi = that.data.address_dizhi
     console.log(types)
     if(types==1){
       wx.redirectTo({
@@ -162,6 +166,14 @@ Page({
     } else if (types == 2){
       wx.redirectTo({
         url: '/pages/details/mthx_hx/mthx_hx?&dizhi=' + dizhi + '&names=' + names + '&phone=' + phone + '&dzid=' + dzid + '&name=' + name + '&receiptCode=' + receiptCode,
+      })
+    } else if (types == 3) {
+      wx.redirectTo({
+        url: '/pages/crxg/wyxx/wyxx?&dizhi=' + dizhi + '&menuMoney=' + menuMoney + '&shoeNumber=' + shoeNumber + '&phone=' + phone + '&equipmentInfoId=' + equipmentInfoId + '&address=' + address_dizhi + '&dzid=' + dzid 
+      })
+    } else if (types == 4) {
+      wx.redirectTo({
+        url: '/pages/crxg/xiuxie/xiuxie?&dizhi=' + dizhi + '&num=' + num + '&phone=' + phone + '&dzid=' + dzid + '&equipmentInfoId=' + equipmentInfoId + '&address=' + address_dizhi ,
       })
     }
     else{

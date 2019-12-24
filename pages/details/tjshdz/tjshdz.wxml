@@ -1,7 +1,7 @@
 <!--pages/details/tjshdz/tjshdz.wxml-->
 <form bindsubmit='addShdz'>
 <view class='content'>
-  <input placeholder="收货人名称" placeholder-class="default" name="xm"/>
+  <input placeholder="收货人名称(实名制)" placeholder-class="default" name="xm"/>
   <input placeholder="手机号码" placeholder-class="default" name="phone"/>
   <view class="section"> 
     <!-- <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">

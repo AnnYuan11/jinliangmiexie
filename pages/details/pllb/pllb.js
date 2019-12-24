@@ -9,8 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgArr:[
-     
+    imgArr: [
+
     ],
     page: 1, //页码
     size: 10, //每页多少条数据
@@ -93,13 +93,12 @@ Page({
         var pinglun = data.data.result;
         var imgUrl = that.data.imgUrl;
         for (var i = 0; i < pinglun.length; i++) {
-          // if (pinglun[i].photo==''){
-          //   pinglun[i].photo = '[]';
+        
+          // if (pinglun[i].photo == '[]') {
+          //   pinglun[i].photo = '';
           // }
-          if (pinglun[i].photo != '[]') {
-            var img = JSON.parse(pinglun[i].photo);
-            pinglun[i].img = img;
-          }
+          var img = JSON.parse(pinglun[i].photo);
+          pinglun[i].img = img;
           var nickName = pinglun[i].userInfo.nickName.substr(5, 16);
           var nickNames = nickName.replace(nickName.substring(3, 7), "****")
           pinglun[i].userInfo.nickName = nickNames;
@@ -111,16 +110,16 @@ Page({
             pinglun: pinglun,
             imgArr: pinglun[i].img
           })
-           wx.hideLoading()
+          wx.hideLoading()
+          // var imgUrl = that.data.imgUrl
+          // var imgArr = that.data.imgArr
           // console.log(that.data.imgArr)
-          var imgUrl = that.data.imgUrl
-          var imgArr = that.data.imgArr
-          imgArr[i] = (imgUrl + imgArr[i]);
-            
+          // imgArr[i] = (imgUrl + imgArr[i]);
+
         }
-        that.setData({
-          imgArr: imgArr
-        })
+        // that.setData({
+        //   imgArr: imgArr
+        // })
         // console.log(that.data.imgArr)
       },
       eCallBack: function () {
@@ -129,7 +128,7 @@ Page({
     base.request(params);
   },
 
-// 下拉加载
+  // 下拉加载
   onReachBottom: function () {
     var that = this;
     // 显示加载图标
@@ -178,14 +177,14 @@ Page({
           })
           wx.hideLoading()
           // console.log(that.data.imgArr)
-          var imgUrl = that.data.imgUrl
-          var imgArr = that.data.imgArr
-          imgArr[i] = (imgUrl + imgArr[i]);
+          // var imgUrl = that.data.imgUrl
+          // var imgArr = that.data.imgArr
+          // imgArr[i] = (imgUrl + imgArr[i]);
 
         }
-        that.setData({
-          imgArr: imgArr
-        })
+        // that.setData({
+        //   imgArr: imgArr
+        // })
         // console.log(that.data.imgArr)
       },
       eCallBack: function () {
@@ -196,36 +195,18 @@ Page({
   },
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // 图片预览
   previewImg: function (e) {
     console.log(e)
     var index = e.currentTarget.dataset.index;
     var imgUrl = this.data.imgUrl;
     var lists = e.currentTarget.dataset.list;
-    for(var i = 0;i<lists.length;i++){
-      lists[i] = imgUrl + '/'+lists[i]
+    for (var i = 0; i < lists.length; i++) {
+      lists[i] = imgUrl +'/'+ lists[i]
       console.log(lists)
     }
     this.setData({
-      lists:lists
+      lists: lists
     })
     wx.previewImage({
       current: e.currentTarget.dataset.src,//当前图片地址

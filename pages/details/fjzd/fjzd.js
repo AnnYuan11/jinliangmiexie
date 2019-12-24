@@ -21,10 +21,10 @@ Page({
       imgUrl: app.globalData.imgUrl
     })
     this.setData({
-      menuMoney: options.menuMoney,
-      shoeNumber: options.shoeNumber,
-      id:options.id,
-      num:options.num,
+      // menuMoney: options.menuMoney,
+      // shoeNumber: options.shoeNumber,
+      // id:options.id,
+      // num:options.num,
       types:options.types
      
     })
@@ -153,11 +153,13 @@ Page({
     var num = that.data.num
     if(types==1){
       wx.redirectTo({
-        url: '/pages/crxg/xiuxie/xiuxie?equipmentInfoId=' + equipmentInfoId + '&address=' + address + '&num=' + num
+        url: '/pages/crxg/xiuxie/xiuxie?equipmentInfoId=' + equipmentInfoId + '&address=' + address
+        // url: '/pages/crxg/xiuxie/xiuxie?equipmentInfoId=' + equipmentInfoId + '&address=' + address + '&num=' + num
       })
     }else{
-      wx.redirectTo({
-        url: '/pages/crxg/wyxx/wyxx?equipmentInfoId=' + equipmentInfoId + '&address=' + address + '&menuMoney=' + menuMoney + '&shoeNumber=' + shoeNumber+'&id='+id
+      wx.navigateTo({
+        url: '/pages/crxg/wyxx_crxg/wyxx_crxg?address='+address+'&equipmentInfoId='+equipmentInfoId
+        // url: '/pages/crxg/wyxx/wyxx?equipmentInfoId=' + equipmentInfoId + '&address=' + address + '&menuMoney=' + menuMoney + '&shoeNumber=' + shoeNumber+'&id='+id
       })
 
     }

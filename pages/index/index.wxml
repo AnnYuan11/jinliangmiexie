@@ -23,7 +23,13 @@
 </view>
 <!-- icon选项部分 -->
 <view class='box_icon'>
-  <navigator url="/pages/crxg/wyxx_crxg/wyxx_crxg" hover-class="none">
+  <!-- <navigator url="/pages/crxg/wyxx_crxg/wyxx_crxg" hover-class="none">
+      <view class='icon_list'>
+        <image src='{{imgUrl}}/image/sNew/crxg.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
+        <text>存入鞋柜</text>   
+      </view>
+  </navigator> -->
+  <navigator url="/pages/details/fjzd/fjzd?types=2" hover-class="none">
       <view class='icon_list'>
         <image src='{{imgUrl}}/image/sNew/crxg.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
         <text>存入鞋柜</text>   
@@ -32,7 +38,7 @@
   <navigator url="/pages/details/wyxx_new/wyxx_new" hover-class="none">
       <view class='icon_list'>
         <image src='{{imgUrl}}/image/sNew/smqx.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
-        <text>上门取鞋</text>   
+        <text>上门取送</text>   
       </view>
   </navigator>
   <navigator url="/pages/details/mthx/mthx" hover-class="none">
@@ -55,7 +61,13 @@
 </view>
 <!-- icon选项部分 -->
 <view class='box_icon s_box_icon'>
-  <navigator url="/pages/crxg/xiuxie/xiuxie" hover-class="none">
+  <!-- <navigator url="/pages/crxg/xiuxie/xiuxie" hover-class="none">
+      <view class='icon_list'>
+        <image src='{{imgUrl}}/image/sNew/crxg2.png'  wx:if="{{imgUrl}}"mode='widthFix'></image>   
+        <text>存入鞋柜</text>   
+      </view>
+  </navigator> -->
+   <navigator url="/pages/details/fjzd/fjzd?types=1" hover-class="none">
       <view class='icon_list'>
         <image src='{{imgUrl}}/image/sNew/crxg2.png'  wx:if="{{imgUrl}}"mode='widthFix'></image>   
         <text>存入鞋柜</text>   
@@ -64,7 +76,7 @@
   <navigator url="/pages/details/xiuxie/xiuxie" hover-class="none">
       <view class='icon_list s_center'>
         <image src='{{imgUrl}}/image/sNew/smqx2.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
-        <text>上门取鞋</text>   
+        <text>上门取送</text>   
       </view>
   </navigator>
     <navigator url="/pages/details/bzzx_details/bzzx_details?id=4028b88165f24d1d0165f25134b40000" hover-class="none">
@@ -123,14 +135,18 @@
     <view class='title'>客服</view>
     <view class='con_box'>
     <view class='zx'>
-      <image src='/image/kef/zxzx.png' mode='widthFix' style='width:80rpx;'></image>
-      <button open-type="contact" bindcontact="handleContact">在线咨询</button>
+      <button open-type="contact" bindcontact="handleContact">
+        <image src='/image/kef/zxzx.png' mode='widthFix' style='width:80rpx;'></image>
+        <button>在线咨询</button>
+      </button>
       <text>常见问题解答</text>
     </view>
     <view class='lines'></view>
     <view class='zx'>
-      <image src='/image/kef/kfdh.png' mode='widthFix' style='width:66rpx;'></image>
-      <button bindtap='phone'>客服电话</button>
+      <button bindtap='phone'>
+        <image src='/image/kef/kfdh.png' mode='widthFix' style='width:66rpx;'></image>
+        <button style="margin-top:1px">客服电话</button>
+      </button>
       <text>服务时间:8:00-20:00</text>
     </view>
     </view>

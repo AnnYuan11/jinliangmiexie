@@ -20,8 +20,8 @@ Page({
     console.log(options)
     this.setData({
       id:options.id,
-      imgUrl: app.globalData.imgUrl
-     
+      imgUrl: app.globalData.imgUrl,
+      lx: options.lx
     })
     this.list();
   },

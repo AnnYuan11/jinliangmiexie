@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/details/yyps/yyps",
     "pages/details/mthx_hx/mthx_hx",
+    "pages/details/yyps/yyps",
     "pages/details/pingjia/pingjia",
     "pages/wode/my/my",
     "pages/details/wyxx_crxg/wyxx_crxg",

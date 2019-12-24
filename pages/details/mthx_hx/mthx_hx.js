@@ -2,7 +2,7 @@
 import { Base } from "../../../utils/request/base.js";
 var base = new Base();
 var util = require('../../../utils/util.js');
-var url = 'https://www.jlzn365.com'
+var url = 'https://jlmxcs.jlzn365.com'
 var app = getApp()
 Page({
 
@@ -85,6 +85,13 @@ Page({
     var that = this;
     var userId = wx.getStorageSync('userId');
     // if (e.detail.value.shoesNumber){
+    if (that.data.dzid == '' || that.data.dzid == undefined || that.data.dzid==null){
+      wx.showToast({
+        title: '请重新选择地址',
+        icon: 'none',
+        mask: true,
+      })
+    }else{
       var params = {
         url: '/app/orderV3/addMenuOrderInfoMt',
         method: 'POST',
@@ -98,7 +105,7 @@ Page({
         },
         sCallBack: function (data) {
           console.log(data)
-          if (data.data.errorCode==0){
+          if (data.data.errorCode == 0) {
             wx.showToast({
               title: data.data.result,
               icon: 'none',
@@ -114,12 +121,14 @@ Page({
               }
             })
           }
-        
+
         },
         eCallBack: function () {
         }
       }
       base.request(params);
+    }
+      
     // }else{
     //   wx.showToast({
     //     title: '请输入鞋的数量',

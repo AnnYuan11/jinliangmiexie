@@ -16,15 +16,44 @@
         </navigator>
         <view class='bottom'>
           <text>{{item.orderTime}}</text>
-          <view class='sure' data-id="{{item.connectNumber}}" data-money="{{item.totalMoney}}"wx:if="{{item.orderStatusTotal=='待支付'}}" data-orderNumber="{{item.orderNumber}}"catchtap ='surePay'>确认支付</view>
+          <view class='sure' data-id="{{item.connectNumber}}" data-money="{{item.totalMoney}}"wx:if="{{item.orderStatusTotal=='待支付'}}" data-orderNumber="{{item.orderNumber}}"data-types="2"catchtap ='surePay'>确认支付</view>
           <!-- <view class='sure' wx:else style="{{item.orderStatusTotal=='已送达'?'background:#64B79C':'background:#666'}}"data-id="{{item.id}}" catchtap ='sureGoods'>确认收件</view> -->
           <view class='sure' wx:if="{{item.orderStatusTotal=='已送达'}}"data-id="{{item.id}}" catchtap ='sureGoods'>确认收件</view>
-        <navigator url="/pages/details/pingjia/pingjia?id={{item.id}}">
+        <navigator url="/pages/details/pingjia/pingjia?id={{item.id}}" style="display:inline-block;float:right;background-color:transparent;">
           <view class='sure' wx:if="{{item.orderStatusTotal=='已完成'}}">去评价</view>
         </navigator>
         </view>
         <!-- <navigator url='../dingdan_details/dingdan_details?id={{item.id}}' hover-class="none"> -->
           <view class='statu'>{{item.orderStatusTotal}}</view>
+        <!-- </navigator> -->
+        
+      </view>
+    
+  </block>
+  <block wx:for="{{lists}}" wx:if="{{lists.length!=0}}">
+      <view class='list'>
+        <view class='title'>
+          <image src='{{imgUrl}}/image/spay/icon (1).png'   wx:if="{{imgUrl}}"  style='width:74rpx;' mode='widthFix'></image>
+          <text class='ddh'>订单号：{{item.orderNumber}}</text>
+          <image src='{{imgUrl}}/image/spay/icon (2).png' wx:if="{{imgUrl}}" style="width:52rpx;margin-left:60rpx" mode='widthFix'></image>
+        </view>
+         <navigator url='../dingdan_details/dingdan_details?id={{item.id}}&lx=1' hover-class="none">
+          <view class='moddle'>
+            <text>订单类型：{{item.orderType}}-{{item.takeShoeType}}</text>
+            <text>订单数量：1双</text>
+            <text>订单总计：{{item.paymentMoney}}元</text>
+          </view>
+        </navigator>
+        <view class='bottom'>
+          <text>{{item.orderTime}}</text>
+          <view class='sure' data-id="{{item.connectNumber}}" data-money="{{item.paymentMoney}}"wx:if="{{item.orderStatus=='待支付'}}" data-orderNumber="{{item.orderNumber}}" data-types="4" catchtap ='surePay'>确认支付</view>
+          <view class='sure' wx:if="{{item.orderStatus=='已送达'}}"data-id="{{item.id}}" catchtap ='sureGoods'>确认收件</view>
+        <navigator url="/pages/details/pingjia/pingjia?id={{item.id}}" style="display:inline-block;float:right;background-color:transparent;">
+          <view class='sure' wx:if="{{item.orderStatus=='已完成'}}">去评价</view>
+        </navigator>
+        </view>
+        <!-- <navigator url='../dingdan_details/dingdan_details?id={{item.id}}' hover-class="none"> -->
+          <view class='statu'>{{item.orderStatus}}</view>
         <!-- </navigator> -->
         
       </view>
@@ -37,24 +66,24 @@
 </view>
 <!-- 选择支付方式 -->
 <view class='zffs_box' wx:if="{{showzf}}">
-      <view class='zffs'>
-        <text class='title'>订单支付</text>
-        <text class='jg'>{{menuMoney}}</text>
-        <text class='yuan'>元</text>
-        <text class='selec'>请选择支付方式</text>
-        
-        <radio-group class="radio-group" bindchange="radioChange">
-          <text class='yue'>（余额：{{money}}元)</text>
-            <label class="radio">
-            <radio value="1" checked="checked"/>
-            余额支付
-          </label>
-          <label class='radio'>
-              <radio value="2"/>
-            微信支付
-          </label>
-        </radio-group>
-        <text class='btns' bindtap='surePay2'>确认支付</text>
-        <image src='{{imgUrl}}/image/details/x1.png'mode="widthFix"   wx:if="{{imgUrl}}"  style='width:43rpx;' class='guan' bindtap='guan'></image>
-      </view>
-    </view>
+  <view class='zffs'>
+    <text class='title'>订单支付</text>
+    <text class='jg'>{{menuMoney}}</text>
+    <text class='yuan'>元</text>
+    <text class='selec'>请选择支付方式</text>
+    
+    <radio-group class="radio-group" bindchange="radioChange">
+      <text class='yue'>（余额：{{money}}元)</text>
+        <label class="radio">
+        <radio value="1" checked="checked"/>
+        余额支付
+      </label>
+      <label class='radio'>
+          <radio value="2"/>
+        微信支付
+      </label>
+    </radio-group>
+    <text class='btns' bindtap='surePay2'>确认支付</text>
+    <image src='{{imgUrl}}/image/details/x1.png'mode="widthFix"   wx:if="{{imgUrl}}"  style='width:43rpx;' class='guan' bindtap='guan'></image>
+  </view>
+</view>

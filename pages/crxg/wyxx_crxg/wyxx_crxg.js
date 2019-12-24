@@ -16,10 +16,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     var that = this;
-    this.setData({
-      imgUrl: app.globalData.imgUrl
+    that.setData({
+      imgUrl: app.globalData.imgUrl,
+      equipmentInfoId: options.equipmentInfoId,
+      address: options.address
     })
+    console.log(that.data.address)
     that.list();
   },
 
@@ -93,9 +97,9 @@ Page({
     base.request(params);
   },
 
-  swidthTo: function () {
-    wx.switchTab({
-      url: '/pages/index/index',
-    })
-  }
+  // swidthTo: function () {
+  //   wx.switchTab({
+  //     url: '/pages/index/index',
+  //   })
+  // }
 })

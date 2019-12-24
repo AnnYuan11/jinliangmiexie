@@ -1,9 +1,9 @@
 <!--pages/crxg/xiuxie/xiuxie.wxml-->
-<view class='list box_fjzd'>
+<!-- <view class='list box_fjzd'>
    <image src='{{imgUrl}}/image/spay/address.png' wx:if="{{imgUrl}}" style='width:36rpx;height:36rpx;vertical-align:middle'></image>
    <text class='left' bindtap='fjzd'>附近站点</text>
    <text class='right' style='float:right'>{{fjzd}}</text>
-</view>
+</view> -->
 
 
 <image src='{{imgUrl}}/image/index/bg.png' wx:if="{{imgUrl}}" style='width:750rpx;' mode="widthFix"></image>
@@ -22,15 +22,21 @@
             <!-- <image  src='{{imgUrl}}/image/details/jia.png' wx:if="{{imgUrl}}"mode="widthFix"style='width:38rpx' bindtap='jia'></image>    -->
           </view>
       </view>
-      <navigator url='/pages/details/fjzd/fjzd?types=1&num={{num}}' hover-class='none'>
+      <!-- <navigator url='/pages/details/fjzd/fjzd?types=1&num={{num}}' hover-class='none'> -->
         <view class='list_s'>
           <text class='xm'>鞋柜地址</text>
-          <text class='r'>{{dizhi}}</text>
+          <text class='r'>{{address}}</text>
+        </view>
+      <!-- </navigator> -->
+      <navigator url='/pages/details/selectdz/selectdz?num={{1}}&equipmentInfoId={{equipmentInfoId}}&types={{4}}&address={{address}}' hover-class='none'>
+        <view class='list_s'>
+          <text class='xm'>地址</text>
+          <text class='r' style='width:80%;text-align:right;'>{{dizhi}}</text>
         </view>
       </navigator>
       <view class='list_s'>
         <text class='xm'>联系电话</text>
-        <input type='number' name="phone" placeholder='请输入您的电话' placeholder-class='phone' class='input'></input>
+        <text class='r' style='width:80%;text-align:right;'>{{phone}}</text>
       </view>
       <view class='lists'>
       <block wx:for="{{arr}}" wx:for-index = "i">  
@@ -56,7 +62,7 @@
 </view>
 </form>
 <!-- 弹窗 -->
-<view class='t_flow'>
+<!-- <view class='t_flow'>
   <view class='t_box'>
   
   <view class='t_img' bindtap='swidthTo'>
@@ -64,4 +70,4 @@
   </view>
  
   </view>
-</view>
+</view> -->

@@ -1,11 +1,11 @@
 /**index.wxss**/
 swiper {
   display:block;
-  height:400rpx;
+  height:500rpx;
 }
 .img{
   width: 750rpx;
-  height: 473rpx;
+  /* height: 473rpx; */
   margin: 0 auto;
   display: block;
   border-radius: 20rpx;
