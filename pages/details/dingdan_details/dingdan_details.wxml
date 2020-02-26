@@ -65,7 +65,7 @@
       <view class='list'>
         <text class='left'>地址：</text>
         <text class='right'>{{list.userAddressInfo.province}}{{list.userAddressInfo.city}}{{list.userAddressInfo.area}}{{list.userAddressInfo.address}}</text>
-        <text class='right'>{{list.equipmentInfo.address}}</text>
+        <!-- <text class='right'>{{list.equipmentInfo.address}}</text> -->
       </view>
     </view>
     <block wx:for="{{list2}}" wx:inde>

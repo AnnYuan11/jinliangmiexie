@@ -29,24 +29,24 @@
         <text>存入鞋柜</text>   
       </view>
   </navigator> -->
-  <navigator url="/pages/details/fjzd/fjzd?types=2" hover-class="none">
+  <!-- <navigator url="/pages/details/fjzd/fjzd?types=2" hover-class="none"> -->
       <view class='icon_list'>
         <image src='{{imgUrl}}/image/sNew/crxg.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
-        <text>存入鞋柜</text>   
+        <text>附近门店</text>   
       </view>
-  </navigator>
-  <navigator url="/pages/details/wyxx_new/wyxx_new" hover-class="none">
+  <!-- </navigator> -->
+  <!-- <navigator url="/pages/details/wyxx_new/wyxx_new" hover-class="none"> -->
       <view class='icon_list'>
         <image src='{{imgUrl}}/image/sNew/smqx.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
         <text>上门取送</text>   
       </view>
-  </navigator>
-  <navigator url="/pages/details/mthx/mthx" hover-class="none">
+  <!-- </navigator> -->
+  <!-- <navigator url="/pages/details/mthx/mthx" hover-class="none"> -->
         <view class='icon_list'>
           <image src='{{imgUrl}}/image/sNew/mtyq.png'wx:if="{{imgUrl}}" mode='widthFix'></image>   
           <text>美团验券</text>   
         </view>
-  </navigator>
+  <!-- </navigator> -->
   <navigator url="/pages/details/bzzx_details/bzzx_details?id=4028b8816c7a759c016c7a7e0b960000" hover-class="none">
       <view class='icon_list'>
         <image src='{{imgUrl}}/image/sNew/xhsm.png' wx:if="{{imgUrl}}" mode='widthFix'></image>    
@@ -67,18 +67,18 @@
         <text>存入鞋柜</text>   
       </view>
   </navigator> -->
-   <navigator url="/pages/details/fjzd/fjzd?types=1" hover-class="none">
+   <!-- <navigator url="/pages/details/fjzd/fjzd?types=1" hover-class="none"> -->
       <view class='icon_list'>
         <image src='{{imgUrl}}/image/sNew/crxg2.png'  wx:if="{{imgUrl}}"mode='widthFix'></image>   
-        <text>存入鞋柜</text>   
+        <text>附近门店</text>   
       </view>
-  </navigator>
-  <navigator url="/pages/details/xiuxie/xiuxie" hover-class="none">
+  <!-- </navigator> -->
+  <!-- <navigator url="/pages/details/xiuxie/xiuxie" hover-class="none"> -->
       <view class='icon_list s_center'>
         <image src='{{imgUrl}}/image/sNew/smqx2.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
         <text>上门取送</text>   
       </view>
-  </navigator>
+  <!-- </navigator> -->
     <navigator url="/pages/details/bzzx_details/bzzx_details?id=4028b88165f24d1d0165f25134b40000" hover-class="none">
         <view class='icon_list'>
           <image src='{{imgUrl}}/image/sNew/jgsm.png' wx:if="{{imgUrl}}"mode='widthFix'></image>   
@@ -151,4 +151,9 @@
     </view>
     </view>
   </view>
+</view>
+<!-- 首页遮罩 -->
+<view class="fade" wx:if="{{fadeShow}}">
+  <image src="http://www.jlzn365.com:8585/yyyctz.png" mode="widthFix" style="width:580rpx;margin:0 auto;display:block"></image>
+  <image src='/image/details/gb.png' mode="widthFix" style="width:60rpx;margin-top:10rpx" bindtap="clsoe"></image>
 </view>

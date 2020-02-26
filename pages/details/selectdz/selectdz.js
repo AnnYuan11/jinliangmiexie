@@ -20,8 +20,13 @@ Page({
       imgUrl: app.globalData.imgUrl
     })
     var that = this;
-    that.address();
+    
     console.log(options)
+    if (options.types=='3'||options.types=='4'){
+      that.address();
+    }else{
+      that.address_xg();
+    }
     that.setData({
       menuMoney: options.menuMoney,
       shoeNumber: options.shoeNumber,
@@ -31,7 +36,8 @@ Page({
       name:options.name,
       receiptCode: options.receiptCode,
       equipmentInfoId: options.equipmentInfoId,
-      address_dizhi: options.address
+      address_dizhi: options.address,
+      equipmentname: options.equipmentname
     })
     // console.log(that.data.num)
   },
@@ -47,7 +53,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.onLoad()
+    // this.onLoad()
   },
 
 
@@ -137,6 +143,57 @@ Page({
     }
     base.request(params);
   },
+  address_xg: function () {
+    var that = this;
+    var userId = wx.getStorageSync('userId');//wx.getStorageSync(key)，获取本地缓存
+    that.setData({
+      userId: userId
+    });
+    var userId = that.data.userId;
+    var params = {
+      url: '/app/user/listUserAddressInfoFilter',
+      method: 'POST',
+      data: {
+        'pageIndex': 1,
+        'pageSize': 1000000,
+        'userInfo.id': userId
+      },
+      sCallBack: function (data) {
+        console.log(data)
+        var list = data.data.result;
+        if (data.data.errorCode == -200) {
+
+          wx.showToast({
+            title: data.data.errorMsg,
+            icon: 'none',
+            duration: 1000,
+          })
+          setTimeout(function () {
+            wx.redirectTo({
+              url: '../../login/login',
+            })
+          }, 1500)
+
+        } else {
+          if (list.length == 0) {
+            wx.redirectTo({
+              url: '../dzgl/dzgl',
+            })
+          } else {
+            that.setData({
+              list: list
+            })
+          }
+        }
+
+
+
+      },
+      eCallBack: function () {
+      }
+    }
+    base.request(params);
+  },
   toxixie: function (e) {
     var that = this;
     console.log(e)
@@ -158,7 +215,8 @@ Page({
     var name = that.data.name;
     var equipmentInfoId = that.data.equipmentInfoId
     var address_dizhi = that.data.address_dizhi
-    console.log(types)
+    var equipmentname = that.data.equipmentname
+    console.log(equipmentname)
     if(types==1){
       wx.redirectTo({
         url: '/pages/details/xiuxie/xiuxie?&dizhi=' + dizhi + '&num=' + num + '&phone=' + phone + '&dzid=' + dzid,
@@ -169,11 +227,11 @@ Page({
       })
     } else if (types == 3) {
       wx.redirectTo({
-        url: '/pages/crxg/wyxx/wyxx?&dizhi=' + dizhi + '&menuMoney=' + menuMoney + '&shoeNumber=' + shoeNumber + '&phone=' + phone + '&equipmentInfoId=' + equipmentInfoId + '&address=' + address_dizhi + '&dzid=' + dzid 
+        url: '/pages/crxg/wyxx/wyxx?&dizhi=' + dizhi + '&menuMoney=' + menuMoney + '&shoeNumber=' + shoeNumber + '&phone=' + phone + '&equipmentInfoId=' + equipmentInfoId + '&address=' + address_dizhi + '&dzid=' + dzid + '&id=' + id + '&equipmentname=' + equipmentname
       })
     } else if (types == 4) {
       wx.redirectTo({
-        url: '/pages/crxg/xiuxie/xiuxie?&dizhi=' + dizhi + '&num=' + num + '&phone=' + phone + '&dzid=' + dzid + '&equipmentInfoId=' + equipmentInfoId + '&address=' + address_dizhi ,
+        url: '/pages/crxg/xiuxie/xiuxie?&dizhi=' + dizhi + '&num=' + num + '&phone=' + phone + '&dzid=' + dzid + '&equipmentInfoId=' + equipmentInfoId + '&address=' + address_dizhi + '&equipmentname=' + equipmentname
       })
     }
     else{

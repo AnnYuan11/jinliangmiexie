@@ -21,7 +21,8 @@ Page({
     that.setData({
       imgUrl: app.globalData.imgUrl,
       equipmentInfoId: options.equipmentInfoId,
-      address: options.address
+      address: options.address,
+      equipmentname: options.equipmentname
     })
     console.log(that.data.address)
     that.list();

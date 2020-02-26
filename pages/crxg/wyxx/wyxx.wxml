@@ -24,11 +24,11 @@
       </view>
     
         <view class='list_s'>
-          <text class='xm'>鞋柜地址</text>
-          <text class='r'>{{address}}</text>
+          <text class='xm'>门店名称</text>
+          <text class='r'>{{equipmentname}}</text>
         </view>
       <!-- </navigator> -->
-      <navigator url='/pages/details/selectdz/selectdz?menuMoney={{options.menuMoney}}&shoeNumber={{options.shoeNumber}}&equipmentInfoId={{options.equipmentInfoId}}&types={{3}}&address={{options.address}}' hover-class='none'>
+      <navigator url='/pages/details/selectdz/selectdz?menuMoney={{options.menuMoney}}&shoeNumber={{options.shoeNumber}}&equipmentInfoId={{options.equipmentInfoId}}&types={{3}}&address={{options.address}}&id={{options.id}}&equipmentname={{equipmentname}}' hover-class='none'>
         <view class='list_s'>
           <text class='xm'>地址</text>
           <text class='r' style='width:80%;text-align:right;'>{{dizhi}}</text>

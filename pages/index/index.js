@@ -3,8 +3,8 @@
 import { Base } from "../../utils/request/base.js";
 var base = new Base();
 var util = require('../../utils/util.js');
-var url = 'https://jlmxcs.jlzn365.com';
-// var url = 'https://jlmxcs.jlzn365.com'
+var url = 'https://www.jlzn365.com';
+// var url = 'https://www.jlzn365.com'
 var app = getApp()
 Page({
   data: {
@@ -21,6 +21,7 @@ Page({
     pinglun:[ ],
     type: 1,
     zixun:false,
+    fadeShow:true
   },
  
   onLoad: function () {
@@ -333,5 +334,11 @@ Page({
       }
     }
     base.request(params);
+  },
+  // 关闭遮罩
+  clsoe:function(){
+    this.setData({
+      fadeShow:false
+    })
   }
 })

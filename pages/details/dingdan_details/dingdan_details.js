@@ -108,7 +108,7 @@ Page({
           }
           var takeShoeType = list.takeShoeType;
           if (takeShoeType == "1") {
-            takeShoeType = "存入鞋柜"
+            takeShoeType = "门店收鞋"
           } else {
             takeShoeType = "上门取鞋"
           }

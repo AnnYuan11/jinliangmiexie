@@ -166,22 +166,6 @@ var AreaJson = [
               "祖庵镇"
             ]
           },
-
-          // "莲湖区",
-          // "新城区",
-          // "碑林区",
-          // "雁塔区",
-          // "灞桥区",
-          // "未央区",
-          // "阎良区",
-          // "临潼区",
-          // "长安区",
-          // "高陵县",
-          // "蓝田县",
-          // "户县",
-          // "周至县",
-          // "杨凌农业示范区",
-          // "其他"
         ]
       },
       {
@@ -224,6 +208,20 @@ var AreaJson = [
           }
         ]
       },
+      {
+        "name": "渭南市",
+        "area": [
+          {
+            "name": "韩城市",
+            "village": [
+              "暂不选择",
+              "城区"
+            ]
+          }
+
+        ]
+      },
+      
     ]
   }
 ];
@@ -266,6 +264,7 @@ function getAreas(provinceIndex, cityIndex) {
 
 // 获取镇
 function getVillage(provinceIndex, cityIndex, areaIndex) {
+  // debugger
   var villages = [];
   villages = AreaJson[provinceIndex].city[cityIndex].area[areaIndex].village;
   return villages;

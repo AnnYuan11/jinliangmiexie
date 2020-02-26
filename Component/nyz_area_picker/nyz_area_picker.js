@@ -42,6 +42,7 @@ Component({
     handleNYZAreaChange: function (e) {
       var that = this;
       console.log(e);
+      // debugger
       var value = e.detail.value;
       /**
        * 滚动的是省
@@ -56,7 +57,7 @@ Component({
           citys: selectCitys,
           areas: selectAreas,
           villages: selectVillage,
-          value: [index[0], 0, 0],
+          value: [index[0], 0, 0,0],
           province: provinces[index[0]],
           city: selectCitys[0],
           area: selectAreas[0],
@@ -69,12 +70,14 @@ Component({
         index = [value[0], value[1], 0, 0]
         let selectCitys = areaTool.getCitys(index[0]);
         let selectAreas = areaTool.getAreas(index[0], value[1]);
-        let selectVillage = areaTool.getVillage(index[0], index[0], value[1]);
+        // let selectVillage = areaTool.getVillage(index[0], value[1], value[2]);
+        let selectVillage = areaTool.getVillage(index[0], index[1], index[0]);
+        console.log(selectVillage)
         that.setData({
           citys: selectCitys,
           areas: selectAreas,
           villages: selectVillage,
-          value: [index[0], index[1], 0],
+          value: [index[0], index[1], 0,0],
           province: provinces[index[0]],
           city: selectCitys[index[1]],
           area: selectAreas[index[2]],
@@ -114,7 +117,7 @@ Component({
           citys: selectCitys,
           areas: selectAreas,
           villages: selectVillage,
-          value: [index[0], index[1], index[2], index[3], 0],
+          value: [index[0], index[1], index[2], index[3]],
           province: provinces[index[0]],
           city: selectCitys[index[1]],
           area: selectAreas[index[2]],

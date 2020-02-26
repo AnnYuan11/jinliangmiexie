@@ -3,8 +3,8 @@
   <image src='/image/my_new/bgs.png' wx:if="{{imgUrl}}"class='bg'></image>
   <!-- <text class='title'>我为今亮代言</text> -->
   <view class='ewm'>
-    <!-- <image src='https://jlmxcs.jlzn365.com/app/user/getUserIdQr?userId={{userId}}'  mode="widthFix"></image> -->
-     <image src='https://jlmxcs.jlzn365.com/app/user/getUserIdQr?userId={{userId}}'  mode="widthFix"></image>
+    <!-- <image src='https://www.jlzn365.com/app/user/getUserIdQr?userId={{userId}}'  mode="widthFix"></image> -->
+     <image src='https://www.jlzn365.com/app/user/getUserIdQr?userId={{userId}}'  mode="widthFix"></image>
   </view>
   <!-- <navigator url='../wdxj/wdxj'> -->
     <!-- <text class='xj'>邀请好友扫码并注册小程序，成为您的团队成员</text> -->

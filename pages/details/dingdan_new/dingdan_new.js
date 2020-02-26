@@ -3,7 +3,7 @@ import { Base } from "../../../utils/request/base.js";
 var base = new Base();
 var util = require('../../../utils/util.js');
 var app = getApp();
-var url = 'https://jlmxcs.jlzn365.com'
+var url = 'https://www.jlzn365.com'
 Page({
 
   /**
@@ -116,7 +116,7 @@ Page({
         
           var takeShoeType = list[i].takeShoeType;
           if (takeShoeType == "1") {
-            takeShoeType = "存入鞋柜"
+            takeShoeType = "门店收鞋"
           } else {
             takeShoeType = "上门取鞋"
           }
@@ -183,7 +183,7 @@ Page({
            
           var takeShoeType = lists[i].takeShoeType;
           if (takeShoeType == "1") {
-            takeShoeType = "存入鞋柜"
+            takeShoeType = "门店收鞋"
           } else {
             takeShoeType = "上门取鞋"
           }

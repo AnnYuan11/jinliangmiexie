@@ -97,6 +97,7 @@ Page({
             latitude: res.latitude,
             longitude: res.longitude
           })
+          
           that.list();
         },
         fail(er) {
@@ -131,8 +132,12 @@ Page({
       },
       sCallBack: function (data) {
         console.log(data)
+        data.data.result.forEach(function(item){
+          item.distance = item.distance.toFixed(2)
+        })
+         
         that.setData({
-          list: data.data.result,
+          list: data.data.result
         })
       },
       eCallBack: function () {
@@ -144,21 +149,23 @@ Page({
   toxixie: function (e) {
     var that = this;
     console.log(e)
+    var equipmentname = e.currentTarget.dataset.equipmentname
     var equipmentInfoId = e.currentTarget.id;
     var address = e.currentTarget.dataset.address
     var menuMoney = that.data.menuMoney;
     var shoeNumber = that.data.shoeNumber;
     var id = that.data.id;
     var types = that.data.types;
-    var num = that.data.num
+    var num = that.data.num;
+    console.log(equipmentname)
     if(types==1){
       wx.redirectTo({
-        url: '/pages/crxg/xiuxie/xiuxie?equipmentInfoId=' + equipmentInfoId + '&address=' + address
+        url: '/pages/crxg/xiuxie/xiuxie?equipmentInfoId=' + equipmentInfoId + '&address=' + address + '&equipmentname=' + equipmentname
         // url: '/pages/crxg/xiuxie/xiuxie?equipmentInfoId=' + equipmentInfoId + '&address=' + address + '&num=' + num
       })
     }else{
       wx.navigateTo({
-        url: '/pages/crxg/wyxx_crxg/wyxx_crxg?address='+address+'&equipmentInfoId='+equipmentInfoId
+        url: '/pages/crxg/wyxx_crxg/wyxx_crxg?address=' + address + '&equipmentInfoId=' + equipmentInfoId + '&equipmentname=' + equipmentname
         // url: '/pages/crxg/wyxx/wyxx?equipmentInfoId=' + equipmentInfoId + '&address=' + address + '&menuMoney=' + menuMoney + '&shoeNumber=' + shoeNumber+'&id='+id
       })
 

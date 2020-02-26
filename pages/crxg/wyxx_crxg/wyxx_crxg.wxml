@@ -1,10 +1,9 @@
 <!--pages/crxg/wyxx_crxg/wyxx_crxg.wxml-->
 <view class='bg_img'>
-  <image src='{{imgUrl}}/image/details/tcxx/bg2.png' wx:if="{{imgUrl}}" class="bg_img" mode="widthFix"></image>
+  <image src='/image/details/bg2.png' wx:if="{{imgUrl}}" class="bg_img" mode="widthFix"></image>
 </view>
-
 <view class='order_box'>
-<navigator url='../wyxx/wyxx?id={{list[0].id}}&menuMoney={{list[0].menuMoney}}&shoeNumber={{list[0].shoeNumber}}&address={{address}}&equipmentInfoId={{equipmentInfoId}}' hover-class="none" >
+<navigator url='../wyxx/wyxx?id={{list[0].id}}&menuMoney={{list[0].menuMoney}}&shoeNumber={{list[0].shoeNumber}}&address={{address}}&equipmentInfoId={{equipmentInfoId}}&equipmentname={{equipmentname}}' hover-class="none" >
   <view class='order'>
     <image src='{{imgUrl}}/image/spay/1.png'  wx:if="{{imgUrl}}" mode="widthFix"></image>
     <view class='m_box'>
@@ -13,7 +12,7 @@
     </view>
   </view>
 </navigator>
-<navigator url='../wyxx/wyxx?id={{list[1].id}}&menuMoney={{list[1].menuMoney}}&shoeNumber={{list[1].shoeNumber}}&address={{address}}&equipmentInfoId={{equipmentInfoId}}' hover-class="none" >
+<navigator url='../wyxx/wyxx?id={{list[1].id}}&menuMoney={{list[1].menuMoney}}&shoeNumber={{list[1].shoeNumber}}&address={{address}}&equipmentInfoId={{equipmentInfoId}}&equipmentname={{equipmentname}}' hover-class="none" >
   <view class='order'>
     <image src='{{imgUrl}}/image/spay/2.png' wx:if="{{imgUrl}}"  mode="widthFix"></image>
     <view class='m_box'>
@@ -22,11 +21,29 @@
     </view>
   </view>
 </navigator>
-<navigator url='../wyxx/wyxx?id={{list[2].id}}&menuMoney={{list[2].menuMoney}}&shoeNumber={{list[2].shoeNumber}}&address={{address}}&equipmentInfoId={{equipmentInfoId}}' hover-class="none" >
+<navigator url='../wyxx/wyxx?id={{list[2].id}}&menuMoney={{list[2].menuMoney}}&shoeNumber={{list[2].shoeNumber}}&address={{address}}&equipmentInfoId={{equipmentInfoId}}&equipmentname={{equipmentname}}' hover-class="none" >
   <view class='order'>
     <image src='{{imgUrl}}/image/spay/3.png'  wx:if="{{imgUrl}}" mode="widthFix"></image>
     <view class='m_box'>
       <text class='money'>{{list[2].menuMoney}}</text><text>元</text>
+     
+    </view>
+  </view>
+</navigator>
+<!-- <navigator url='../wyxx/wyxx?id={{list[3].id}}&menuMoney={{list[3].menuMoney}}&shoeNumber={{list[3].shoeNumber}}&address={{address}}&equipmentInfoId={{equipmentInfoId}}' hover-class="none" >
+  <view class='order'>
+    <image src='{{imgUrl}}/image/spay/4.png'  wx:if="{{imgUrl}}" mode="widthFix"></image>
+    <view class='m_box'>
+      <text class='money'>{{list[3].menuMoney}}</text><text>元</text>
+     
+    </view>
+  </view>
+</navigator> -->
+<navigator url='../wyxx/wyxx?id={{list[4].id}}&menuMoney={{list[4].menuMoney}}&shoeNumber={{list[4].shoeNumber}}&address={{address}}&equipmentInfoId={{equipmentInfoId}}&equipmentname={{equipmentname}}' hover-class="none" >
+  <view class='order'>
+    <image src='{{imgUrl}}/image/spay/5.png'  wx:if="{{imgUrl}}" mode="widthFix"></image>
+    <view class='m_box'>
+      <text class='money'>{{list[4].menuMoney}}</text><text>元</text>
      
     </view>
   </view>

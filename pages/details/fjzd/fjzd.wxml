@@ -7,10 +7,19 @@
   搜索
   </view>
 </view> -->
+<view class="mdlb">门店列表</view>
 <block wx:for="{{list}}">
-  <view class='list' bindtap='toxixie' id="{{item.id}}" data-address="{{item.address}}">
-    <text>站点{{index+1}}:</text>
-    <text class='address'>{{item.address}}</text>
+  <view class='list' bindtap='toxixie' id="{{item.id}}" data-equipmentName="{{item.equipmentName}}"data-address="{{item.address}}">
+    <image src="http://www.jlzn365.com:8585/{{item.photo}}" style="width:200rpx;height:200rpx;border-radius:20rpx;"></image>
+    <view class="right">
+      <text class="dm">{{item.equipmentName}}</text>
+      <view class="jl">
+        <image src="/image/icon/map.png" style="width:32rpx;vertical-align: middle" mode="widthFix"></image>
+        <text class="distance">{{item.distance}}km</text>
+      </view>
+      <text class='address'>地址：{{item.address}}</text>
+    
+    </view>
   </view>
 </block>
 <view class='zw' wx:if="{{list.length==0}}">暂无数据</view>
