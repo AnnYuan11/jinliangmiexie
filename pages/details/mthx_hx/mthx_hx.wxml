@@ -15,7 +15,7 @@
   <view class='information_box'>
     <text class='title'>填写信息</text>
     <view class='information'>
-    <navigator url='../selectdz/selectdz?types=2&name={{options.name}}&receiptCode={{options.receiptCode}}' hover-class='none'>
+    <navigator url='../selectdz/selectdz?types=2&name={{options.name}}&receiptCode={{options.receiptCode}}&equipmentInfoId={{options.equipmentInfoId}}' hover-class='none'>
         <view class='list'>
           <text class='xm'>地址</text>
           <text class='address'>{{dizhi}}</text>

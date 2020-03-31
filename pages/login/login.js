@@ -272,6 +272,7 @@ Page({
         method: 'POST',
         success: function (res) {
           console.log(res);
+          wx.removeStorageSync('sessionId');
           wx.setStorage({
             key: 'userId',
             data: res.data.result.id

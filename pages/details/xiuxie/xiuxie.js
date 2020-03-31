@@ -34,7 +34,8 @@ Page({
       dizhi: options.dizhi,
       phone:options.phone,
       imgUrl: imgUrl,
-      dzid: options.dzid
+      dzid: options.dzid,
+      equipmentInfoId: options.equipmentInfoId
     })
   },
 
@@ -200,6 +201,9 @@ Page({
       if (that.data.remark == undefined || that.data.remark == "") {
         that.data.remark = ""
       }
+      if (that.data.equipmentInfoId == undefined || that.data.equipmentInfoId == "") {
+        that.data.equipmentInfoId = ""
+      }
       var params = {
         url: '/app/orderV3/addWashOrderInfoV3Repair',
         method: 'POST',
@@ -210,7 +214,8 @@ Page({
           'orderType': 2,
           'takeShoeType': 2,
           'beforePhoto': arr,
-          'shoesNumber': that.data.num
+          'shoesNumber': that.data.num,
+          'equipmentInfo.id': that.data.equipmentInfoId,
         },
         sCallBack: function (res) {
           console.log(res)

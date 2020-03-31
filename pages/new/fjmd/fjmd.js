@@ -1,4 +1,4 @@
-// pages/details/fjzd/fjzd.js
+// pages/new/fjmd/fjmd.js
 import { Base } from "../../../utils/request/base.js";
 var base = new Base();
 var util = require('../../../utils/util.js');
@@ -25,8 +25,8 @@ Page({
       // shoeNumber: options.shoeNumber,
       // id:options.id,
       // num:options.num,
-      types:options.types
-     
+      types: options.types
+
     })
     this.mapViewTap();
     // this.list();
@@ -81,7 +81,7 @@ Page({
   onShareAppMessage: function () {
 
   },
-// 获取当前经纬度
+  // 获取当前经纬度
   mapViewTap: function () {
     var that = this;
     setTimeout(() => {
@@ -97,7 +97,7 @@ Page({
             latitude: res.latitude,
             longitude: res.longitude
           })
-          
+
           that.list();
         },
         fail(er) {
@@ -125,6 +125,7 @@ Page({
     var that = this;
     var city = wx.getStorageSync('city');
     var province = wx.getStorageSync('province');
+    console.log(city)
     var params = {
       url: '/app/user/listEquipmentInfoByDistance',
       method: 'POST',
@@ -136,10 +137,10 @@ Page({
       },
       sCallBack: function (data) {
         console.log(data)
-        data.data.result.forEach(function(item){
+        data.data.result.forEach(function (item) {
           item.distance = item.distance.toFixed(2)
         })
-         
+
         that.setData({
           list: data.data.result
         })
@@ -149,7 +150,7 @@ Page({
     }
     base.request(params);
   },
-  
+
   toxixie: function (e) {
     var that = this;
     console.log(e)
@@ -162,47 +163,23 @@ Page({
     var types = that.data.types;
     var num = that.data.num;
     console.log(equipmentname)
-    if(types==1){
+    if (types == 1) {
       wx.redirectTo({
-        url: '/pages/crxg/xiuxie/xiuxie?equipmentInfoId=' + equipmentInfoId + '&address=' + address + '&equipmentname=' + equipmentname
-        // url: '/pages/crxg/xiuxie/xiuxie?equipmentInfoId=' + equipmentInfoId + '&address=' + address + '&num=' + num
+        url: '/pages/details/xiuxie/xiuxie?equipmentInfoId=' + equipmentInfoId + '&address=' + address + '&equipmentname=' + equipmentname
+       
       })
-    }else{
+    } else if (types == 2){
       wx.navigateTo({
-        url: '/pages/crxg/wyxx_crxg/wyxx_crxg?address=' + address + '&equipmentInfoId=' + equipmentInfoId + '&equipmentname=' + equipmentname
-        // url: '/pages/crxg/wyxx/wyxx?equipmentInfoId=' + equipmentInfoId + '&address=' + address + '&menuMoney=' + menuMoney + '&shoeNumber=' + shoeNumber+'&id='+id
+        url: '/pages/details/wyxx_new/wyxx_new?address=' + address + '&equipmentInfoId=' + equipmentInfoId + '&equipmentname=' + equipmentname
+        
+      })
+
+    }else {
+      wx.navigateTo({
+        url: '/pages/details/mthx_hx/mthx_hx?equipmentInfoId=' + equipmentInfoId + '&equipmentname=' + equipmentname
+
       })
 
     }
   },
-  // 获取input的值
-  searchInput:function(e){
-    this.setData({
-      address: e.detail.value
-    })
-
-  },
-  search:function(){
-    var that = this;
-    var address = that.data.address;
-    var params = {
-      url: '/app/user/listEquipmentInfo',
-      method: 'POST',
-      data: {
-        'pageIndex': 1,
-        'pageSize': 1000000,
-        'address':address
-      },
-      sCallBack: function (data) {
-        console.log(data)
-
-        that.setData({
-          list: data.data.result,
-        })
-      },
-      eCallBack: function () {
-      }
-    }
-    base.request(params);
-  }
 })

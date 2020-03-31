@@ -14,7 +14,7 @@
             <!-- <image  src='{{imgUrl}}/image/details/jia.png' wx:if="{{imgUrl}}"mode="widthFix"style='width:38rpx' bindtap='jia'></image>    -->
           </view>
       </view>
-      <navigator url='../selectdz/selectdz?types=1&num={{num}}' hover-class='none'>
+      <navigator url='../selectdz/selectdz?types=1&num={{num}}&equipmentInfoId={{equipmentInfoId}}' hover-class='none'>
         <view class='list_s'>
           <text class='xm'>地址</text>
           <text class='r'>{{dizhi}}</text>

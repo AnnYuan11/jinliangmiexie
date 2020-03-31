@@ -19,7 +19,7 @@
         <text class='xm'>鞋子数量</text>
         <text class='r'>{{options.shoeNumber}}双</text>
       </view>
-      <navigator url='../selectdz/selectdz?menuMoney={{options.menuMoney}}&shoeNumber={{options.shoeNumber}}&id={{options.id}}' hover-class='none'>
+      <navigator url='../selectdz/selectdz?menuMoney={{options.menuMoney}}&shoeNumber={{options.shoeNumber}}&id={{options.id}}&equipmentInfoId={{options.equipmentInfoId}}' hover-class='none'>
         <view class='list_s'>
           <text class='xm'>地址</text>
           <text class='r' style='width:80%;text-align:right;'>{{dizhi}}</text>

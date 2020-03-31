@@ -11,7 +11,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.4",
+	"libVersion": "2.10.2",
 	"appid": "wxf091110394a41f2d",
 	"projectname": "xiecs",
 	"isGameTourist": false,

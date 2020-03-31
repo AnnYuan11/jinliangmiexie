@@ -18,7 +18,10 @@
         <text class='left'>订单时间：</text>
         <text class='right'>{{list.orderTime}}</text>
       </view>
-    
+      <view class='list' wx:if="{{list.equipmentInfo.equipmentName!=''}}">
+        <text class='left'>门店名称：</text>
+        <text class='right'>{{list.equipmentInfo.equipmentName}}</text>
+      </view>
     </view>
     <view class='ddxx'>
       <view class='list'>

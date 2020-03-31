@@ -4,7 +4,7 @@
 </view>
 
 <view class='order_box'>
-<navigator url='../wyxx/wyxx?id={{list[0].id}}&menuMoney={{list[0].menuMoney}}&shoeNumber={{list[0].shoeNumber}}' hover-class="none" >
+<navigator url='../wyxx/wyxx?id={{list[0].id}}&menuMoney={{list[0].menuMoney}}&shoeNumber={{list[0].shoeNumber}}&equipmentInfoId={{equipmentInfoId}}' hover-class="none" >
   <view class='order'>
     <image src='{{imgUrl}}/image/spay/1.png' wx:if="{{imgUrl}}"mode="widthFix"></image>
     <view class='m_box'>
@@ -13,7 +13,7 @@
     </view>
   </view>
 </navigator>
-<navigator url='../wyxx/wyxx?id={{list[1].id}}&menuMoney={{list[1].menuMoney}}&shoeNumber={{list[1].shoeNumber}}' hover-class="none" >
+<navigator url='../wyxx/wyxx?id={{list[1].id}}&menuMoney={{list[1].menuMoney}}&shoeNumber={{list[1].shoeNumber}}&equipmentInfoId={{equipmentInfoId}}' hover-class="none" >
   <view class='order'>
     <image src='{{imgUrl}}/image/spay/2.png'wx:if="{{imgUrl}}" mode="widthFix"></image>
     <view class='m_box'>
@@ -22,7 +22,7 @@
     </view>
   </view>
 </navigator>
-<navigator url='../wyxx/wyxx?id={{list[2].id}}&menuMoney={{list[2].menuMoney}}&shoeNumber={{list[2].shoeNumber}}' hover-class="none" >
+<navigator url='../wyxx/wyxx?id={{list[2].id}}&menuMoney={{list[2].menuMoney}}&shoeNumber={{list[2].shoeNumber}}&equipmentInfoId={{equipmentInfoId}}' hover-class="none" >
   <view class='order'>
     <image src='{{imgUrl}}/image/spay/3.png'wx:if="{{imgUrl}}" mode="widthFix"></image>
     <view class='m_box'>
@@ -40,7 +40,7 @@
     </view>
   </view>
 </navigator> -->
-<navigator url='../wyxx/wyxx?id={{list[4].id}}&menuMoney={{list[4].menuMoney}}&shoeNumber={{list[4].shoeNumber}}' hover-class="none" >
+<navigator url='../wyxx/wyxx?id={{list[4].id}}&menuMoney={{list[4].menuMoney}}&shoeNumber={{list[4].shoeNumber}}&equipmentInfoId={{equipmentInfoId}}' hover-class="none" >
   <view class='order'>
     <image src='{{imgUrl}}/image/spay/5.png'wx:if="{{imgUrl}}" mode="widthFix"></image>
     <view class='m_box'>

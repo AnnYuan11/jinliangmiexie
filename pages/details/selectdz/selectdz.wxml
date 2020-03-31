@@ -1,7 +1,8 @@
 <!--pages/details/selectdz/selectdz.wxml-->
+<view class="box">
 <block wx:for="{{list}}">
   
-  <view class='list' id="{{item.id}}"  bindtap='toxixie' data-id="{{item.id}}"  data-province="{{item.province}}" data-city="{{item.city}}" data-phone="{{item.phone}}"data-area="{{item.area}}" data-address="{{item.address}}" data-street="{{item.street}}"data-name='{{item.name}}'>
+  <view class='list' style="background:{{item.city==city?'':'#F5F5F5'}}" id="{{item.id}}"  bindtap='toxixie' data-id="{{item.id}}"  data-province="{{item.province}}" data-city="{{item.city}}" data-phone="{{item.phone}}"data-area="{{item.area}}" data-address="{{item.address}}" data-street="{{item.street}}"data-name='{{item.name}}'>
       <view class='message'>
         <text class='name'>{{item.name}}</text>
         <text class='num'>{{item.phone}}</text>
@@ -29,4 +30,5 @@
     <view class='line'></view>
   
 </block>
+</view>
 <navigator url='../tjshdz/tjshdz' hover-class="none"><view class='add'>添加收货地址</view></navigator>

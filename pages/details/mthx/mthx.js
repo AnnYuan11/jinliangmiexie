@@ -124,10 +124,18 @@ Page({
   },
   sure:function(){
     var that = this;
+    var city = wx.getStorageSync('city');
     setTimeout(function () {
-      wx.navigateTo({
-        url: '/pages/details/mthx_hx/mthx_hx?name=' + that.data.name + '&receiptCode=' + that.data.receiptCode,
-      })
+      if (city=="西安市"){
+        wx.navigateTo({
+          url: '/pages/details/mthx_hx/mthx_hx?name=' + that.data.name + '&receiptCode=' + that.data.receiptCode,
+        })
+      }else{
+        wx.navigateTo({
+          url: '/pages/new/fjmd/fjmd?types=3',
+        })
+      }
+      
     }, 1000);
   },
   sure2: function () {

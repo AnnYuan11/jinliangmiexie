@@ -122,6 +122,7 @@ Page({
       },
       sCallBack: function (data) {
         console.log(data)
+        
         if (data.data.errorCode == -200) {
           wx.showToast({
             title: data.data.errorMsg,

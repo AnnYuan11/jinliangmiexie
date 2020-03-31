@@ -1,4 +1,7 @@
 /* pages/details/selectdz/selectdz.wxss */
+.box{
+  padding-bottom: 88rpx;
+}
 .list{
   padding: 0 32rpx;
   box-sizing: border-box;

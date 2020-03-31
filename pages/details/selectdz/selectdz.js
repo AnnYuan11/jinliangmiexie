@@ -22,11 +22,12 @@ Page({
     var that = this;
     
     console.log(options)
-    if (options.types=='3'||options.types=='4'){
-      that.address();
-    }else{
-      that.address_xg();
-    }
+    that.address();
+    // if (options.types=='3'||options.types=='4'){
+    //   that.address();
+    // }else{
+    //   that.address_xg();
+    // }
     that.setData({
       menuMoney: options.menuMoney,
       shoeNumber: options.shoeNumber,
@@ -53,6 +54,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that= this;
+    that.address();
     // this.onLoad()
   },
 
@@ -95,9 +98,12 @@ Page({
   address: function () {
     var that = this;
     var userId = wx.getStorageSync('userId');//wx.getStorageSync(key)，获取本地缓存
+    var city = wx.getStorageSync('city');
     that.setData({
-      userId: userId
+      userId: userId,
+      city: city
     });
+    console.log(that.data.city)
     var userId = that.data.userId;
     var params = {
       url: '/app/user/listUserAddressInfo',
@@ -111,7 +117,6 @@ Page({
         console.log(data)
         var list = data.data.result;
         if(data.data.errorCode== -200){
-         
           wx.showToast({
             title: data.data.errorMsg,
             icon: 'none',
@@ -130,7 +135,8 @@ Page({
             })
           }else{
             that.setData({
-              list: list
+              list: list,
+             
             })
           }
         }
@@ -143,57 +149,58 @@ Page({
     }
     base.request(params);
   },
-  address_xg: function () {
-    var that = this;
-    var userId = wx.getStorageSync('userId');//wx.getStorageSync(key)，获取本地缓存
-    that.setData({
-      userId: userId
-    });
-    var userId = that.data.userId;
-    var params = {
-      url: '/app/user/listUserAddressInfoFilter',
-      method: 'POST',
-      data: {
-        'pageIndex': 1,
-        'pageSize': 1000000,
-        'userInfo.id': userId
-      },
-      sCallBack: function (data) {
-        console.log(data)
-        var list = data.data.result;
-        if (data.data.errorCode == -200) {
+  // 限制地址没有渭南
+  // address_xg: function () {
+  //   var that = this;
+  //   var userId = wx.getStorageSync('userId');//wx.getStorageSync(key)，获取本地缓存
+  //   that.setData({
+  //     userId: userId
+  //   });
+  //   var userId = that.data.userId;
+  //   var params = {
+  //     url: '/app/user/listUserAddressInfoFilter',
+  //     method: 'POST',
+  //     data: {
+  //       'pageIndex': 1,
+  //       'pageSize': 1000000,
+  //       'userInfo.id': userId
+  //     },
+  //     sCallBack: function (data) {
+  //       console.log(data)
+  //       var list = data.data.result;
+  //       if (data.data.errorCode == -200) {
 
-          wx.showToast({
-            title: data.data.errorMsg,
-            icon: 'none',
-            duration: 1000,
-          })
-          setTimeout(function () {
-            wx.redirectTo({
-              url: '../../login/login',
-            })
-          }, 1500)
+  //         wx.showToast({
+  //           title: data.data.errorMsg,
+  //           icon: 'none',
+  //           duration: 1000,
+  //         })
+  //         setTimeout(function () {
+  //           wx.redirectTo({
+  //             url: '../../login/login',
+  //           })
+  //         }, 1500)
 
-        } else {
-          if (list.length == 0) {
-            wx.redirectTo({
-              url: '../dzgl/dzgl',
-            })
-          } else {
-            that.setData({
-              list: list
-            })
-          }
-        }
+  //       } else {
+  //         if (list.length == 0) {
+  //           wx.redirectTo({
+  //             url: '../dzgl/dzgl',
+  //           })
+  //         } else {
+  //           that.setData({
+  //             list: list
+  //           })
+  //         }
+  //       }
 
 
 
-      },
-      eCallBack: function () {
-      }
-    }
-    base.request(params);
-  },
+  //     },
+  //     eCallBack: function () {
+  //     }
+  //   }
+  //   base.request(params);
+  // },
   toxixie: function (e) {
     var that = this;
     console.log(e)
@@ -216,14 +223,19 @@ Page({
     var equipmentInfoId = that.data.equipmentInfoId
     var address_dizhi = that.data.address_dizhi
     var equipmentname = that.data.equipmentname
-    console.log(equipmentname)
+    console.log(that.data.city)
+    console.log(city)
+    if (city != that.data.city){
+      // debugger
+      return false;
+    }
     if(types==1){
       wx.redirectTo({
-        url: '/pages/details/xiuxie/xiuxie?&dizhi=' + dizhi + '&num=' + num + '&phone=' + phone + '&dzid=' + dzid,
+        url: '/pages/details/xiuxie/xiuxie?&dizhi=' + dizhi + '&num=' + num + '&phone=' + phone + '&dzid=' + dzid + '&equipmentInfoId=' + equipmentInfoId,
       })
     } else if (types == 2){
       wx.redirectTo({
-        url: '/pages/details/mthx_hx/mthx_hx?&dizhi=' + dizhi + '&names=' + names + '&phone=' + phone + '&dzid=' + dzid + '&name=' + name + '&receiptCode=' + receiptCode,
+        url: '/pages/details/mthx_hx/mthx_hx?&dizhi=' + dizhi + '&names=' + names + '&phone=' + phone + '&dzid=' + dzid + '&name=' + name + '&receiptCode=' + receiptCode + '&equipmentInfoId=' + equipmentInfoId,
       })
     } else if (types == 3) {
       wx.redirectTo({
@@ -237,7 +249,7 @@ Page({
     else{
       wx.redirectTo({
         // url: '../wyxx/wyxx?num=' + num + '&dizhi=' + dizhi + '&adaddress=' + adaddress + '&dzid=' + dzid + '&zdid=' + zdid + '&type1=' + type1 + '&userCouponInfoId=' + userCouponInfoId+'&money='+money+'&wlf='+wlf ,
-        url: '../wyxx/wyxx?&dizhi=' + dizhi + '&menuMoney=' + menuMoney + '&shoeNumber=' + shoeNumber + '&phone=' + phone + '&dzid=' + dzid + '&id=' + id,
+        url: '../wyxx/wyxx?&dizhi=' + dizhi + '&menuMoney=' + menuMoney + '&shoeNumber=' + shoeNumber + '&phone=' + phone + '&dzid=' + dzid + '&id=' + id + '&equipmentInfoId=' + equipmentInfoId,
       })
     }
    

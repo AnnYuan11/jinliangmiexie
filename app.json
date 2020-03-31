@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/details/fjzd/fjzd",
     "pages/details/mthx_hx/mthx_hx",
+    "pages/details/fjzd/fjzd",
     "pages/details/yyps/yyps",
     "pages/details/pingjia/pingjia",
     "pages/wode/my/my",
@@ -56,7 +56,8 @@
     "pages/details/selectdz3/selectdz3",
     "pages/crxg/wyxx_crxg/wyxx_crxg",
     "pages/crxg/wyxx/wyxx",
-    "pages/crxg/xiuxie/xiuxie"
+    "pages/crxg/xiuxie/xiuxie",
+    "pages/new/fjmd/fjmd"
   ],
   "window": {
     "backgroundTextStyle": "light",

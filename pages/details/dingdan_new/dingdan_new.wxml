@@ -5,13 +5,15 @@
         <view class='title'>
           <image src='{{imgUrl}}/image/spay/icon (1).png'   wx:if="{{imgUrl}}"  style='width:74rpx;' mode='widthFix'></image>
           <text class='ddh'>订单号：{{item.connectNumber}}</text>
-          <image src='{{imgUrl}}/image/spay/icon (2).png' wx:if="{{imgUrl}}" style="width:52rpx;margin-left:60rpx" mode='widthFix'></image>
+          <image src='{{imgUrl}}/image/spay/icon (2).png' wx:if="{{imgUrl}}" style="width:52rpx;margin-left:40rpx" mode='widthFix'></image>
         </view>
          <navigator url='../dingdan_details/dingdan_details?id={{item.id}}' hover-class="none">
           <view class='moddle'>
             <text>订单类型：{{item.orderType}}-{{item.takeShoeType}}</text>
             <text>订单数量：{{item.shoesNumberTotal}}双</text>
             <text>订单总计：{{item.totalMoney}}元</text>
+            <text style="display:inline-block" wx:if="{{jdSendName!=''}}">快递员：{{jdSendName}}</text>
+            <image wx:if="{{jdSendPhone!=''}}"src="/image/details/dh.png" mode="widthFix" style="width: 44rpx;height: 44rpx;vertical-align: middle;margin-left: 4%;" bindtap="phone"></image>
           </view>
         </navigator>
         <view class='bottom'>
@@ -35,13 +37,15 @@
         <view class='title'>
           <image src='{{imgUrl}}/image/spay/icon (1).png'   wx:if="{{imgUrl}}"  style='width:74rpx;' mode='widthFix'></image>
           <text class='ddh'>订单号：{{item.orderNumber}}</text>
-          <image src='{{imgUrl}}/image/spay/icon (2).png' wx:if="{{imgUrl}}" style="width:52rpx;margin-left:60rpx" mode='widthFix'></image>
+          <image src='{{imgUrl}}/image/spay/icon (2).png' wx:if="{{imgUrl}}" style="width:52rpx;margin-left:40rpx" mode='widthFix'></image>
         </view>
          <navigator url='../dingdan_details/dingdan_details?id={{item.id}}&lx=1' hover-class="none">
           <view class='moddle'>
             <text>订单类型：{{item.orderType}}-{{item.takeShoeType}}</text>
             <text>订单数量：1双</text>
             <text>订单总计：{{item.paymentMoney}}元</text>
+            <text style="display:inline-block" wx:if="{{jdSendName!=''}}">快递员：{{jdSendName}}</text>
+            <image wx:if="{{jdSendPhone!=''}}"src="/image/details/dh.png" mode="widthFix" style="width: 44rpx;height: 44rpx;vertical-align: middle;margin-left: 4%;" bindtap="phone"></image>
           </view>
         </navigator>
         <view class='bottom'>

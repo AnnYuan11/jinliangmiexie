@@ -28,7 +28,9 @@ Page({
       dizhi: options.dizhi,
       dzid: options.dzid,
       names: options.names,
-      phone:options.phone
+      phone:options.phone,
+      equipmentInfoId: options.equipmentInfoId
+
     })
   },  
 
@@ -85,6 +87,9 @@ Page({
     var that = this;
     var userId = wx.getStorageSync('userId');
     // if (e.detail.value.shoesNumber){
+    if (that.data.equipmentInfoId == undefined || that.data.equipmentInfoId == "") {
+      that.data.equipmentInfoId = ""
+    }
     if (that.data.dzid == '' || that.data.dzid == undefined || that.data.dzid==null){
       wx.showToast({
         title: '请重新选择地址',
@@ -101,7 +106,8 @@ Page({
           'userInfo.id': userId,
           'orderType': 1,
           // 'shoesNumber': e.detail.value.shoesNumber,
-          'remark': e.detail.value.remark
+          'remark': e.detail.value.remark,
+          'equipmentInfo.id': that.data.equipmentInfoId,
         },
         sCallBack: function (data) {
           console.log(data)

@@ -99,6 +99,28 @@ Page({
           var paymentStatus = list[i].paymentStatus;
           var orderStatusTotal = list[i].orderStatusTotal;
          
+         
+          if (list[i].isJdSend == 1) {
+            that.setData({
+              jdSendName: list[i].jdSendName,
+              jdSendPhone: list[i].jdSendPhone
+            })
+          } else if (list[i].orderStatusTotal == 1){
+            if (list[i].isSendOperator == 1){
+              that.setData({
+                jdSendName: list[i].sendOperatorInfo.userName,
+                jdSendPhone: list[i].sendOperatorInfo.phone
+              })
+            }
+          } else if (list[i].orderStatusTotal == 4 || list[i].orderStatusTotal == 5 || list[i].orderStatusTotal == 6 || list[i].orderStatusTotal == 7){
+            if (list[i].isTakeOperator == 1) {
+              that.setData({
+                jdSendName: list[i].takeOperatorInfo.userName,
+                jdSendPhone: list[i].takeOperatorInfo.phone
+              })
+            }
+          }
+
           if (orderType == "1") {
             orderType = "洗鞋订单"
           } else if (orderType == "2"){
@@ -173,7 +195,26 @@ Page({
           var authStatus = lists[i].authStatus;
           var paymentStatus = lists[i].paymentStatus;
           var orderStatus = lists[i].orderStatus;
-
+          if (lists[i].isJdSend == 1) {
+            that.setData({
+              jdSendName: lists[i].jdSendName,
+              jdSendPhone: lists[i].jdSendPhone
+            })
+          } else if (lists[i].orderStatusTotal == 1) {
+            if (lists[i].isSendOperator == 1) {
+              that.setData({
+                jdSendName: lists[i].sendOperatorInfo.userName,
+                jdSendPhone: lists[i].sendOperatorInfo.phone
+              })
+            }
+          } else if (lists[i].orderStatusTotal == 4 || lists[i].orderStatusTotal == 5 || lists[i].orderStatusTotal == 6 || lists[i].orderStatusTotal == 7) {
+            if (lists[i].isTakeOperator == 1) {
+              that.setData({
+                jdSendName: lists[i].takeOperatorInfo.userName,
+                jdSendPhone: lists[i].takeOperatorInfo.phone
+              })
+            }
+          }
           if (orderType == "3") {
             orderType = "增补订单"
           } 
@@ -508,5 +549,11 @@ Page({
     }
     base.request(params);
   },
-  
+  // 快递员电话
+  phone(){
+    var that=this;
+    wx.makePhoneCall({
+      phoneNumber: that.data.jdSendPhone //仅为示例，并非真实的电话号码
+    })
+  }
 })

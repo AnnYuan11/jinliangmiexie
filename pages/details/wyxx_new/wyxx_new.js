@@ -17,10 +17,12 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    this.setData({
-      imgUrl: app.globalData.imgUrl
+    that.setData({
+      imgUrl: app.globalData.imgUrl,
+      equipmentInfoId: options.equipmentInfoId,
     })
     that.list();
+    
   },
 
   /**

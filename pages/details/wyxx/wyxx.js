@@ -33,7 +33,8 @@ Page({
       dzid:options.dzid,
       phone:options.phone,
       id:options.id,
-      menuMoney: options.menuMoney
+      menuMoney: options.menuMoney,
+      equipmentInfoId: options.equipmentInfoId,
     })
     
     this.setData({
@@ -41,7 +42,7 @@ Page({
     })
     // 洗鞋背景图片的调用
     this.bgImg();
-    this.mapViewTap();
+    // this.mapViewTap();
     // 账户余额
     this.refresh();
     // 获取openid
@@ -133,70 +134,70 @@ Page({
     base.request(params);
   },
   // 附近站点
-  mapViewTap: function () {
-    var that = this;
-    setTimeout(() => {
-      wx.getLocation({
-        type: 'gcj02',
-        success(res) {
-          console.log(res)
-          const latitude = res.latitude
-          const longitude = res.longitude
-          const speed = res.speed
-          const accuracy = res.accuracy
-          that.setData({
-            latitude: res.latitude,
-            longitude: res.longitude
-          })
-          that.list();
-        },
-        fail(er) {
-          var params = {
-            url: '/app/user/listEquipmentInfoByDistance',
-            method: 'POST',
-            data: {
+  // mapViewTap: function () {
+  //   var that = this;
+  //   setTimeout(() => {
+  //     wx.getLocation({
+  //       type: 'gcj02',
+  //       success(res) {
+  //         console.log(res)
+  //         const latitude = res.latitude
+  //         const longitude = res.longitude
+  //         const speed = res.speed
+  //         const accuracy = res.accuracy
+  //         that.setData({
+  //           latitude: res.latitude,
+  //           longitude: res.longitude
+  //         })
+  //         that.list();
+  //       },
+  //       fail(er) {
+  //         var params = {
+  //           url: '/app/user/listEquipmentInfoByDistance',
+  //           method: 'POST',
+  //           data: {
 
-            },
-            sCallBack: function (data) {
-              console.log(data)
-              that.setData({
-                list: data.data.result,
-              })
-            },
-            eCallBack: function () { }
-          }
-          base.request(params);
-        }
-      })
-    }, 1000)
+  //           },
+  //           sCallBack: function (data) {
+  //             console.log(data)
+  //             that.setData({
+  //               list: data.data.result,
+  //             })
+  //           },
+  //           eCallBack: function () { }
+  //         }
+  //         base.request(params);
+  //       }
+  //     })
+  //   }, 1000)
 
-  },
-  list: function () {
-    var that = this;
-    var params = {
-      url: '/app/user/listEquipmentInfoByDistance',
-      method: 'POST',
-      data: {
-        'myLng': that.data.longitude,
-        'myLat': that.data.latitude,
-      },
-      sCallBack: function (data) {
-        console.log(data)
-        that.setData({
-          list: data.data.result,
-          fjzd: data.data.result[0].address
-        })
-      },
-      eCallBack: function () {
-      }
-    }
-    base.request(params);
-  },
-  fjzd:function(){
-    wx.navigateTo({
-      url: '/pages/details/fjzd3/fjzd3',
-    })
-  },
+  // },
+  // list: function () {
+  //   var that = this;
+  //   var params = {
+  //     url: '/app/user/listEquipmentInfoByDistance',
+  //     method: 'POST',
+  //     data: {
+  //       'myLng': that.data.longitude,
+  //       'myLat': that.data.latitude,
+  //     },
+  //     sCallBack: function (data) {
+  //       console.log(data)
+  //       that.setData({
+  //         list: data.data.result,
+  //         fjzd: data.data.result[0].address
+  //       })
+  //     },
+  //     eCallBack: function () {
+  //     }
+  //   }
+  //   base.request(params);
+  // },
+  // fjzd:function(){
+  //   wx.navigateTo({
+  //     url: '/pages/details/fjzd3/fjzd3',
+  //   })
+  // },
 
   // 支付方式选择
   radioChange(e) {
@@ -359,6 +360,9 @@ Page({
       if (that.data.remark == undefined || that.data.remark == "") {
         that.data.remark = ""
       }
+      if (that.data.equipmentInfoId == undefined || that.data.equipmentInfoId == ""){
+        that.data.equipmentInfoId = ""
+      }
       var params = {
         url: '/app/orderV3/addMenuOrderInfo',
         method: 'POST',
@@ -367,7 +371,8 @@ Page({
           'userAddressInfo.id': that.data.dzid,
           'userInfo.id': userId,
           'remark': that.data.remark,
-          'orderType': 1
+          'orderType': 1,
+          'equipmentInfo.id':that.data.equipmentInfoId,
         },
         sCallBack: function (res) {
           console.log(res)

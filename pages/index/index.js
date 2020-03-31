@@ -1,11 +1,17 @@
 //index.js
 //获取应用实例
 import { Base } from "../../utils/request/base.js";
+
+var QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
+
 var base = new Base();
 var util = require('../../utils/util.js');
 var url = 'https://www.jlzn365.com';
 // var url = 'https://www.jlzn365.com'
 var app = getApp()
+var qqmapsdk = new QQMapWX({
+  key: 'YQZBZ-C24LS-LTIO2-6HVJV-NCQVK-NPB3T' // 必填
+});
 Page({
   data: {
     imgUrls: [
@@ -21,10 +27,13 @@ Page({
     pinglun:[ ],
     type: 1,
     zixun:false,
-    fadeShow:true
+    fadeShow:true,
+    select: false,
+
   },
  
   onLoad: function () {
+    this.locations()
     this.setData({
       imgUrl: app.globalData.imgUrl
     })
@@ -41,9 +50,57 @@ Page({
   
   },
   onShow: function () {
+    this.getOpenId();
     var that = this 
+     var that = this;
+    wx.getSetting({
+      success: (res) => {
+        console.log(res);
+        console.log(res.authSetting['scope.userLocation']);
+        if (res.authSetting['scope.userLocation'] != undefined && res.authSetting['scope.userLocation'] != true) {//非初始化进入该页面,且未授权
+          wx.showModal({
+            title: '是否授权当前位置',
+            content: '需要获取您的地理位置，请确认授权，否则地图功能将无法使用',
+            success: function (res) {
+              console.log(res)
+              if (res.cancel) {
+                wx.showToast({
+                  title: '拒绝授权',
+                  icon: 'none',
+                  duration: 1000
+                })
 
-    that.onLoad()
+              } else if (res.confirm) {
+                // debugger
+                wx.openSetting({
+                  success: function (data) {
+                    console.log(data);
+                    if (data.authSetting["scope.userLocation"] == true) {
+                      wx.showToast({
+                        title: '授权成功',
+                        icon: 'success',
+                        duration: 5000
+                      })
+                      //再次授权，调用getLocationt的API
+                      that.locations();
+                    } else {
+                      wx.showToast({
+                        title: '授权失败',
+                        icon: 'success',
+                        duration: 5000
+                      })
+                    }
+                  }
+                })
+              }
+            }
+          })
+        } else if (res.authSetting['scope.userLocation'] == undefined) {//初始化进入
+          that.locations();
+        }
+      }
+    })
+    // that.onLoad()
   },
   more:function(){
     wx.navigateTo({
@@ -167,6 +224,7 @@ Page({
       },
       sCallBack: function (res) {
         console.log(res)
+        wx.removeStorageSync('sessionId');
         wx.setStorage({
           key: 'sessionId',
           data: res.data.result.sessionId
@@ -339,6 +397,74 @@ Page({
   clsoe:function(){
     this.setData({
       fadeShow:false
+    })
+  },
+  
+ 
+  // 获取用户地理位置
+  locations: function () {
+    let vm = this;
+    //1、获取当前位置坐标
+    wx.getLocation({
+      type: 'gcj02',
+      success: function (res) {
+        console.log(res);
+
+        //2、根据坐标获取当前位置名称，显示在顶部:腾讯地图逆地址解析
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: function (addressRes) {
+            console.log(vm.data.city);
+           
+            wx.setStorage({
+              key: 'city',
+              data: addressRes.result.ad_info.city,
+            })
+            wx.setStorage({
+              key: 'province',
+              data: addressRes.result.ad_info.province
+            })
+            vm.setData({
+              city: addressRes.result.ad_info.city,
+              province: addressRes.result.ad_info.province
+            })
+          },
+          fail: function (error) {
+            console.error(error);
+          },
+          complete: function (res) {
+            console.log(res);
+          }
+        })
+      }
+    })
+  },
+  bindShowMsg() {
+    this.setData({
+      select: !this.data.select
+    })
+  },
+  mySelect(e) {
+    console.log(e)
+    var name = e.currentTarget.dataset.name
+    if (name == "韩城市") {
+      this.setData({
+        city: "渭南市",
+        select: false
+
+      })
+    }else{
+      this.setData({
+        city: name,
+        select: false
+      })
+    }
+    wx.setStorage({
+      key: 'city',
+      data: this.data.city,
     })
   }
 })
