@@ -140,5 +140,11 @@ Page({
       }
     }
     base.request(params);
-  }
+  },
+  // 去使用
+  toUse(e){
+    wx.navigateTo({
+      url: '/pages/MemberVip/subscribe/subscribe?nums='+this.data.list.packageNumber,
+    })
+  },
 })

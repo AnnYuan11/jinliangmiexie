@@ -1,0 +1,7 @@
+/* pages/MemberVip/advertisingH5/h5.wxss */
+.img{
+  width: 100%;
+}
+.img image{
+  width:100%;
+}

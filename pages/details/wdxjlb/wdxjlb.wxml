@@ -1,5 +1,5 @@
 <!--pages/details/wdxjlb/wdxjlb.wxml-->
-<view class='bg_box'>
+<view class='bg_box' wx:if="{{type!='1'}}">
   <image src='{{imgUrl}}/image/tuijian/2.png' mode='widthFix'  wx:if="{{imgUrl}}" style='width:750rpx;'></image>
   <view class='yue'>
     <view class='lis'>
@@ -20,8 +20,8 @@
   </view>
 <block wx:for="{{list}}">
   <view class='box'>
-    <image src='{{imgUrl}}/image/details/bgs.png' wx:if="{{item.photo==''&imgUrl}}"></image>
-    <image src='{{imgUrl+"/"+item.photo}}' wx:if="{{item.photo!=''&imgUrl}}"></image>
+    <image src='{{imgUrl}}/image/details/bgs.png' wx:if="{{item.photo==''}}"></image>
+    <image src='{{imgUrl+"/"+item.photo}}' wx:if="{{item.photo!=''}}"></image>
     <view class='xinx'>
       <text class='dingdan'>昵称：<text class='nc'>{{item.nickName}}</text></text>
       <text class='dingdan'>手机号码：<text class='nc'>{{item.phone}}</text></text>

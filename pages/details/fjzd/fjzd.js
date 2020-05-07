@@ -124,14 +124,14 @@ Page({
   list: function () {
     var that = this;
     var city = wx.getStorageSync('city');
-    var province = wx.getStorageSync('province');
+    // var province = wx.getStorageSync('province');
     var params = {
       url: '/app/user/listEquipmentInfoByDistance',
       method: 'POST',
       data: {
         'myLng': that.data.longitude,
         'myLat': that.data.latitude,
-        'province': province,
+        'province': '陕西省',
         'city': city
       },
       sCallBack: function (data) {
@@ -204,5 +204,14 @@ Page({
       }
     }
     base.request(params);
+  },
+  // 门店电话
+  phone(e){
+    var that=this;
+    console.log(e)
+    var jdSendPhone=e.currentTarget.dataset.phone
+    wx.makePhoneCall({
+      phoneNumber:jdSendPhone //仅为示例，并非真实的电话号码
+    })
   }
 })

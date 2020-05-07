@@ -1,0 +1,222 @@
+/* pages/MemberVip/Member_vip/member.wxss */
+.box{
+  width: 92%;
+  margin: 0 auto;
+}
+.head{
+  display: flex;
+}
+.head_pic{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+}
+.head_pic image{
+  width: 140rpx;
+  margin-top: -20%;
+  margin-left: -5%;
+}
+.grxx{
+  color: #646464;
+  line-height: 65rpx;
+  margin-left: 32rpx;
+}
+.grxx text{
+  display: block;
+  font-size: 24rpx;
+}
+.grxx .name{
+  font-size:24rpx;
+  color:rgba(100,100,100,1);
+}
+.grxx .phone{
+  font-size:36rpx;
+  color: #000000;
+}
+/* 推广码 */
+.right{
+  background:rgba(255,255,255,1);
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+  border-radius:10rpx;
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0 0 80rpx;
+}
+.right image{
+  width: 60rpx;
+}
+.right text{
+  font-size:20rpx;
+  color:rgba(0,0,0,1);
+  margin-left: 10rpx;
+}
+.cwhy{
+  background:rgba(255,186,47,1);
+  box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+}
+.cwhy text{
+  width: 104rpx;
+  margin-left: 0rpx;
+  color: #fff;
+  text-align: center;
+}
+
+/* 会员续费 */
+.renew_box{
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+  margin-top: 8%;
+}
+.renew{
+  width: 324rpx;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+  background:rgba(255,255,255,1);
+  box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+  border-radius:10px;
+  display: flex;
+  align-items: center;
+}
+.renew image{
+  width: 80rpx;
+}
+.renew text{
+  font-size:36rpx;
+  color:rgba(0,0,0,1);
+}
+/* 图片 */
+.img_box{
+  width: 100%;
+  margin:32rpx auto;
+}
+.img_box image{
+  width: 100%;
+  border-radius: 20rpx;
+}
+/* 套餐 */
+.Setmeal{
+  width: 100%;
+}
+.meal{
+  display: flex;
+  justify-content: space-between;
+  padding: 24rpx 32rpx;
+  box-sizing: border-box;
+  /* width:343px;
+  height:80px; */
+  background:rgba(255,255,255,1);
+  box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+  border-radius:10px;
+  margin-bottom: 32rpx;
+}
+.meal_left{
+  width: 76%;
+}
+.meal_left .title{
+  font-size:32rpx;
+  color:rgba(0,0,0,1);
+}
+.meal_bottom{
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #646464;
+  margin-top: 34rpx;
+}
+.meal_bottom .price{
+  color: #FF0000;
+}
+.meal_right{
+  text-align: center;
+  border-left: 2px solid #E2E2E2;
+  padding-left: 40rpx;
+}
+.meal_right text{
+  display: block;
+  font-size:24rpx;
+  color:rgba(100,100,100,1);
+  margin-top: 12rpx
+}
+/* 问题 */
+.question_box{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0,0,0,0.6);
+  top:0;
+}
+.question{
+  width: 92%;
+  margin:50% auto;
+  background: #fff;
+  width:343px;
+  height:400rpx;
+  border-radius:10px;
+  padding:32rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.page_box{
+  width: 100%;
+  text-align: center;
+}
+.subject{
+  width: 100%;
+}
+.subject text{
+  font-size:32rpx;
+  color:#000;
+}
+.radio{
+  display: block;
+  margin:30rpx auto;
+}
+radio .wx-radio-input{
+  width: 42rpx;
+  height: 42rpx;
+  display: block;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked{
+  border: none;
+  background: #4184ff;
+  width: 46rpx;
+  height: 46rpx;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;/* 圆角 */
+   width: 42rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 42rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height: 42rpx;
+   text-align: center;
+   font-size:30rpx; /* 对勾大小 30rpx */
+   color:#fff; /* 对勾颜色 白色 */
+   background: transparent;
+   display: block;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+.radio-group{
+  margin-top: 6%;
+}
+.next,.pass{
+  width:120rpx;
+  height:48rpx;
+  background:rgba(255,255,255,1);
+  border:1px solid rgba(226,226,226,1);
+  border-radius:12px;
+  font-size:24rpx;
+  color:rgba(0,0,0,1);
+  text-align: center;
+  line-height: 48rpx;
+  margin:0 auto;
+}
+.pass{
+  position: absolute;
+  top:7%;
+  right: 4%;
+}

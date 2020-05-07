@@ -67,17 +67,17 @@
       <find>http://www.jlzn365.com:8585</find>
       <find>http://jlmxcs.jlzn365.com:8585/</find>
       <find>https://www.jlzn365.com</find>
-      <find>https://jlmxcs.jlzn365.com</find>
+      <find>https://www.jlzn365.com</find>
       <find>https://www.jlzn365.com/index</find>
     </findStrings>
     <replaceStrings>
       <replace>https://www.jlzn365.com:8585</replace>
       <replace>http://www.jlzn365.com:8585</replace>
-      <replace>https://jlmxcs.jlzn365.com/login</replace>
+      <replace>https://www.jlzn365.com/login</replace>
       <replace>http://jlmxcs.jlzn365.com:8585/</replace>
       <replace />
       <replace>http://www.jlzn365.com:8585/</replace>
-      <replace>https://jlmxcs.jlzn365.com</replace>
+      <replace>https://www.jlzn365.com</replace>
       <replace>https://www.jlzn365.com/index</replace>
       <replace>https://www.jlzn365.com</replace>
     </replaceStrings>

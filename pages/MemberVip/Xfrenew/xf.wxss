@@ -1,0 +1,48 @@
+/* pages/MemberVip/Xfrenew/xf.wxss */
+.box{
+  width: 92%;
+  margin: 0 auto;
+}
+.Setmeal{
+  width: 100%;
+}
+.meal{
+  display: flex;
+  justify-content: space-between;
+  padding: 24rpx 32rpx;
+  box-sizing: border-box;
+  /* width:343px;
+  height:80px; */
+  background:rgba(255,255,255,1);
+  box-shadow:0px 3px 6px rgba(0,0,0,0.16);
+  border-radius:10px;
+  margin-bottom: 32rpx;
+}
+.meal_left{
+  width: 76%;
+}
+.meal_left .title{
+  font-size:32rpx;
+  color:rgba(0,0,0,1);
+}
+.meal_bottom{
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #646464;
+  margin-top: 34rpx;
+}
+.meal_bottom .price{
+  color: #FF0000;
+}
+.meal_right{
+  text-align: center;
+  border-left: 2px solid #E2E2E2;
+  padding-left: 40rpx;
+}
+.meal_right text{
+  display: block;
+  font-size:24rpx;
+  color:rgba(100,100,100,1);
+  margin-top: 12rpx
+}

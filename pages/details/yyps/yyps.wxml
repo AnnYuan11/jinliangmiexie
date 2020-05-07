@@ -1,6 +1,6 @@
 <!--pages/details/yyps/yyps.wxml-->
 <form bindsubmit="bindFormSubmit" bindreset="formReset">
-  <!-- <view class="section section_gap">
+  <view class="section section_gap">
     <view class='title'>
       <image style='width:30rpx;height:30rpx;' src="{{imgUrl}}/image/details/time.png"></image>
       <text>预约时间</text>
@@ -21,7 +21,7 @@
     </view>
 
 
-  </view> -->
+  </view>
   <text class="tips">预约成功后，您的订单将于24小时之内送达，届时请您注意查收短信或接听电话</text>
   <view class="section section_gap">
     <view class='title'>

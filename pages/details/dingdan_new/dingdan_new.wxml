@@ -12,8 +12,9 @@
             <text>订单类型：{{item.orderType}}-{{item.takeShoeType}}</text>
             <text>订单数量：{{item.shoesNumberTotal}}双</text>
             <text>订单总计：{{item.totalMoney}}元</text>
-            <text style="display:inline-block" wx:if="{{jdSendName!=''}}">快递员：{{jdSendName}}</text>
-            <image wx:if="{{jdSendPhone!=''}}"src="/image/details/dh.png" mode="widthFix" style="width: 44rpx;height: 44rpx;vertical-align: middle;margin-left: 4%;" bindtap="phone"></image>
+            <text style="display:inline-block" wx:if="{{item.jdSendName!=''}}">快递员：{{item.jdSendName}}{{item.jdSendPhone}}
+            </text>
+            <image wx:if="{{item.jdSendName!=''}}"src="/image/details/dh.png" mode="widthFix" style="width: 44rpx;height: 44rpx;vertical-align: middle;margin-left: 4%;"  catchtap="phone" data-phone="{{item.jdSendPhone}}"></image>
           </view>
         </navigator>
         <view class='bottom'>
@@ -44,8 +45,8 @@
             <text>订单类型：{{item.orderType}}-{{item.takeShoeType}}</text>
             <text>订单数量：1双</text>
             <text>订单总计：{{item.paymentMoney}}元</text>
-            <text style="display:inline-block" wx:if="{{jdSendName!=''}}">快递员：{{jdSendName}}</text>
-            <image wx:if="{{jdSendPhone!=''}}"src="/image/details/dh.png" mode="widthFix" style="width: 44rpx;height: 44rpx;vertical-align: middle;margin-left: 4%;" bindtap="phone"></image>
+            <text style="display:inline-block"  wx:if="{{item.jdSendNames!=''}}">快递员：{{item.jdSendNames}}{{item.jdSendPhones}}</text>
+            <image wx:if="{{item.jdSendNames!=''}}"src="/image/details/dh.png" mode="widthFix" style="width: 44rpx;height: 44rpx;vertical-align: middle;margin-left: 4%;" bindtap="phone" data-phone="{{item.jdSendPhones}}"></image>
           </view>
         </navigator>
         <view class='bottom'>

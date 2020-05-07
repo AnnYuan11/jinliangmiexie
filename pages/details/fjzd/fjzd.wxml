@@ -18,7 +18,7 @@
         <text class="distance">{{item.distance}}km</text>
       </view>
       <text class='address'>地址：{{item.address}}</text>
-    
+      <text class='address' catchtap="phone" data-phone="{{item.phone}}">电话：{{item.phone}}</text>
     </view>
   </view>
 </block>

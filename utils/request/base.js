@@ -13,10 +13,10 @@ class Base {
     console.log(sessionId)
 
     if (sessionId != "" && sessionId != null) {
-      console.log("111111" + sessionId)
+      
       var header = { 'Content-Type': 'application/x-www-form-urlencoded', 'Cookie':'SESSION='+ sessionId}
     } else {
-      console.log("222221" + sessionId)
+      
       var header = { 'content-type': 'application/x-www-form-urlencoded' }
     }
     if (!params.method) {

@@ -1,0 +1,32 @@
+<!--pages/MemberVip/login_vip/loginVip.wxml-->
+<form bindsubmit="fpcxtj">
+	<view class="login_bg">
+		<image src="/image/vip/bg.png" mode="widthFix" style="width:100%"></image>
+		<view class="login">
+			<view class="phone">
+				<input placeholder="请输入您的手机号" type='number' bindinput='bindinput' placeholder-class="pla" name="phone" />
+			</view>
+			<view class="phone yzm">
+				<input placeholder="请输入验证码" type='number' placeholder-class="pla" name="yzm" />
+				<view class="line"></view>
+				<view class="obtain" bindtap="phoneYz">{{num}}</view>
+				<!-- <view class="mask" wx:if="{{flag}}"></view> -->
+			</view>
+		</view>
+		<!-- 套餐 -->
+		<view class="combo_box">
+			<block wx:for="{{list}}">
+				<view class="combo {{item.id==id?'active':''}}" bindtap="Recharges" data-id="{{item.id}}">
+					<view class="title">{{item.name}}</view>
+					<view class="amount">
+						<text class="num">套餐数量：{{item.shoeNumber}}双</text>
+						<text class="price">￥{{item.money}}</text>
+					</view>
+				</view>
+			</block>
+
+
+		</view>
+		<button formType="submit" class="buyNow">立即购买</button>
+	</view>
+</form>

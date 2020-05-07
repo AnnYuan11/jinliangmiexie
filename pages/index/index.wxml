@@ -44,13 +44,13 @@
   <navigator url="/pages/details/fjzd/fjzd?types=2" hover-class="none">
       <view class='icon_list'>
         <image src='{{imgUrl}}/image/sNew/crxg.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
-        <text>附近门店</text>   
+        <text>到店消费</text>   
       </view>
   </navigator>
   <navigator wx:if="{{city=='西安市'}}" url="/pages/details/wyxx_new/wyxx_new" hover-class="none">
       <view class='icon_list'>
         <image src='{{imgUrl}}/image/sNew/smqx.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
-        <text>上门取送</text>   
+        <text>京东取送</text>   
       </view>
   </navigator>
   <navigator wx:else url="/pages/new/fjmd/fjmd?types=2" hover-class="none">
@@ -66,12 +66,18 @@
           <text>美团验券</text>   
         </view>
   </navigator>
-  <navigator url="/pages/details/bzzx_details/bzzx_details?id=4028b8816c7a759c016c7a7e0b960000" hover-class="none">
+  <!-- <navigator url="/pages/details/bzzx_details/bzzx_details?id=4028b8816c7a759c016c7a7e0b960000" hover-class="none">
       <view class='icon_list'>
         <image src='{{imgUrl}}/image/sNew/xhsm.png' wx:if="{{imgUrl}}" mode='widthFix'></image>    
         <text>洗护说明</text>   
       </view>
-  </navigator>
+  </navigator> -->
+   <!-- <navigator url="/pages/MemberVip/Member_vip/member" hover-class="none"> -->
+      <view class='icon_list' bindtap="toVip">
+        <image src='/image/vip/hyzq.png' wx:if="{{imgUrl}}" mode='widthFix'></image>   
+        <text>会员专区</text>   
+      </view>
+  <!-- </navigator> -->
 </view>
 <!-- 修鞋服务 -->
 <view class='s_xxfw'>

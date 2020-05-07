@@ -8,9 +8,8 @@ App({
   
   globalData: {
     userInfo: null,
-    // imgUrl:"http://www.jlzn365.com:8585"
     imgUrl: "http://www.jlzn365.com:8585"
-  }
+  },
   //  refresh: function () {
   //   var that = this;
   //   var userId = wx.getStorageSync('userId');//wx.getStorageSync(key)，获取本地缓存
@@ -33,5 +32,31 @@ App({
   //   }
   //   base.request(params);
   // }
+  //获取openID
+  getOpenId: function () {
+    var that = this;
+    wx.login({
+      success: function (res) {
+        console.log(res)
+        if (res.code) {
+          // 发起网络请求
+          wx.request({
+            url: url + '/app/getOpenId?code=' + res.code,
+            // header:{'content-type': 'application/x-www-form-urlencoded' },
+            success: function (data) {
+              console.log(data);
+              wx.setStorage({
+                key: 'openId',
+                data: data.data.result.openId,
+              })
+            },
+            fail: function (data) {
+              // console.log(data);
+            }
+          })
+        }
+      }
+    })
+  }
 
 })

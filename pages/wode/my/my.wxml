@@ -15,6 +15,7 @@
     <view class='zc'>
       <view class='head'>
         <open-data type="userAvatarUrl" style="border-radius:50%;overflow:hidden;display:block;height:130rpx;"></open-data>
+        <image src="/image/vip/vip.png" mode="widthFix"  wx:if="{{list.isVip=='1'}}" class="hy"></image>
       </view>
       <view class='xinxi'>
         <text class='number'>{{phone}}</text>
@@ -44,9 +45,10 @@
         </view>
       </navigator>
       </view>
-    <navigator url="../../details/chongzhi/chongzhi" hover-class="none">
+    <!-- <navigator url="../../details/chongzhi/chongzhi" hover-class="none">
       <view class='chongzhi'>充值</view>
-    </navigator>
+    </navigator> -->
+    <view class='chongzhi' bindtap="toUse">套餐剩余{{list.packageNumber}}双</view>
 </view>
 <!-- 我的订单、推荐有礼 -->
 <view class='vie'>
@@ -69,11 +71,17 @@
       </view>
     </navigator>
     <!-- <navigator url="/pages/details/wyjx/wyjx" hover-class="none"> -->
-      <view class='item_lix'>
+      <!-- <view class='item_lix'>
         <image src='/image/my_new/axjx.png' style="width:78rpx;"mode='widthFix'></image>
         <text>爱心捐鞋</text>
-      </view>
+      </view> -->
     <!-- </navigator> -->
+    <navigator url="/pages/details/chongzhi/chongzhi" hover-class="none">
+      <view class='item_lix'>
+        <image src='/image/my_new/axjx.png' style="width:78rpx;"mode='widthFix'></image>
+        <text>充值</text>
+      </view>
+    </navigator>
     <navigator url="/pages/details/bzzx/bzzx" hover-class="none">
       <view class='item_lix'>
         <image src='/image/my_new/bzzx.png' style="width:78rpx;"mode='widthFix'></image>

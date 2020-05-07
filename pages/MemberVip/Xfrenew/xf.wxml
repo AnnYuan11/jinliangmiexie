@@ -1,0 +1,21 @@
+<!--pages/MemberVip/Xfrenew/xf.wxml-->
+<view class="box">
+   <!-- 套餐 -->
+ <view class="Setmeal">
+		<block wx:for="{{list}}">
+			<view class="meal">
+				<view class="meal_left">
+					<text class="title">{{item.name}}</text>
+					<view class="meal_bottom">
+						<text class="num">套餐数量：{{item.shoeNumber}}双</text>
+						<text class="price">￥{{item.money}}</text>
+					</view>
+				</view>
+				<view class="meal_right" bindtap="add" data-id="{{item.id}}">
+					<image src="/image/vip/gwc.png" mode="widthFix" style="width:48rpx"></image>
+					<text>立即购</text>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>

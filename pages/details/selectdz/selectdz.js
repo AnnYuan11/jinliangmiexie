@@ -246,6 +246,20 @@ Page({
         url: '/pages/crxg/xiuxie/xiuxie?&dizhi=' + dizhi + '&num=' + num + '&phone=' + phone + '&dzid=' + dzid + '&equipmentInfoId=' + equipmentInfoId + '&address=' + address_dizhi + '&equipmentname=' + equipmentname
       })
     }
+    else if (types == 5) {
+      let pages = getCurrentPages(); //获取当前页面pages里的所有信息。
+      let prevPage = pages[pages.length - 2]; 
+      prevPage.setData({  // 将我们想要传递的参数在这里直接setData。上个页面就会执行这里的操作。
+        dzid: dzid,
+        equipmentname:equipmentname,
+        dizhi:dizhi,
+        name:names,
+        phone:phone
+      })
+    wx.navigateBack({
+      delta: 1  // 返回上一级页面。
+    })
+    }
     else{
       wx.redirectTo({
         // url: '../wyxx/wyxx?num=' + num + '&dizhi=' + dizhi + '&adaddress=' + adaddress + '&dzid=' + dzid + '&zdid=' + zdid + '&type1=' + type1 + '&userCouponInfoId=' + userCouponInfoId+'&money='+money+'&wlf='+wlf ,

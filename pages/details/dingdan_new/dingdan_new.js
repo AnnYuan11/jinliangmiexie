@@ -22,7 +22,7 @@ Page({
     this.setData({
       imgUrl: app.globalData.imgUrl
     })
-    that.list();
+    // that.list();
     that.getOpenId();
     that.refresh();
   },
@@ -98,29 +98,26 @@ Page({
           var authStatus = list[i].authStatus;
           var paymentStatus = list[i].paymentStatus;
           var orderStatusTotal = list[i].orderStatusTotal;
-         
-         
           if (list[i].isJdSend == 1) {
-            that.setData({
-              jdSendName: list[i].jdSendName,
-              jdSendPhone: list[i].jdSendPhone
-            })
-          } else if (list[i].orderStatusTotal == 1){
-            if (list[i].isSendOperator == 1){
-              that.setData({
-                jdSendName: list[i].sendOperatorInfo.userName,
-                jdSendPhone: list[i].sendOperatorInfo.phone
-              })
+              list[i].jdSendName=list[i].jdSendName,
+              list[i].jdSendPhone= list[i].jdSendPhone
+          }else{
+            if (list[i].orderStatusTotal == 1){
+              if (list[i].isSendOperator == 1){
+                list[i].jdSendName=list[i].sendOperatorInfo.userName
+                list[i].jdSendPhone=list[i].sendOperatorInfo.phone
+              }
+            } else if (list[i].orderStatusTotal == 4 || list[i].orderStatusTotal == 5 || list[i].orderStatusTotal == 6 || list[i].orderStatusTotal == 7){
+              if (list[i].isTakeOperator == 1) {
+                list[i].jdSendName=list[i].takeOperatorInfo.userName
+                list[i].jdSendPhone=list[i].takeOperatorInfo.phone
+              }
             }
-          } else if (list[i].orderStatusTotal == 4 || list[i].orderStatusTotal == 5 || list[i].orderStatusTotal == 6 || list[i].orderStatusTotal == 7){
-            if (list[i].isTakeOperator == 1) {
-              that.setData({
-                jdSendName: list[i].takeOperatorInfo.userName,
-                jdSendPhone: list[i].takeOperatorInfo.phone
-              })
+            else {
+              list[i].jdSendName=''
+              list[i].jdSendPhone=''
             }
           }
-
           if (orderType == "1") {
             orderType = "洗鞋订单"
           } else if (orderType == "2"){
@@ -195,26 +192,30 @@ Page({
           var authStatus = lists[i].authStatus;
           var paymentStatus = lists[i].paymentStatus;
           var orderStatus = lists[i].orderStatus;
+         
           if (lists[i].isJdSend == 1) {
-            that.setData({
-              jdSendName: lists[i].jdSendName,
-              jdSendPhone: lists[i].jdSendPhone
-            })
-          } else if (lists[i].orderStatusTotal == 1) {
-            if (lists[i].isSendOperator == 1) {
-              that.setData({
-                jdSendName: lists[i].sendOperatorInfo.userName,
-                jdSendPhone: lists[i].sendOperatorInfo.phone
-              })
+            lists[i].jdSendNames=lists[i].jdSendName,
+            lists[i].jdSendPhones= lists[i].jdSendPhone
+        }else{
+          if (lists[i].orderStatusTotal == 1){
+            if (lists[i].isSendOperator == 1){
+              lists[i].jdSendNames=lists[i].sendOperatorInfo.userName
+              lists[i].jdSendPhones=lists[i].sendOperatorInfo.phone
             }
-          } else if (lists[i].orderStatusTotal == 4 || lists[i].orderStatusTotal == 5 || lists[i].orderStatusTotal == 6 || lists[i].orderStatusTotal == 7) {
+          } else if (lists[i].orderStatusTotal == 4 || lists[i].orderStatusTotal == 5 || lists[i].orderStatusTotal == 6 || lists[i].orderStatusTotal == 7){
             if (lists[i].isTakeOperator == 1) {
-              that.setData({
-                jdSendName: lists[i].takeOperatorInfo.userName,
-                jdSendPhone: lists[i].takeOperatorInfo.phone
-              })
+              lists[i].jdSendNames=lists[i].takeOperatorInfo.userName
+              lists[i].jdSendPhones=lists[i].takeOperatorInfo.phone
             }
           }
+          else {
+            lists[i].jdSendNames=''
+            lists[i].jdSendPhones=''
+          }
+        }
+
+
+
           if (orderType == "3") {
             orderType = "增补订单"
           } 
@@ -250,15 +251,14 @@ Page({
           lists[i].orderStatus = orderStatus;
           lists[i].takeShoeType = takeShoeType;
           lists[i].orderType = orderType;
+         
         }
-        // that.data.list1.push.apply(that.data.list1, lists);
-        // console.log(that.data.list1)
+        
         
         that.setData({
-          
           lists:lists
         })
-        console.log(that.data.list)
+        console.log(that.data.lists)
       },
       eCallBack: function () {
       }
@@ -550,10 +550,11 @@ Page({
     base.request(params);
   },
   // 快递员电话
-  phone(){
+  phone(e){
     var that=this;
+    var jdSendPhone=e.currentTarget.dataset.phone
     wx.makePhoneCall({
-      phoneNumber: that.data.jdSendPhone //仅为示例，并非真实的电话号码
+      phoneNumber:jdSendPhone //仅为示例，并非真实的电话号码
     })
   }
 })

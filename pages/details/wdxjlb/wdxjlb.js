@@ -25,7 +25,8 @@ Page({
     var that = this;
     that.setData({
       wdxj:options.wdxj,
-      userPhone: options.userPhone
+      userPhone: options.userPhone,
+      type:options.type
     })
     that.list();
   },

@@ -1,0 +1,62 @@
+<!--pages/MemberVip/subscribe/subscribe.wxml-->
+<image src='{{imgUrl}}/image/index/bg.png' style='width:750rpx' wx:if="{{imgUrl}}" mode='widthFix'></image>
+<view class='information_box'>
+	<view class='message'>
+		<image src='{{imgUrl}}/image/details/line.png' wx:if="{{imgUrl}}" mode='widthFix' style='width:10rpx;'></image>
+		<text>填写信息</text>
+	</view>
+	<view class='list_s'>
+			<text class='xm'>门店</text>
+			<view class="picker_box">
+			<picker mode="selector" range="{{mdlist}}" bindchange="bindmd" range-key="equipmentName">
+					<view class="picker">
+						{{mdlist[index2].equipmentName}}
+					</view>
+				</picker>
+			</view>
+		</view>
+	<view class='information'>
+		<navigator url='/pages/details/selectdz/selectdz?types=5&num={{num}}' hover-class='none'>
+			<view class='list_s'>
+				<text class='xm'>地址</text>
+				<text class='r' style='width:80%;text-align:right;'>{{dizhi}}</text>
+			</view>
+		</navigator>
+		<view class='list_s'>
+			<text class='xm'>姓名</text>
+			<text class='r'>{{name}}</text>
+		</view>
+		<view class='list_s'>
+			<text class='xm'>联系电话</text>
+			<text class='r'>{{phone}}</text>
+		</view>
+		<view class='list_s'>
+			<text class='xm'>鞋子数量</text>
+			<view class='right'>
+				<image src='{{imgUrl}}/image/details/jian.png' wx:if="{{imgUrl}}" mode="widthFix" style='width:38rpx' bindtap='jian'></image>
+				<text>{{num}}</text>
+				<image src='{{imgUrl}}/image/details/jia.png' wx:if="{{imgUrl}}" mode="widthFix" style='width:38rpx' bindtap='jia'></image>
+			</view>
+		</view>
+		<view class='list_s'>
+			<text class='xm'>预约时间</text>
+			<view class="picker_box">
+				<picker mode="date" value="{{dates}}" start="{{currentDate}}" end="{{endDate}}" bindchange="bindDateChange" name='date'>
+					<view class="picker">
+						{{dates}}
+					</view>
+				</picker>
+        <picker mode="selector" value="{{array[index].value}}}" range="{{array}}" bindchange="bindTime" name='time' range-key="name">
+					<view class="picker">
+						{{array[index].name}}
+					</view>
+				</picker>
+			</view>
+		</view>
+		<view class='lists'>
+			<text class='xm bz'>添加备注</text>
+			<textarea placeholder="请注释您鞋子护理的具体要求（字数不超过50字）" maxlength="50" placeholder-class="place" bindinput="bindTextAreaBlur"/>
+			</view>
+    </view>
+    <button class='sub' bindtap='submit'>确认预约</button>
+  </view>

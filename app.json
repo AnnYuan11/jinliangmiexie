@@ -1,9 +1,13 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/MemberVip/login_vip/loginVip",
+    "pages/MemberVip/subscribe/subscribe",
+    "pages/MemberVip/Member_vip/member",
     "pages/details/mthx_hx/mthx_hx",
-    "pages/details/fjzd/fjzd",
+    "pages/MemberVip/Xfrenew/xf",
     "pages/details/yyps/yyps",
+    "pages/details/fjzd/fjzd",
     "pages/details/pingjia/pingjia",
     "pages/wode/my/my",
     "pages/details/wyxx_crxg/wyxx_crxg",
@@ -57,7 +61,8 @@
     "pages/crxg/wyxx_crxg/wyxx_crxg",
     "pages/crxg/wyxx/wyxx",
     "pages/crxg/xiuxie/xiuxie",
-    "pages/new/fjmd/fjmd"
+    "pages/new/fjmd/fjmd",
+    "pages/MemberVip/advertisingH5/h5"
   ],
   "window": {
     "backgroundTextStyle": "light",

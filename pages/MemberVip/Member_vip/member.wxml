@@ -1,0 +1,86 @@
+<!--pages/MemberVip/Member_vip/member.wxml-->
+<view class="box">
+	<!-- 头部 -->
+	<view class="head">
+		<view class="head_pic">
+			<open-data type="userAvatarUrl" style="border-radius:50%;overflow:hidden;display:block;height:130rpx;"></open-data>
+			<image src="/image/vip/vip.png" mode="widthFix"  wx:if="{{isVip=='1'}}"></image>
+		</view>
+		<view class="grxx">
+			<text class="phone">{{phone}}</text>
+			<text class="name" wx:if="{{isVip=='1'}}">会员有效期：{{packageEndTime}}</text>
+			<text class="name" wx:else>普通会员</text>
+		</view>
+		<view class="right"  wx:if="{{isVip=='1'}}">
+			<navigator url="/pages/details/wdyq/wdyq" hover-class="none" style="display: flex;align-items: center;">
+				<image src="/image/vip/ewm.png" mode="widthFix"></image>
+				<text>推广码</text>
+			</navigator>
+		</view>
+		<view class="right cwhy" wx:else>
+        <text>购买以下套餐成为会员</text>
+      </view>
+	</view>
+	<!-- 会员专属部分 -->
+	<view class="renew_box" wx:if="{{isVip=='1'}}">
+		<navigator url="/pages/MemberVip/Xfrenew/xf" hover-class="none">
+			<view class="renew">
+				<image src="/image/vip/xf.png" mode="widthFix"></image>
+				<text>续费会员</text>
+			</view>
+		</navigator>
+		<navigator url="/pages/details/wdxjlb/wdxjlb?type=1">
+			<view class="renew">
+				<image src="/image/vip/tj.png" mode="widthFix"></image>
+				<text>推荐明细</text>
+			</view>
+		</navigator>
+	</view>
+	<!-- 图片 -->
+	<navigator url="/pages/MemberVip/advertisingH5/h5" hover-class="none">
+		<view class="img_box">
+			<image src="http://47.92.117.219:8585/hysm.jpg" mode="widthFix"></image>
+		</view>
+	</navigator>
+	<!-- 套餐 -->
+	<view class="Setmeal">
+		<block wx:for="{{list}}">
+			<view class="meal">
+				<view class="meal_left">
+					<text class="title">{{item.name}}</text>
+					<view class="meal_bottom">
+						<text class="num">套餐数量：{{item.shoeNumber}}双</text>
+						<text class="price">￥{{item.money}}</text>
+					</view>
+				</view>
+				<view class="meal_right" wx:if="{{item.isBuy=='0'}}" bindtap="add" data-id="{{item.id}}">
+					<image src="/image/vip/gwc.png" mode="widthFix" style="width:48rpx"></image>
+					<text>立即购</text>
+				</view>
+				<view class="meal_right" wx:else bindtap="toUse" data-nums="{{item.shoeNumber}}">
+					<image src="/image/vip/qsy.png" mode="widthFix" style="width:48rpx"></image>
+					<text>去使用</text>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>
+<view class="question_box" wx:if="{{isShow}}">
+	<view class="question">
+		<view class="page_box">
+			<text class="page">{{index}}/{{length}}</text>
+		</view>
+		<view class="subject">
+			<text>{{lists[0].problem}}</text>
+			<radio-group class="radio-group" bindchange="radioChange">
+				<radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.value}}" checked="{{item.checked}}">
+					<text>{{item.value}}</text>
+				</radio>
+			</radio-group>
+		</view>
+    <!-- 下一题 -->
+    <view class="next" catchtap="next">下一题</view>
+    <!-- 跳过 -->
+    <view class="pass" catchtap="pass">跳过</view>
+	</view>
+</view>

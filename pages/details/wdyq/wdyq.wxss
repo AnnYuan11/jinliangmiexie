@@ -20,9 +20,9 @@ page{
   margin: auto;
 }
 .ewm{
-  width: 103%;
+  width: 100%;
   position: absolute;
-  top: 40%;
+  top: 34%;
 }
 .ewm image{
   width: 300rpx;

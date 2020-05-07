@@ -73,7 +73,7 @@
   color:rgba(255,255,255,1);
 }
 .chongzhi{
-  width:140rpx;
+  padding: 0 20rpx;
   height:70rpx;
   border:1px solid #fff;
   border-radius:20rpx;
@@ -155,4 +155,9 @@
   font-size:24rpx;
   color:rgba(102,102,102,1);
   display: block;
+}
+.bg_box  .hy{
+  width: 140rpx;
+  margin-top: -20%;
+  margin-left: -5%;  
 }

@@ -1,6 +1,6 @@
 <!--pages/details/wdyq/wdyq.wxml-->
 <view class='ewm_box'>
-  <image src='/image/my_new/bgs.png' wx:if="{{imgUrl}}"class='bg'></image>
+  <image src='{{imgUrl}}/tjgz.png' wx:if="{{imgUrl}}"class='bg'></image>
   <!-- <text class='title'>我为今亮代言</text> -->
   <view class='ewm'>
     <!-- <image src='https://www.jlzn365.com/app/user/getUserIdQr?userId={{userId}}'  mode="widthFix"></image> -->

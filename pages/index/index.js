@@ -27,7 +27,7 @@ Page({
     pinglun:[ ],
     type: 1,
     zixun:false,
-    fadeShow:true,
+    fadeShow:false,//首页浮层显示
     select: false,
 
   },
@@ -52,7 +52,6 @@ Page({
   onShow: function () {
     this.getOpenId();
     var that = this 
-     var that = this;
     wx.getSetting({
       success: (res) => {
         console.log(res);
@@ -466,5 +465,45 @@ Page({
       key: 'city',
       data: this.data.city,
     })
-  }
+  },
+  // 获取信息
+  toVip: function () {
+    var that = this;
+    var userId = wx.getStorageSync('userId');//wx.getStorageSync(key)，获取本地缓存
+    console.log(userId)
+    var params = {
+      url: '/app/user/findById',
+      method: 'POST',
+      data: {
+        'id': userId
+      },
+      sCallBack: function (res) {
+      console.log(res)
+      // debugger
+      if (res.data.errorCode == '-200') {
+        wx.showToast({
+          title: res.data.errorMsg,
+          icon: 'none',
+          duration: 1000,
+        })
+        setTimeout(function () {
+          wx.redirectTo({
+            url: '/pages/login/login',
+          })
+        }, 1500)
+      }else{
+        wx.navigateTo({
+          url: '/pages/MemberVip/Member_vip/member',
+        })
+      }
+      
+      },
+      eCallBack: function () {
+      }
+    }
+    base.request(params);
+  },
+
+
+
 })
